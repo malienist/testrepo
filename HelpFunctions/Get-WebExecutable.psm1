@@ -28,11 +28,8 @@ function Get-WebExecutable{
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 	$web = New-Object System.Net.WebClient
 	$flag = $false
-<<<<<<< HEAD
 
 	# Download URL to specified outfile
-=======
->>>>>>> 1daeefe1701a361f40a3a30f5525b917f345c2d2
 	While ($flag -eq $false)
 	{
 		Try
@@ -45,7 +42,6 @@ function Get-WebExecutable{
 			Write-Information -InformationAction Continue -MessageData $output
 		}
 	}
-<<<<<<< HEAD
 
 	# Now download has finished, confirm file exists
 	$filetest = Test-Path -Path $outfile
@@ -58,6 +54,4 @@ function Get-WebExecutable{
 
 	Write-Output $filetest
 
-=======
->>>>>>> 1daeefe1701a361f40a3a30f5525b917f345c2d2
 }

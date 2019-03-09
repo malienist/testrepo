@@ -20,7 +20,7 @@ function Set-BaseVMFileStructure
 
     Write-Information -MessageData "Setting up Base VM filepaths"
     # Compile DSC script to generate MOF
-    . .SetupScripts\setfilepathsDSC.ps1
+    . .\SetupScripts\setfilepathsDSC.ps1
     # Create MOF file
     FilepathSetup
     # Set configuration
