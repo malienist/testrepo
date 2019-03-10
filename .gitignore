@@ -1,2 +1,4 @@
-C:\Users\HostHunter\Executables\
-C:\Users\HostHunter\Executables\Test4.txt
+# Ignore all executables due to space constraints
+*.exe
+*.msi
+Executables/
