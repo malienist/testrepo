@@ -27,5 +27,5 @@ function Set-BaseVMFileStructure
     Start-DscConfiguration FilepathSetup -Verbose -Wait
     
     Remove-Item -Path C:\Users\HostHunter\FilepathSetup -Recurse -Force -Verbose
-    
+
 }

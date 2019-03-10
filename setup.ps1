@@ -14,7 +14,7 @@ Set-BaseVMFileStructure
 # access and save it. Many thanks to this website: https://blogs.msdn.microsoft.com/johan/2008/10/01/powershell-editing-permissions-on-a-file-or-folder/
 # and https://stackoverflow.com/questions/33234047/powershell-how-to-give-full-access-a-list-of-local-user-for-folders
 
-Write-Information -MessageData "Updating Folder Permissions"
+Write-Information -InformationAction Continue -MessageData "Updating Folder Permissions"
 $ACL = Get-Acl -Path C:\Users\HostHunter
 $NewACL = New-Object System.Security.AccessControl.FileSystemAccessRule($env:USERNAME, "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
 Set-ACL -Path C:\Users\HostHunter\ $ACL
@@ -38,8 +38,11 @@ if($pester.Name -ne "Pester")
 {
     Write-Information -InformationAction Continue -MessageData "Pester not installed, installing"
     Install-Module -Name Pester -Force -Verbose
+}else{
+    Write-Information -InformationAction Continue -MessageData "Pester exists, continuing"
 }
 
+Write-Information -InformationAction Continue -MessageData "Updated"
 # Now move all files / modules to directory structure created
 #Copy-Item -Path .\HelpFunctions\*.psm1 -Destination C:\Users\HostHunter\HelpFunctions
 #Copy-Item -Path .\modulemanifest.txt -Destination C:\Users\HostHunter\modulemanifest.txt
