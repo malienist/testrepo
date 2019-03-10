@@ -10,6 +10,18 @@ function Get-WebExecutable{
 	.Parameter
 	URL - The URL to download from
 
+	.Parameter
+	Outfile - the location to store the output from the download
+
+	.Parameter
+	Hash - the file hash of the downloaded file
+
+	.Parameter
+	BITS - switch to use if a large file requiring feedback to user to be used
+
+	.Parameter
+	Async - switch to use if file is being transfered asynchronously
+
 	.Example
 	Get-WebExecutable -URL https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.6-signed.msi
 
@@ -20,7 +32,9 @@ function Get-WebExecutable{
 	(
 		[string]$URL,
 		[string]$Outfile,
-		[string]$Hash
+		[string]$Hash,
+		[switch]$BITS,
+		[switch]$Async
     )
 
 	# todo: Ensure file gets hashed after download
@@ -30,18 +44,30 @@ function Get-WebExecutable{
 	$flag = $false
 
 	# Download URL to specified outfile
-	While ($flag -eq $false)
+	if($BITS)
 	{
-		Try
+		$notification = "Starting BITS transfer of $URL"
+		Write-Information -InformationAction Continue -MessageData $notification
+		if($Async){
+			Start-BitsTransfer -Source $URL -Destination $Outfile -Asynchronous 
+		}else{
+			Start-BitsTransfer -Source $URL -Destination $Outfile
+		}
+	}else{
+		While ($flag -eq $false)
 		{
-			$URL = $URL.ToString()
-			$web.DownloadFile($URL, $Outfile)
-			$flag = $true
-		}Catch{
-			$output = "Download of $URL unsuccessful, retrying"
-			Write-Information -InformationAction Continue -MessageData $output
+			Try
+			{
+				$URL = $URL.ToString()
+				$web.DownloadFile($URL, $Outfile)
+				$flag = $true
+			}Catch{
+				$output = "Download of $URL unsuccessful, retrying"
+				Write-Information -InformationAction Continue -MessageData $output
+			}
 		}
 	}
+	
 
 	# Now download has finished, confirm file exists
 	$filetest = Test-Path -Path $outfile
@@ -52,6 +78,6 @@ function Get-WebExecutable{
 		}
 	}
 
-	Write-Output $filetest
+	Write-Output $output
 
 }
