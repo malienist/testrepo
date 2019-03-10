@@ -41,14 +41,15 @@ if($pester.Name -ne "Pester")
     Write-Information -InformationAction Continue -MessageData "Pester exists, continuing"
 }
 
+# Install databasing function so actions can be recorded effectively
 Write-Information -InformationAction Continue -MessageData "Setting up databasing"
-# Now move all files / modules to directory structure created
-#Copy-Item -Path .\HelpFunctions\*.psm1 -Destination C:\Users\HostHunter\HelpFunctions
-#Copy-Item -Path .\modulemanifest.txt -Destination C:\Users\HostHunter\modulemanifest.txt
-
-
-
-# Download mongodb for databasing
-#Write-Information -InformationAction Continue -MessageData "Downloading mongodb"
-#Get-WebExecutable -URL https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-ssl-4.0.6-signed.msi -Outfile "C:\Users\HostHunter\Executables\mongodb.msi"
-
+# Get SQLite executable
+Get-WebExecutable -URL https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip -Outfile C:\Users\HostHunter\Executables\sqlite.zip
+# Unzip executable
+Open-ZipFile -ZipFile C:\Users\HostHunter\Executables\sqlite.zip -ExtractionLoc C:\Users\HostHunter\Databasing\
+# Move executable to Databasing subfolder
+Move-Item C:\Users\HostHunter\Databasing\sqlite-tools-win32-x86-3270200\sqlite3.exe -Destination C:\Users\HostHunter\Databasing\sqlite3.exe
+# Remove zip file
+Remove-Item -Path C:\Users\HostHunter\Executables\sqlite.zip
+# Install PSSQLite module
+Install-Module PSSQLite

@@ -1,4 +1,3 @@
 # Ignore all executables due to space constraints
-*.exe
-*.msi
 Executables/
+Databasing/

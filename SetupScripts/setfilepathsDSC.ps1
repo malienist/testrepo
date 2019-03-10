@@ -51,5 +51,11 @@ Configuration FilepathSetup{
             Ensure = "Present"
             Type = "Directory"
         }
+        # Location of databasing tools
+        File Databasing{
+            DestinationPath = "C:\Users\HostHunter\Databasing"
+            Ensure = "Present"
+            Type = "Directory"
+        }
     } 
 }

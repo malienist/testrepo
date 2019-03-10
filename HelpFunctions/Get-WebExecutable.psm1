@@ -6,7 +6,8 @@ function Get-WebExecutable{
 	.Description
 	Downloads executable from website in a safe manner. Uses System.Net.WebClient
 	Code developed from: https://learn-powershell.net/2011/02/11/using-powershell-to-query-web-site-information/
-    
+	For BITS http://woshub.com/copying-large-files-using-bits-and-powershell/
+	
 	.Parameter
 	URL - The URL to download from
 
@@ -73,8 +74,8 @@ function Get-WebExecutable{
 	$filetest = Test-Path -Path $outfile
 	if($filetest -eq "True"){
 		$output = @{
-			FileExists = "True"
-			FilePath = $Outfile
+			"FileExists" = "True"
+			"FilePath" = $Outfile
 		}
 	}
 
