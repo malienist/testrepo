@@ -24,19 +24,16 @@ function New-Executable
     )
 
     # Get executable manifest
-    $exemanifestjson = Get-Content C:\Users\HostHunter\Manifests\executablemanifest.json
+    $exemanifestjson = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\executablemanifest.json | ConvertFrom-Json
 
-    # Convert into powershell objects
-    # todo: once more than one object here, fix this up
-    #$exemanifest = ConvertFrom-Json $exemanifestjson
     # Assume not true initially
     $noexe = $true
     # Check that the current suggested executable doesn't already exist. Check name, url and hash
-    foreach($exe in $exemanifest)
+    foreach($exe in $exemanifestjson)
     {
         if($exe.ExeName -eq $ExeName -and $exe.URL -eq $ExeURL)
         {
-            Write-Information -MessageData "Executable already in framework"
+            Write-Information -InformationAction Continue -MessageData "Executable already in framework"
             $noexe = $false
         }
     }
@@ -51,10 +48,10 @@ function New-Executable
             URL = $ExeURL
         }
         # Add to array
-        $exemanifest += $newexe
+        $exemanifestjson += $newexe
     }
     # Write updated list of exes back to disk
-    $exeoutput = $exemanifest | ConvertTo-Json
+    $exeoutput = $exemanifestjson | ConvertTo-Json
     $exeoutput | Out-File -FilePath "C:\Users\HostHunter\Manifests\executablemanifest.json"
 
 }
