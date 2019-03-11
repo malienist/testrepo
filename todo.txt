@@ -1,0 +1,4 @@
+#todo: Update exe modules with remove and replace modules to allow management of updates
+#todo: Implement a way of checking for updates to various programs
+#todo: Check windows machine for installation of exes before downloading
+#todo: Figure out how to get git to download
