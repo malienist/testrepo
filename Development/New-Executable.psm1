@@ -41,11 +41,11 @@ function New-Executable
     {
         # Add executable to the list
         $newexe = @{
-            ExeName = $ExeName
-            Sha256Hash = $ExeSha256Hash
-            MD5Hash = $ExeMD5Hash
-            Sha2Hash = $ExeSha2Hash
-            URL = $ExeURL
+            "ExeName" = $ExeName
+            "Sha256Hash" = $ExeSha256Hash
+            "MD5Hash" = $ExeMD5Hash
+            "Sha2Hash" = $ExeSha2Hash
+            "URL" = $ExeURL
         }
         # Add to array
         $exemanifestjson += $newexe
