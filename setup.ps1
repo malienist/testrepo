@@ -1,4 +1,5 @@
 #Requires -RunAsAdministrator
+#Requires -Version 5.1
 
 # Update Powershell Help
 # Update-Help

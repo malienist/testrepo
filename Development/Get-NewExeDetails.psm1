@@ -39,3 +39,5 @@ function Get-NewExeDetails{
 	# Now add to executable list
 	New-Executable -ExeName $ExeName -ExeSha256Hash $Sha256.Hash -ExeMD5Hash $MD5hash.Hash -ExeURL $ExeURL
 }
+
+
