@@ -54,7 +54,7 @@ function New-Module{
         $moduleloc = $moduleloc + ".psm1"
         Copy-Item -Path "C:\Users\HostHunter\Development\Get-Example.psm1" -Destination $moduleloc -Verbose
         # Add item to module manifest
-        Write-Information -MessageData "Adding to manifest"
+        Write-Information -InformationAction Continue -MessageData "Adding to manifest"
         $modulelist += $moduleloc
         $modulelist | Out-File -FilePath "C:\Users\HostHunter\Manifests\modulemanifest.txt"
         Write-Output "Module creation succeeded"

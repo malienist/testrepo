@@ -1,0 +1,8 @@
+C:\Users\HostHunter\Development\New-Executable.psm1
+C:\Users\HostHunter\Development\New-Module.psm1
+C:\Users\HostHunter\HelpFunctions\Get-WebExecutable.psm1
+C:\Users\HostHunter\HelpFunctions\Set-BaseVMFilestructure.psm1
+C:\Users\HostHunter\HelpFunctions\Open-ZipFile.psm1
+C:\Users\HostHunter\Development\Get-NewExeDetails.psm1
+C:\Users\HostHunter\SetupScripts\ExecutableManagement\Remove-Executable.psm1
+C:\Users\HostHunter\Development\Move-ModuleLocation.psm1
