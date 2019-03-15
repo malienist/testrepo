@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Manifests/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reload.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/reload.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Development/New-Module.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/Development/New-Module.psm1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Development/Remove-Executable.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/Development/Remove-Executeable.psm1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,36 +16,23 @@
     <splitter split-orientation="vertical" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="496">
+                  <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Development/Test-Module.psm1">
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="160">
-                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/reload.ps1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="224">
-                  <caret line="14" selection-start-line="14" selection-end-line="14" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="488">
-                  <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
-                </state>
-              </provider>
+            <entry file="file://$PROJECT_DIR$/Development/Remove-Executeable.psm1">
+              <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -63,6 +49,15 @@
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.txt">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Development/New-Executable.psm1">
               <provider selected="true" editor-type-id="text-editor">
@@ -70,11 +65,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Manifests/testmanifest.txt">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/reload.ps1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="112">
-                  <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+                <state relative-caret-position="224">
+                  <caret line="14" selection-start-line="14" selection-end-line="14" />
                 </state>
               </provider>
             </entry>
@@ -97,10 +92,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Manifests/package.json" />
-        <option value="$PROJECT_DIR$/Manifests/modulemanifest.txt" />
         <option value="$PROJECT_DIR$/Manifests/settings.json" />
         <option value="$PROJECT_DIR$/reload.ps1" />
         <option value="$PROJECT_DIR$/Manifests/modulemanifest.json" />
+        <option value="$PROJECT_DIR$/HelpFunctions/Get-WebExecuteable.psm1" />
+        <option value="$PROJECT_DIR$/Manifests/modulemanifest.txt" />
+        <option value="$PROJECT_DIR$/Development/New-Module.psm1" />
       </list>
     </option>
   </component>
@@ -125,6 +122,11 @@
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
               <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Development" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="HelpFunctions" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
@@ -173,12 +175,12 @@
       <workItem from="1552635027124" duration="649000" />
       <workItem from="1552636699722" duration="34000" />
       <workItem from="1552636808519" duration="1807000" />
-      <workItem from="1552639555788" duration="1524000" />
+      <workItem from="1552639555788" duration="3227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4119000" />
+    <option name="totallyTimeSpent" value="5822000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -251,26 +253,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Manifests/package.json" />
-    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.txt" />
-    <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Development/Move-ModuleLocation.psm1">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/executablemanifest.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Development/New-Executable.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manifests/testmanifest.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="56" lean-forward="true" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HelpFunctions/Get-WebExecuteable.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/New-Executable.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
@@ -280,6 +286,9 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Development/Move-ModuleLocation.psm1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/reload.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -287,10 +296,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+    <entry file="file://$PROJECT_DIR$/Development/Remove-Executeable.psm1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/Test-Module.psm1">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/executablemanifest.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="31" column="42" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
+        <state relative-caret-position="160">
+          <caret line="10" column="80" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="64" column="68" selection-start-line="64" selection-start-column="68" selection-end-line="64" selection-end-column="68" />
         </state>
       </provider>
     </entry>

@@ -30,36 +30,42 @@ function New-Module{
         [switch]$Testing
     )
 
-    $moduleloc = $ModuleLocation + "\" + $ModuleName
-    Write-Host $moduleloc
+    # Setup output variable
+    $output = @{
+        "ModuleName" = $ModuleName
+        "ModuleLocation" = ""
+        "Outcome" = ""
+    }
+    $moduleloc = $ModuleLocation + "\" + $ModuleName + ".psm1"
+    $output.ModuleLocation = $moduleloc
 
     # Get a list of the current modules
-    $modulelist = Get-Content -Path "C:\Users\HostHunter\Manifests\modulemanifest.txt"
+    $modulelist = Get-Content -Path $ModulePath | ConvertFrom-Json
 
     # Confirm a module of the same name does not already exist
     $moduleexists = $false
-    foreach($module in $modulelist)
+    if($modulelist | Where-Object {$_.Name -match $ModuleName})
     {
-        if($ModuleLoc -eq $module){
-            Write-Information -MessageData "Module already exists"
-            $moduleexists = $true
-            Write-Output "Module creation failed"
-        }
-    }
-    # If not found, do the hard work of adding
-    if($moduleexists -eq $false)
-    {
+        # if yes, notify the user
+        Write-Information -InformationAction Continue -MessageData "Module already exists"
+        $message = "Module Location: " + ($modulelist | Where-Object { $_.Name -match $ModuleName }).FileLocation
+        Write-Information -InformationAction Continue -MessageData $message
+        $moduleexists = $true
+        $output.Outcome = "ModuleCreationFailed"
+    }else{
         Write-Information -MessageData "Module does not exist. Integrating."
         # Get a copy of the template and put into new location
-        $moduleloc = $moduleloc + ".psm1"
         Copy-Item -Path "C:\Users\HostHunter\Development\Get-Example.psm1" -Destination $moduleloc -Verbose
         # Add item to module manifest
         Write-Information -InformationAction Continue -MessageData "Adding to manifest"
-        $modulelist += $moduleloc
-        $modulelist | Out-File -FilePath "C:\Users\HostHunter\Manifests\modulemanifest.txt"
-        Write-Output "Module creation succeeded"
+        $modulelist += @{
+            "Name" = $ModuleName
+            "FileLocation" = $moduleloc
+        }
+        $modulelist | ConvertTo-Json| Out-File -FilePath $ModulePath
+        $output.Outcome = "ModuleCreationSuccess"
     }
 
     # todo: add switch for testing
-
+    Write-Output $output
 }
