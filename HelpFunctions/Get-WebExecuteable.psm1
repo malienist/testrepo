@@ -1,4 +1,4 @@
-function Get-WebExecutable{
+function Get-WebExecuteable{
 	<#
 	.Synopsis
     Downloads executable from website in a safe manner

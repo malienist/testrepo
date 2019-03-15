@@ -1,0 +1,10 @@
+[
+  {
+    "Type": "ExecuteableLocation",
+    "FileLocation": "C:\\Users\\HostHunter\\Manifests\\executablemanifest.json"
+  },
+  {
+    "Type": "ModuleList",
+    "FileLocation": "C:\\Users\\HostHunter\\Manifests\\modulemanifest.json"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "Name": "Get-NewExeDetails",
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Get-NewExeDetails.psm1"
+  },
+  {
+    "Name": "New-Executeable",
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\New-Executable.psm1"
+  },
+  {
+    "Name": "New-Module",
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\New-Module.psm1"
+  },
+  {
+    "Name": "Get-WebExecuteable",
+    "FileLocation": "C:\\Users\\HostHunter\\HelpFunctions\\Get-WebExecuteable.psm1"
+  },
+  {
+    "Name": "Set-BaseVMFilestructure",
+    "FileLocation": "C:\\Users\\HostHunter\\HelpFunctions\\Set-BaseVMFilestructure.psm1"
+  },
+  {
+    "Name": "Open-ZipFile",
+    "FileLocation": "C:\\Users\\HostHunter\\HelpFunctions\\Open-ZipFile.psm1"
+  },
+  {
+    "Name": "Remove-Executeable",
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Remove-Executeable.psm1"
+  },
+  {
+    "Name": "Move-ModuleLocation",
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Move-ModuleLocation.psm1"
+  }
+]
