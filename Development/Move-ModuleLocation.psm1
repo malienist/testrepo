@@ -24,7 +24,7 @@ function Move-ModuleLocation{
 	[CmdletBinding()]
 	param
 	(
-		$CurrentLocation,
+		$ModuleName,
 		$NewLocation
 	)
 
@@ -37,38 +37,26 @@ function Move-ModuleLocation{
 	
 	# First, check if module in current location works. 
 	Write-Information -InformationAction Continue -MessageData "Checking file location"
-	$currentpath = Test-Path -Path $CurrentLocation
+	$modulelist = Get-Content -Raw -Path $ModulePath | ConvertFrom-Json
+	$path = ($modulelist | Where-Object {$_.Name -eq $ModuleName}).FileLocation
+	$currentpath = Test-Path -Path $Path
 	$output.Exists = $currentpath
-	if($currentpath -eq $true)
+	if($output.Exists -eq $true)
 	{
 		Write-Verbose -Message "Path exists, moving"
 		# If module exists, move to new location
-		Move-Item -Path $CurrentLocation -Destination $NewLocation
+		Move-Item -Path $path -Destination $NewLocation
 		# Test new path to ensure move successful
 		$newpath = Test-Path -Path $NewLocation
 		$output.Move = $newpath
 		# If module moved successfully, update the module manifest
 		if($output.Move -eq $true)
 		{
-			$manifest = Get-Content -Path C:\Users\HostHunter\Manifests\modulemanifest.txt
-			# Create new module array
-			# Find the module being moved
-			foreach($module in $manifest)
-			{
-				if($CurrentLocation -like $module)
-				{
-					$newmanifest += $NewLocation
-				}else{
-					$newmanifest += $module
-				}
-			}
-			# Sort alphabetically (because I'm fairly particular that way :P)
-			$newmanifest = $newmanifest | Sort-Object
-			# Remove current manifest
-			Write-Verbose -Message "Removing current manifest"
-			Remove-Item -Path C:\Users\HostHunter\Manifests\modulemanifest.txt
-			# Put new array back into the module manifest
-			$newmanifest | Out-File -FilePath C:\Users\HostHunter\Manifests\modulemanifest.txt
+			# Update hashtable
+			($modulelist | Where-Object {$_.Name -eq $ModuleName}).FileLocation = $NewLocation
+			$newmanifest = $modulelist
+			# Write hash table back to .json file
+			$newmanifest | ConvertTo-Json | Out-File $ModulePath
 			$output.Result = "Successful"
 		}else{
 			Write-Information -InformationAction Continue -MessageData "Error in moving module. Not successful"
