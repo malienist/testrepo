@@ -5,7 +5,7 @@
   },
   {
     "Name": "New-Executeable",
-    "FileLocation": "C:\\Users\\HostHunter\\Development\\New-Executable.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\ExecuteableManagement\\New-Executeable.psm1"
   },
   {
     "Name": "New-Module",
@@ -25,7 +25,7 @@
   },
   {
     "Name": "Remove-Executeable",
-    "FileLocation": "C:\\Users\\HostHunter\\Development\\Remove-Executeable.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\ExecuteableManagement\\Remove-Executeable.psm1"
   },
   {
     "Name": "Move-ModuleLocation",
@@ -33,6 +33,6 @@
   },
   {
     "Name": "Test-Module",
-    "FileLocation": "C:\\Users\\HostHunter\\Test-Module.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Test-Module.psm1"
   }
 ]
