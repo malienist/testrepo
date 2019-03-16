@@ -6,7 +6,7 @@ function Set-BaseVMFileStructure
     
 	.Description
     Uses DSC to setup base vm opertions. Sets the following:
-    1. File structure for use
+    1. File structure for use # todo: fill this out properly once finalised
 
 	.Example
 	Set-BaseVMFilestructure
@@ -18,14 +18,14 @@ function Set-BaseVMFileStructure
         
     )
 
-    Write-Information -MessageData "Setting up Base VM filepaths"
+    Write-Information -InformationAction Continue -MessageData "Setting up Base VM filepaths"
     # Compile DSC script to generate MOF
     . .\SetupScripts\setfilepathsDSC.ps1
     # Create MOF file
     FilepathSetup
     # Set configuration
-    Start-DscConfiguration FilepathSetup -Verbose -Wait
+    Start-DscConfiguration FilepathSetup -Verbose -Wait -Force
     
-    Remove-Item -Path C:\Users\HostHunter\FilepathSetup -Recurse -Force -Verbose
+    # Remove-Item -Path C:\Users\HostHunter\FilepathSetup -Recurse -Force -Verbose
 
 }

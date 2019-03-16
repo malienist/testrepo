@@ -17,7 +17,7 @@
   },
   {
     "Name": "Set-BaseVMFilestructure",
-    "FileLocation": "C:\\Users\\HostHunter\\HelpFunctions\\Set-BaseVMFilestructure.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\Set-BaseVMFileStructure.psm1"
   },
   {
     "Name": "Open-ZipFile",
@@ -34,5 +34,13 @@
   {
     "Name": "Test-Module",
     "FileLocation": "C:\\Users\\HostHunter\\Development\\Test-Module.psm1"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\Set-BaseVMCoreExecuteables.psm1",
+    "Name": "Set-BaseVMCoreExecuteables"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\Get-CoreExecuteables.psm1",
+    "Name": "Get-CoreExecuteables"
   }
 ]

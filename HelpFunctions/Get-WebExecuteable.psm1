@@ -39,6 +39,7 @@ function Get-WebExecuteable{
     )
 
 	# todo: Ensure file gets hashed after download
+	# todo: Ensure a check occurs for constant fail in download
 	# Ensure correct verions of TLS/SSL in use
 	[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 	$web = New-Object System.Net.WebClient

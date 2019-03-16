@@ -20,7 +20,8 @@ function New-Executable
         $ExeSha256Hash,
         $ExeMD5Hash,
         $ExeSha2Hash,
-        $ExeURL
+        $ExeURL,
+        $ExeRole # todo: update with mandatory and set of params to choose from (Core, Gathering, Developed)
     )
 
     # Get executable manifest
@@ -46,6 +47,7 @@ function New-Executable
             "MD5Hash" = $ExeMD5Hash
             "Sha2Hash" = $ExeSha2Hash
             "URL" = $ExeURL
+            "ExeRole" = $ExeRole
         }
         # Add to array
         $exemanifestjson += $newexe

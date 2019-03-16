@@ -2,8 +2,6 @@
 
 # Information on DSC can be found here: https://docs.microsoft.com/en-us/powershell/dsc/overview/overview
 
-# todo: download a 'todo' extension
-
 Configuration FilepathSetup{
     # Import the module that contains the File Resource
     Import-DSCResource -ModuleName PsDesiredStateConfiguration
@@ -17,7 +15,7 @@ Configuration FilepathSetup{
         }
         # Location of all executables
         File Executables{
-            DestinationPath = "C:\Users\HostHunter\Executables"
+            DestinationPath = "C:\Users\HostHunter\Executeables"
             Ensure = "Present"
             Type = "Directory"
         }

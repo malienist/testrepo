@@ -1,3 +1,8 @@
 # Ignore all executables due to space constraints
 Executables/
+Executeables/
 Databasing/
+C:/Users/HostHunter/Executeables
+*.exe
+*.msi
+*.zip

@@ -2,11 +2,14 @@
 #Requires -Version 5.1
 
 # Update Powershell Help
-# Update-Help
+#Update-Help
+
+# Ensure WinRM services is running
+Enable-PSRemoting -Force
 
 # Import DSC module
 Write-Information -InformationAction Continue -MessageData "Configuring Base VM"
-Import-Module .\HelpFunctions\Set-BaseVMFileStructure.psm1 -Force
+Import-Module C:\Users\HostHunter\SetupScripts\Set-BaseVMFileStructure.psm1 -Force
 
 # Now configure BaseVM
 Set-BaseVMFileStructure
@@ -22,13 +25,11 @@ $NewACL = New-Object System.Security.AccessControl.FileSystemAccessRule($env:USE
 Set-ACL -Path C:\Users\HostHunter\ $ACL
 
 # Import all modules into current command shell
-Write-Information -MessageData "Importing powershell modules"
-$modules = Get-Content C:\Users\HostHunter\Manifests\modulemanifest.txt
-foreach($line in $modules){
-    $ImportString = "Importing: " + $line.tostring()
-    Write-Information -InformationAction Continue -MessageData $ImportString
-    Import-Module $line -Force
-}
+Write-Information -InformationAction Continue -MessageData "Importing powershell modules"
+.\reload.ps1
+
+# Ensure all core executeables have been downloaded
+Get-CoreExecuteables
 
 # Install Pester
 Write-Information -InformationAction Continue -MessageData "Checking Pester Installation"
@@ -45,12 +46,15 @@ if($pester.Name -ne "Pester")
 # Install databasing function so actions can be recorded effectively
 Write-Information -InformationAction Continue -MessageData "Setting up databasing"
 # Get SQLite executable
-Get-WebExecutable -URL https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip -Outfile C:\Users\HostHunter\Executables\sqlite.zip
+#Get-WebExecuteable -URL https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip -Outfile C:\Users\HostHunter\Executables\sqlite.zip
 # Unzip executable
-Open-ZipFile -ZipFile C:\Users\HostHunter\Executables\sqlite.zip -ExtractionLoc C:\Users\HostHunter\Databasing\
+#Open-ZipFile -ZipFile C:\Users\HostHunter\Executables\sqlite.zip -ExtractionLoc C:\Users\HostHunter\Databasing\
 # Move executable to Databasing subfolder
-Move-Item C:\Users\HostHunter\Databasing\sqlite-tools-win32-x86-3270200\sqlite3.exe -Destination C:\Users\HostHunter\Databasing\sqlite3.exe
+#Move-Item C:\Users\HostHunter\Databasing\sqlite-tools-win32-x86-3270200\sqlite3.exe -Destination C:\Users\HostHunter\Databasing\sqlite3.exe
 # Remove zip file
-Remove-Item -Path C:\Users\HostHunter\Executables\sqlite.zip
+#Remove-Item -Path C:\Users\HostHunter\Executables\sqlite.zip
 # Install PSSQLite module
-Install-Module PSSQLite
+# Install-Module PSSQLite
+
+# Install Core Executeables
+#Set-BaseVMCoreExecuteables
