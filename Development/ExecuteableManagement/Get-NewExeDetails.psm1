@@ -23,13 +23,14 @@ function Get-NewExeDetails{
 	param
 	(
         $ExeName,
-		$ExeURL
+		$ExeURL,
+		$ExeRole
     )
 
 	# First, download executable
 	Write-Information -InformationAction Continue -MessageData "Getting executable"
-	$filepath = "C:\Users\HostHunter\Executables\$ExeName"
-	Get-WebExecutable -URL $ExeURL -Outfile C:\Users\HostHunter\Executables\$ExeName -BITS
+	$filepath = "C:\Users\HostHunter\Executeables\$ExeName"
+	Get-WebExecuteable -URL $ExeURL -Outfile C:\Users\HostHunter\Executeables\$ExeName -BITS
 
 	# Get details of executable
 	Write-Information -InformationAction Continue "Getting details"
@@ -37,7 +38,9 @@ function Get-NewExeDetails{
 	$Sha256 = Get-FileHash -Path $filepath -Algorithm SHA256
 
 	# Now add to executable list
-	New-Executable -ExeName $ExeName -ExeSha256Hash $Sha256.Hash -ExeMD5Hash $MD5hash.Hash -ExeURL $ExeURL
+	New-Executeable -ExeName $ExeName -ExeSha256Hash $Sha256.Hash -ExeMD5Hash $MD5hash.Hash -ExeURL $ExeURL -ExeRole $ExeRole
+	
+	# todo: needs to delete all the different elements if something fails
 }
 
 

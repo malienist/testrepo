@@ -27,5 +27,11 @@ function Set-BaseVMCoreExecuteables{
 	# Set Configuration
 	Start-DscConfiguration CoreExecuteables -Verbose -Wait -Force
 	
-	# Remove-Item -Path C:\Users\HostHunter\CoreExecuteables -Recurse -Force -Verbose
+	Remove-Item -Path C:\Users\HostHunter\CoreExecuteables -Recurse -Force -Verbose
+	
+	# Now setup the executeables that don't require installation
+	Write-Information -InformationAction Continue -MessageData "Setting up executeables which don't require install"
+	# vscode
+	Open-ZipFile -ZipFile C:\Users\HostHunter\Executeables\vscode_x64.zip -ExtractionLoc C:\Users\HostHunter\Executeables\vscode_x64
+	
 }

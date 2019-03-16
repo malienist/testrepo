@@ -19,5 +19,12 @@ Configuration CoreExecuteables
             ProductId = ""
             Arguments = "/passive"
         }
+        Package Python2
+        {
+            Name = 'Python 2.7.16 (64-bit)'
+            Path = "C:\Users\HostHunter\Executeables\python_2.7.16.msi"
+            Ensure = "Present"
+            ProductId = "DCD5B320-89D9-4C7C-9E8B-84496588744E"
+        }
     }
 }

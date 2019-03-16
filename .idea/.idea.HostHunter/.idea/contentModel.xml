@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\HostHunter" t="IncludeFlat" />
+    <e p="C:\Users\HostHunter" t="IncludeFlat">
+      <e p="Executeables\vscode_x64\resources\app\extensions\emmet\node_modules" t="ExcludeRecursive">
+        <e p="vscode-emmet-helper" t="IncludeRecursive" />
+      </e>
+      <e p="Executeables\vscode_x64\resources\app\extensions\ms-vscode.node-debug2\node_modules" t="ExcludeRecursive">
+        <e p="@types" t="IncludeRecursive" />
+        <e p="vscode-chrome-debug-core" t="IncludeRecursive" />
+        <e p="vscode-debugadapter" t="IncludeRecursive" />
+        <e p="vscode-nls" t="IncludeRecursive" />
+      </e>
+    </e>
     <e p="C:\Users\james\.Rider2018.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\james\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HostHunter.-517313650.00" t="ExcludeRecursive" />
   </component>

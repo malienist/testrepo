@@ -1,4 +1,4 @@
-function New-Executable
+function New-Executeable
 {
     <#
 	.Synopsis
