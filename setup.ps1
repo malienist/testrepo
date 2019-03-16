@@ -45,8 +45,6 @@ if($pester.Name -ne "Pester")
 
 # Install databasing function so actions can be recorded effectively
 Write-Information -InformationAction Continue -MessageData "Setting up databasing"
-# Get SQLite executable
-#Get-WebExecuteable -URL https://www.sqlite.org/2019/sqlite-tools-win32-x86-3270200.zip -Outfile C:\Users\HostHunter\Executables\sqlite.zip
 # Unzip executable
 #Open-ZipFile -ZipFile C:\Users\HostHunter\Executables\sqlite.zip -ExtractionLoc C:\Users\HostHunter\Databasing\
 # Move executable to Databasing subfolder
@@ -57,4 +55,4 @@ Write-Information -InformationAction Continue -MessageData "Setting up databasin
 # Install-Module PSSQLite
 
 # Install Core Executeables
-#Set-BaseVMCoreExecuteables
+Set-BaseVMCoreExecuteables
