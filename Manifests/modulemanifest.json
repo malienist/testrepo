@@ -46,5 +46,13 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\Set-ADServer.psm1",
     "Name": "Set-ADServer"
+  },
+  {
+    "Name": "Set-TestLabUpdate",
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\Set-TestLabUpdate.psm1"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\VMManagement\\New-TestLabMachine.psm1",
+    "Name": "New-TestLabMachine"
   }
 ]

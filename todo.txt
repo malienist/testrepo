@@ -3,5 +3,4 @@
 #todo: Check windows machine for installation of exes before downloading
 #todo: Figure out how to get git to download
 #todo: Implement a method of error handling rather than informational updates
-#todo: Get settings file implemented
-#todo: Convert module manifest to JSON or CSV. Prefer json
+#todo: Implement Virtualisation updating and changing

@@ -31,6 +31,8 @@ Write-Information -InformationAction Continue -MessageData "Importing powershell
 # Ensure all core executeables have been downloaded
 Get-CoreExecuteables
 
+# todo: implement a virtualisation software updating method
+
 # Install Pester
 Write-Information -InformationAction Continue -MessageData "Checking Pester Installation"
 $pester = Get-Module -ListAvailable -Name Pester
@@ -56,3 +58,11 @@ Write-Information -InformationAction Continue -MessageData "Setting up databasin
 
 # Install Core Executeables
 Set-BaseVMCoreExecuteables
+
+# Install Core Modules from other sources for Framework
+# Install PSWindowsUpdate - used to help automate the management of test lab. Note this is an untrusted repository
+# so up to user to decide if they want to use it.
+# I strongly recommned you read and understand the documents for this - a good start is:
+# https://4sysops.com/archives/install-windows-updates-remotely-with-the-powershell/
+Install-Module PSWindowsUpdate
+

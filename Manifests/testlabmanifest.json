@@ -1,0 +1,14 @@
+[
+  {
+    "HostName": "WIN-J7M415A83NK",
+    "WinRM": true,
+    "HostType": "AD",
+    "IP": "192.168.157.141"
+  },
+  {
+    "HostName": "WIN-J7M415A83NZ",
+    "WinRM": true,
+    "HostType": "Win10Client",
+    "IP": "192.168.157.142"
+  }
+]
