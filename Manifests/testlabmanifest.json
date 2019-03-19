@@ -10,5 +10,12 @@
     "WinRM": true,
     "HostType": "Win10Client",
     "IP": "192.168.157.142"
+  },
+  {
+    "HostName": "TestMachine",
+    "IP": "0.0.0.1",
+    "Group": "TestMachines",
+    "WinRM": "True",
+    "HostType": "AD"
   }
 ]

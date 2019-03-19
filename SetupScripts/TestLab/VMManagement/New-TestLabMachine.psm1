@@ -27,11 +27,12 @@ function New-TestLabMachine{
     )
 	
 	$output = @{
-		HostType = ""
-		HostName = ""
-		$IP = ""
-		$WinRM = ""
-		$Outcome = "Failed"
+		"HostType" = ""
+		"HostName" = "null"
+		"IP" = "0.0.0.0"
+		"WinRM" = "null"
+		"Group" = "null"
+		"Outcome" = "Failed"
 	}
 	
 	# Get the type of virtualisation being used
@@ -41,15 +42,37 @@ function New-TestLabMachine{
 	# Depending on the type of virtualisation being used, update the required details
 	if($Virtualisation -eq "VMware" -or $ManualUpdate)
 	{
-		$output.HostType = Read-Host "HostType (AD, IIS Server, Win10Client): "
-		$output.HostName = Read-Host "HostName: "
-		$output.IP = Read-Host "IP: "
-		$output.WinRM = Read-Host "WinRM Enabled? "
+		$output.HostType = Read-Host "HostType (AD, IIS Server, Win10Client) "
+		$output.HostName = Read-Host "HostName "
+		$output.IP = Read-Host "IP "
+		$output.WinRM = Read-Host "WinRM Enabled? (True / False)"
+		$output.Group = Read-Host "What group is vm a part of? "
 	}
 	# todo: update with new types of hypervisor as they become available
 	
 	# Update the TestLabManifest with details
 	# Get content of HostLabManifest
+	$testlab = Get-Content -raw -Path $testlabmanifest | ConvertFrom-Json
 	
+	# Check there is no conflict in hostname or IP address
+	$hostname = $testlab | Where-Object {$_.HostName -eq $output.HostName}
+	$ip = $testlab | Where-Object {$_.IP -eq $output.ip}
+	if($ip -ne $null -or $hostname -ne $null)
+	{
+		Write-Information -InformationAction Continue -MessageData "Hostname or Ip not unique. Try again" # todo: change color for this message
+	}else{
+		# If not, update test lab
+		$testlab += @{
+			HostType = $output.HostType
+			HostName = $output.HostName
+			IP = $output.IP
+			WinRM = $output.WinRM
+			Group = $output.Group
+		}
+		# Write to file
+		$testlab | ConvertTo-Json | Out-File -FilePath $testlabmanifest
+		$output.Outcome = "Success"
+	}
 	
+	Write-Output $Output
 }

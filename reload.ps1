@@ -5,7 +5,7 @@ $settings = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\settings.json |
 # Setup global variables
 $global:ExecuteableLocation = ($settings | Where-Object{$_.Type -match "ExecuteableLocation"}).FileLocation
 $global:ModulePath = ($settings | Where-Object{$_.Type -match "ModuleList"}).FileLocation
-
+$global:TestLabManifest = ($settings | Where-Object{$_.Type -match "TestLabManifest"}).FileLocation
 # Import modules
 $message = $ModulePath
 Write-Host $message
