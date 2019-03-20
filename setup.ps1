@@ -31,7 +31,11 @@ Write-Information -InformationAction Continue -MessageData "Importing powershell
 # Ensure all core executeables have been downloaded
 Get-CoreExecuteables
 
-# todo: implement a virtualisation software updating method
+# todo: do input validation on this entry
+Write-Information -InformationAction Continue -MessageData "Currently available virtualization integration: VMWareWorkstation"
+$virtualization = Read-Host "Set virtualisation preference (VMWareWorkstation)"
+
+Set-VirtualisationPreference -VirtualisationPreference $virtualization
 
 # Install Pester
 Write-Information -InformationAction Continue -MessageData "Checking Pester Installation"
