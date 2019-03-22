@@ -21,18 +21,23 @@ This is a project and released under the MIT licence. Use this at your own risk.
 
 ## Setup
 ### Active Directory (AD) / Domain Controller (DC) / Domain Name Service (DNS)
-1. Download Windows Server 2016
-  -> I strongly recommend you use approved copies from the Microsoft Developers Network for this. 
+1. Download Windows Server 2016 
+    I strongly recommend you use approved copies from the Microsoft Developers Network for this. 
 2. Using your virtualisation option of choice (AWS/Azure/HomeLab/VMWare/Hyper-V) create the Windows Server 2016 Virtual Machine.
-  -> My personal preference for home labs is VMWare as it's easy to use. However it also costs $150 per year on average to maintain. Windows Professional now comes with Hyper-V for free, and Virtual Box is open source.
-  -> Standard settings are fine. This is the initial test lab, a series of updates, downloads and changes are about to take place.
+    My personal preference for home labs is VMWare as it's easy to use. However it also costs $150 per year on average to maintain. Windows Professional now comes with Hyper-V for free, and Virtual Box is open source.
+    Standard settings are fine. This is the initial test lab, a series of updates, downloads and changes are about to take place.
 3. Take Snapshot (call it Initial_Snapshot)
 4. On Remote Machine, enable Windows Remote Management. 
-  -> In administrator Powershell window "Enable-PSRemoting -Force"
-  -> Change Trusted Hosts registry key to * (all hosts) "Set-Item WSMan:\localhost\client\trustedhosts *" :Note - this allows all hosts which can authenticate to your machine to remote in. This is NOT ideal, and is only to be used for the initial configuration.*
+    In administrator Powershell window "Enable-PSRemoting -Force"
+    Change Trusted Hosts registry key to * (all hosts) "Set-Item WSMan:\localhost\client\trustedhosts *" :Note - this allows all hosts which can authenticate to your machine to remote in. This is NOT ideal, and is only to be used for the initial configuration.*
 5. Test that WSMan works on local machine. "Test-WSMan -ComputerName localhost"
-  -> If no error returns, this now works.
+    If no error returns, this now works.
 6. Take Snapshot (call it WSMan_Snapshot)
-7. Update Machine from Base VM
-  -> 
+
+### Windows 10 Client
+1. Download Windows 10 version you wish to use
+    I strongly recommend you use approved copies from the Microsoft Developers Network for this.
+2. Using your virtualization option of choice, create the Windows 10 Virtual Machine
+3. Take Snapshot (call it Initial_Snapshot)
+4. 
 

@@ -42,7 +42,7 @@ function Set-VirtualisationPreference{
                 Write-Information -InformationAction Continue -MessageData "VMX Toolkit installed"
                 $output.Outcome = "Success"
                 # Get version of vmware installed
-                $version = Read-Host "VMWare Version: "
+                $version = (Get-VMwareVersion).Major
                 
                 # Update settings file
                 Set-Setting -Type $VirtualisationPreference -Version $version -Vendor "VMWare" 
