@@ -34,19 +34,17 @@ function New-TestLabMachine{
 		"Group" = "null"
 		"Outcome" = "Failed"
 	}
-	
-	# Get the type of virtualisation being used
-	$Virtualisation = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\settings.json |ConvertFrom-Json
-	$Virtualisation = ($Virtualisation | Where-Object {$_.Type -eq "VirtualizationType"}).Vendor
 
 	# Depending on the type of virtualisation being used, update the required details
-	if($Virtualisation -eq "VMware" -or $ManualUpdate)
+	if($ManualUpdate)
 	{
 		$output.HostType = Read-Host "HostType (AD, IIS Server, Win10Client) "
 		$output.HostName = Read-Host "HostName "
 		$output.IP = Read-Host "IP "
 		$output.WinRM = Read-Host "WinRM Enabled? (True / False)"
 		$output.Group = Read-Host "What group is vm a part of? "
+	}elseif($VirtualisationPreference -eq "VMWareWorkstation"){
+		
 	}
 	# todo: update with new types of hypervisor as they become available
 	

@@ -20,5 +20,13 @@ function Get-HostNameConversion{
 	(
         [string]$IP
     )
+	
+	# Create custom powershell object for output
+	$output = @{
+		
+	}
+	
+	# Write output to pipeline
+	Write-Output $output
 
 }

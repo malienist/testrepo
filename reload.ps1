@@ -7,6 +7,7 @@ $global:ExecuteableLocation = ($settings | Where-Object{$_.Type -match "Executea
 $global:ModulePath = ($settings | Where-Object{$_.Type -match "ModuleList"}).FileLocation
 $global:TestLabManifest = ($settings | Where-Object{$_.Type -match "TestLabManifest"}).FileLocation
 $global:SettingsFile = "C:\Users\HostHunter\Manifests\settings.json"
+$global:VirtualisationPreference = ($settings | Where-Object{$_.Type -match "VirtualizationPreference"}).Vendor
 # Import modules
 $message = $ModulePath
 Write-Host $message

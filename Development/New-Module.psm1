@@ -44,7 +44,7 @@ function New-Module{
 
     # Confirm a module of the same name does not already exist
     $moduleexists = $false
-    if($modulelist | Where-Object {$_.Name -match $ModuleName})
+    if($modulelist | Where-Object {$_.Name -eq $ModuleName})
     {
         # if yes, notify the user
         Write-Information -InformationAction Continue -MessageData "Module already exists"
