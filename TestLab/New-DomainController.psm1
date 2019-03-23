@@ -1,29 +1,46 @@
-function Get-HostNameConversion{
+function New-DomainController{
 	<#
 	.Synopsis
-    Provides the hostname for an IP based upon DC list
+    Creates a new Domain Controller
     
 	.Description
-    Provides the hostname for an IP based upon DC list
+    Creates a new Domain Controller from the Server Template. Does not create users etc.
     
-	.Parameter
-	IP - The IP to be searched for
+    .Parameter
+    DCName - Name of the DC (will also be used to setup the domain)
 
 	.Example
-	Get-HostNameConversion 192.168.1.23
-	Gets the hostname for 192.168.1.23
+	New-DomainController
 
 	#>
 
 	[CmdletBinding()]
 	param
 	(
-        [string]$IP
+        $DCName
     )
 	
 	# Create custom powershell object for output
 	$output = @{
+		Outcome = "Failed"
+		DCName = $DCName
+	}
+	
+	#### Creating Certificates ####
+	# https://docs.microsoft.com/en-us/powershell/dsc/pull-server/secureMOF
+	
+	# First, see if a key has been created
+	
+	
+	# Create a new Server VM
+	$DCVM = New-VirtualMachine -VMName $DCName -WindowsServer
+	if($DCVM.Outcome -eq "Success")
+	{
+		# Compile DSC resource 
+		. ./Configurations/StandardDC.ps1
 		
+		# Publish to a remote machine
+		Publish-DscConfiguration -Path C:\Users\HostHunter\TestLab\Configurations\StandardDC.ps1 -ComputerName $DCVM.VMIPAddress -Credential (Get-Credential	)
 	}
 	
 	# Write output to pipeline

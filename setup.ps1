@@ -70,3 +70,9 @@ Set-BaseVMCoreExecuteables
 # https://4sysops.com/archives/install-windows-updates-remotely-with-the-powershell/
 Install-Module PSWindowsUpdate
 
+# Install Active Directory DSC resource
+# https://www.powershellgallery.com/packages/xActiveDirectory/2.24.0.0
+
+Install-Module -Name xActiveDirectory
+# 
+

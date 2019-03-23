@@ -22,7 +22,7 @@ function Get-HostNameConversion{
     )
 	
 	# Create custom powershell object for output
-	$output = @{
+	$output = [PSCustomObject]@{
 		
 	}
 	
