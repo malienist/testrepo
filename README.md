@@ -37,7 +37,9 @@ This is a project and released under the MIT licence. Use this at your own risk.
     - If an error is received about the network being public, perform the following commands:
         - Get Network Connection profile `Get-NetConnectionProfile`
         - Set the name of the network connection to private `Set-NetConnectionProfile -Name <name from step above> -NetworkCategory Private`
-        - Note: *Setting the network category to private is an initial step, this will be resolved later* 
+        - Note: *Setting the network category to private is an initial step, this will be resolved later*
+    - Ensure WinRM receiving `winrm quickconfig`
+        - Accept prompt 
 5. Test WSMan is enabled on virtual machine by self-testing on VM.
     - `Test-WSMan -ComputerName localhost`
     - If no error returns, this now works

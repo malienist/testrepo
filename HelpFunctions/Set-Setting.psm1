@@ -29,7 +29,8 @@ function Set-Setting{
 	[parameter(Mandatory=$true)]$Type,
 	$Version,
 	$Vendor,
-	$FileLocation
+	$FileLocation,
+	$Setting
     )
 	
 	$output = @{
