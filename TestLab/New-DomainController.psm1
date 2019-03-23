@@ -30,6 +30,19 @@ function New-DomainController{
 	# https://docs.microsoft.com/en-us/powershell/dsc/pull-server/secureMOF
 	
 	# First, see if a key has been created
+	Write-Information -InformationAction Continue -MessageData "Confirming certificate for MOF File"
+	if(Test-Path -Path C:\Users\HostHunter\Certificates\DSCPublicKey.cer)
+	{
+		Write-Information -InformationAction Continue -MessageData "Certificate exists, continue"
+	}else{
+		# If not, create key
+		$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
+		$cert | Export-Certificate -FilePath C:\Users\HostHunter\Certificates\DSCPublicKey.cer
+	}
+	
+	# Import key to Authoring Node (Base VM)
+	Import-Certificate -FilePath C:\Users\HostHunter\Certificates\DSCPublicKey.cer -CertStoreLocation Cert:\LocalMachine\My
+	
 	
 	
 	# Create a new Server VM
