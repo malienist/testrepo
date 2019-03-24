@@ -17,33 +17,19 @@ function New-DomainController{
 	[CmdletBinding()]
 	param
 	(
-        $DCName
+		[Parameter(Mandatory=$true, ValueFromPipeline=$true)][string]$DCName,
+		[Parameter(Mandatory=$true, ValueFromPipeline=$true)][string]$DCIP
     )
 	
 	# Create custom powershell object for output
 	$output = @{
 		Outcome = "Failed"
 		DCName = $DCName
+		FileTransfer = ""
+		FileName = ""
+		FileHash = ""
+		
 	}
-	
-	#### Creating Certificates ####
-	# https://docs.microsoft.com/en-us/powershell/dsc/pull-server/secureMOF
-	
-	# First, see if a key has been created
-	Write-Information -InformationAction Continue -MessageData "Confirming certificate for MOF File"
-	if(Test-Path -Path C:\Users\HostHunter\Certificates\DSCPublicKey.cer)
-	{
-		Write-Information -InformationAction Continue -MessageData "Certificate exists, continue"
-	}else{
-		# If not, create key
-		$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
-		$cert | Export-Certificate -FilePath C:\Users\HostHunter\Certificates\DSCPublicKey.cer
-	}
-	
-	# Import key to Authoring Node (Base VM)
-	Import-Certificate -FilePath C:\Users\HostHunter\Certificates\DSCPublicKey.cer -CertStoreLocation Cert:\LocalMachine\My
-	
-	
 	
 	# Create a new Server VM
 	$DCVM = New-VirtualMachine -VMName $DCName -WindowsServer
@@ -55,6 +41,20 @@ function New-DomainController{
 		# Publish to a remote machine
 		Publish-DscConfiguration -Path C:\Users\HostHunter\TestLab\Configurations\StandardDC.ps1 -ComputerName $DCVM.VMIPAddress -Credential (Get-Credential	)
 	}
+	
+	# Install the required modules on remote machine 
+	# Get Credentials 
+	$cred = Get-Credential -Message "Input local credentials for Domain Controller"
+	# Install xActiveDirectory
+	Invoke-Command -ComputerName $DCIP -Credential $cred -ScriptBlock{Install-Module -Name xActiveDirectory}
+	
+	
+	# Ready file transfer. Note that at this point logical accountability server has not been established, so command details stored on disk.
+	# These will be processed once the logical accountability server is setup
+	$localfilepath = "C:\Users\HostHunter\TestLab\Configurations\StandardDC.ps1"
+	$targetfilepath = "StandardDC.ps1"
+	# note this is stored in C:\Windows\System32\StandardDC.ps1
+	Invoke-InitialWinRMFileTransfer -ComputerName $DCIP -LocalFilePath $localfilepath -TargetFilePath $targetfilepath
 	
 	# Write output to pipeline
 	Write-Output $output

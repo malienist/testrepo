@@ -55,5 +55,29 @@ Configuration FilepathSetup{
             Ensure = "Present"
             Type = "Directory"
         }
+        # Location of certificates
+        File Databasing{
+            DestinationPath = "C:\Users\HostHunter\Certificates"
+            Ensure = "Present"
+            Type = "Directory"
+        }
+        # Location of TestLab
+        File Databasing{
+            DestinationPath = "C:\Users\HostHunter\TestLab"
+            Ensure = "Present"
+            Type = "Directory"
+        }
+        # Location of TestLab configurations
+        File Databasing{
+            DestinationPath = "C:\Users\HostHunter\TestLab\Configurations"
+            Ensure = "Present"
+            Type = "Directory"
+        }
+        # Storage of logical accountability when not available
+        File LogicalAccountability{
+            DestinationPath = "C:\Users\HostHunter\Manifests\StoredLogicalAccountability"
+            Ensure = "Present"
+            Type = "Directory"
+        }
     } 
 }

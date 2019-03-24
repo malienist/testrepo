@@ -1,14 +1,7 @@
 # Many thanks to https://blogs.technet.microsoft.com/ashleymcglone/2015/03/20/deploy-active-directory-with-powershell-dsc-a-k-a-dsc-promo/
 
-configuration NewDomain
+Configuration NewDomain
 {
-    param
-    (
-        [Parameter(Mandatory)]$DomainName,
-        [Parameter(Mandatory)][pscredential]$domainCred,
-        [Parameter(Mandatory)][pscredential]$safemodeAdministratorCred
-    )
-    
     Import-DscResource -ModuleName xActiveDirectory
     Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
     
