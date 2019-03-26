@@ -18,8 +18,29 @@ This is a project and released under the MIT licence. Use this at your own risk.
 1. Base VM: Windows 10 (latest edition). Must also have .Net Core installed. 
 2. Test Server: Windows Server 2016
 3. Test Clients: Windows 10
+4. Ubuntu 18.04 Server
 
 ## Setup
+### Ubuntu 18.04 Server
+1. Download latest Ubuntu 18.04 image. Website: http://releases.ubuntu.com/18.04/
+2. Using your virtualisation option of choice (AWS/Azure/HomeLab/VMWare/Hyper-V) create Ubuntu 18.04 Server
+    - Call the Ubuntu Server "HostHunterSIEM"
+    - Choose Hard Disk wisely - this is where your host data will end up
+    - todo: discuss how to integrate for distributed ops
+3. Ensure SSH is working on Ubuntu Server
+    - This can be selected during install 
+    - If not selected during install: `sudo apt install openssh-server`
+    - Run command `sudo systemctl status ssh`
+4. Ensure server build is fully updated
+    - `sudo apt update`
+    - `sudo apt upgrade`
+5. Get IP Address of server
+    - `ifconfig`
+6. Check that Powershell 6 can ssh to server
+    - From Powershell 6 command prompt `ssh user@ipaddress`
+    - Reboot server from Powershell `sudo reboot -f`
+7. Once reboot is successful, shutdown server again and snapshot. Call it "Initial_Snapshot"
+
 ### Active Directory (AD) / Domain Controller (DC) / Domain Name Service (DNS)
 1. Download Windows Server 2016 
     - I strongly recommend you use approved copies from the Microsoft Developers Network for this. 

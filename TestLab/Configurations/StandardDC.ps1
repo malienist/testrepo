@@ -1,5 +1,3 @@
-# Many thanks to https://blogs.technet.microsoft.com/ashleymcglone/2015/03/20/deploy-active-directory-with-powershell-dsc-a-k-a-dsc-promo/
-
 Configuration NewDomain
 {
     Import-DscResource -ModuleName xActiveDirectory
