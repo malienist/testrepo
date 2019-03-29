@@ -79,5 +79,17 @@ Configuration FilepathSetup{
             Ensure = "Present"
             Type = "Directory"
         }
+        # TestLab Virtual Machines
+        File TestLabVMs{
+            DestinationPath = "C:\Users\HostHunter\TestLab\VirtualMachines"
+            Ensure = "Present"
+            Type = "Directory"
+        }
+        # Isos
+        File ISOs{
+            DestinationPath = "C:\Users\HostHunter\ISOs"
+            Ensure = "Present"
+            Type = "Directory"
+        }
     } 
 }

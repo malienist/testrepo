@@ -1,5 +1,4 @@
 # Ignore all executables due to space constraints
-Executables/
 Executeables/
 Databasing/
 C:/Users/HostHunter/Executeables
@@ -10,3 +9,4 @@ C:/Users/HostHunter/Manifests/testlabmanifest.json
 *.iso
 *.idea
 *.cer
+TestLab/VirtualMachines/
