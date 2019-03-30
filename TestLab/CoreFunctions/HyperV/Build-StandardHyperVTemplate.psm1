@@ -32,6 +32,7 @@ function Build-StandardHyperVTemplate{
 		VMType = $OSType
 		Created = @{}
 		Started = @{}
+		Config = @{}
 	}
 	
 	# First create the VM. Create linked to a disconnected switch initially
@@ -64,7 +65,19 @@ function Build-StandardHyperVTemplate{
 		if($OSType -eq "WindowsServer2016")
 		{
 			Write-Information -InformationAction Continue -MessageData "Configuring Windows Server 2016 for template"
-			Invoke-WindowsServer2016TemplateConfiguration -VMName $VMName -Credential $vmcreds
+			$vmconfig = Invoke-WindowsServer2016TemplateConfiguration -VMName $VMName -Credential $vmcreds
+			$output.Config = $vmconfig
+			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
+			Stop-VM -VMName $VMName
+			Remove-VMDvdDrive -VMName $VMName -ControllerLocation 1 -ControllerNumber 0
+		}
+		
+		# If config completed, export the VM as a template
+		if($vmconfig.Outcome -eq "Success")
+		{
+			Write-Information -InformationAction Continue -MessageData "Exporting Virtual Machine"
+			Export-VM -VMName $VMName -Path C:\Users\HostHunter\TestLab\VirtualMachines\Templates\
+			$output.Outcome = "Success"
 		}
 	}
 	
