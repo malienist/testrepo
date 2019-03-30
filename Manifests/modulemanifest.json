@@ -94,5 +94,33 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\New-AnsibleServer.psm1",
     "Name": "New-AnsibleServer"
+  },
+  {
+    "Name": "New-UbuntuServer",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\New-UbuntuServer.psm1"
+  },
+  {
+    "Name": "New-HyperVVM",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-HyperVVM.psm1"
+  },
+  {
+    "Name": "Get-StandardVMSettings",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\Get-StandardVMSettings.psm1"
+  },
+  {
+    "Name": "Edit-StandardVMSettings",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\Edit-StandardVMSettings.psm1"
+  },
+  {
+    "Name": "New-StandardHyperVVM",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-StandardHyperVVM.psm1"
+  },
+  {
+    "Name": "New-HostHunterSwitch",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\New-HostHunterSwitch.psm1"
+  },
+  {
+    "Name": "New-HyperVHostHunterSwitch",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-HyperVHostHunterSwitch.psm1"
   }
 ]

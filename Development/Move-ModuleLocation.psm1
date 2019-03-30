@@ -24,8 +24,8 @@ function Move-ModuleLocation{
 	[CmdletBinding()]
 	param
 	(
-		$ModuleName,
-		$NewLocation
+		[Parameter(Mandatory=$true)][String]$ModuleName,
+		[Parameter(Mandatory=$true)]$NewLocation
 	)
 
 	# Setup output variable
@@ -34,6 +34,9 @@ function Move-ModuleLocation{
 		Move = ''
 		Result = ''
 	}
+	
+	# Set up complete filename
+	$newlocation = $NewLocation + $ModuleName + ".psm1"
 	
 	# First, check if module in current location works. 
 	Write-Information -InformationAction Continue -MessageData "Checking file location"

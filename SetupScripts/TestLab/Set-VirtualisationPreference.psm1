@@ -45,12 +45,18 @@ function Set-VirtualisationPreference{
                 $version = (Get-VMwareVersion).Major
                 
                 # Update settings file
-                Set-Setting -Type $VirtualisationPreference -Version $version -Vendor "VMWare" 
+                Set-Setting -Type "VirtualisationPreference" -Version $version -Vendor "VMWare" 
                 
             }else{
                 Write-Information -InformationAction Continue -MessageData "VMWToolkit installation failed"
             }
         }
+    }
+    elseif($VirtualisationPreference -eq "HyperV")
+    {
+        Write-Information -InformationAction Continue -MessageData "HyperV standard installation available"
+        $version = ""
+        Set-Setting -Type $VirtualisationPreference -Version $version -Vendor "HyperV"
     }
     
 }

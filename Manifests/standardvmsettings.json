@@ -1,0 +1,26 @@
+[
+  {
+    "OSType": "WindowsServer2016",
+    "RAM": "2GB",
+    "HardDriveSize": "30GB",
+    "Generation": 2
+  },
+  {
+    "OSType": "Windows10Enterprise",
+    "RAM": "4GB",
+    "HardDriveSize": "60GB",
+    "Generation": 2
+  },
+  {
+    "OSType": "Ubuntu1804Server",
+    "RAM": "2GB",
+    "HardDriveSize": "30GB",
+    "Generation": 1
+  },
+  {
+    "OSType": "Ubuntu1804Client",
+    "RAM": "2GB",
+    "HardDriveSize": "30GB",
+    "Generation": 1
+  }
+]

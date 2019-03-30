@@ -36,7 +36,7 @@ function New-Module{
         "ModuleLocation" = ""
         "Outcome" = ""
     }
-    $moduleloc = $ModuleLocation + "\" + $ModuleName + ".psm1"
+    $moduleloc = $ModuleLocation + $ModuleName + ".psm1"
     $output.ModuleLocation = $moduleloc
 
     # Get a list of the current modules

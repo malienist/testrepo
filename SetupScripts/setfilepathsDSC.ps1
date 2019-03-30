@@ -87,7 +87,13 @@ Configuration FilepathSetup{
         }
         # Isos
         File ISOs{
-            DestinationPath = "C:\Users\HostHunter\ISOs"
+            DestinationPath = "C:\Users\HostHunter\TestLab\ISOs"
+            Ensure = "Present"
+            Type = "Directory"
+        }
+        # Test Lab Core functionality
+        File ISOs{
+            DestinationPath = "C:\Users\HostHunter\TestLab\CoreFunctions"
             Ensure = "Present"
             Type = "Directory"
         }
