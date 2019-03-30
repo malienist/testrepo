@@ -17,7 +17,7 @@ function New-HyperVVM{
 	[CmdletBinding()]
 	param
 	(
-        [Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
+        [Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
 		[Parameter][switch]$NonStandardSettings
     )
 	

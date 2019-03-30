@@ -133,6 +133,14 @@
   },
   {
     "Name": "Start-NewHyperVVM",
-    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\Start-NewHyperVVM.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\Start-NewHyperVVM.psm1"
+  },
+  {
+    "Name": "New-HyperVTemplate",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\Build-StandardHyperVTemplate.psm1"
+  },
+  {
+    "Name": "New-WindowsServer2016Config",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-WindowsServer2016TemplateConfiguration.psm1"
   }
 ]
