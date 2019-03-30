@@ -3,14 +3,14 @@
     "OSType": "WindowsServer2016",
     "RAM": "2GB",
     "HardDriveSize": "30GB",
-    "Generation": 2,
+    "Generation": 1,
     "ISOLocation": "C:\\Users\\HostHunter\\TestLab\\ISOs\\en_windows_server_2016_updated_feb_2018_x64_dvd_11636692.iso"
   },
   {
     "OSType": "Windows10Enterprise",
     "RAM": "4GB",
     "HardDriveSize": "60GB",
-    "Generation": 2,
+    "Generation": 1,
     "ISOLocation": "C:\\Users\\HostHunter\\TestLab\\ISOs\\en_windows_10_enterprise_version_1703_updated_march_2017_x64_dvd_10189290.iso"
   },
   {

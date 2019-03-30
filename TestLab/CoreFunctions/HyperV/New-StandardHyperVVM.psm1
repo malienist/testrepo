@@ -31,85 +31,31 @@ function New-StandardHyperVVM{
 	$output = [PSCustomObject]@{
 		Outcome = "Failed"
 		VMType = $OSType
-		ISOExists = "False"
 		VMPath = ""
 		VMSettings = @{}
 		VMName = $VMName
 	}
 
-	# Set base path. Deliberately abstracted from reload script as all interaction with ISOs should be through the commandlets
-	$path = "C:\Users\HostHunter\TestLab\ISOs\"
-
-	# Check the correct iso exists
-	# todo: make this more generic as versions will change
-	if($OSType -eq 'WindowsServer16')
+	# Use Standard Settings
+	$settings = Get-StandardVMSettings -OSType $OSType
+	$output.VMSettings = $settings
+	
+	# Need to convert the RAM size string into int64 again
+	$RAMstr = $settings.RAM
+	$RAM = [int64]$RAMstr.Replace('GB','') * 1GB
+	
+	# Need to convert the Hard Drive size string into into64 again
+	$VHDstr = $settings.HardDriveSize
+	$VHD = [int64]$VHDstr.Replace('GB','') * 1GB
+	$NewVMFolder = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName
+	$NewVMPath = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName + "\" + $VMName + ".vhdx"
+	$output.VMPath = $NewVMPath
+	$vm = New-VM -Name $VMName -MemoryStartupBytes $RAM -Generation $settings.Generation -NewVHDPath $NewVMPath -NewVHDSizeBytes $VHD -Path $NewVMFolder -SwitchName $Switch
+	if($vm.Name -eq $VMName -and $vm.Status -eq "Operating normally")
 	{
-		$path = $path + "en_windows_server_2016_updated_feb_2018_x64_dvd_11636692.iso"
-		$file = Test-Path -Path $path
-		if($file)
-		{
-			Write-Verbose "Windows Server 2016 exists"
-			$output.ISOExists = "True"
-			$output.VMPath = $path
-		}else{
-			Write-Information "Windows Server 2016 does not exist. Download file and try again"
-			$output.ISOExists = "False"
-		}
+		$output.Outcome = "Success"
 	}
-	elseif ($OSType -eq 'Windows10')
-	{
-		$path = $path + "en_windows_10_enterprise_version_1703_updated_march_2017_x64_dvd_10189290.iso"
-		$file = Test-Path -Path $path
-		if($file)
-		{
-			Write-Verbose "Windows 10 Enterprise exists"
-			$output.ISOExists = "True"
-			$output.VMPath = $path
-		}else{
-			Write-Information "Windows 10 Enterprise does not exist. Download file and try again"
-			$output.ISOExists = "False"
-		}
-	}
-	elseif ($OSType -eq 'Ubuntu1804Server')
-	{
-		$path = $path + "ubuntu-18.04.2-live-server-amd64.iso"
-		$file = Test-Path -Path $path
-		if($file)
-		{
-			Write-Verbose "Ubuntu 18.04 Server exists"
-			$output.ISOExists = "True"
-			$output.VMPath = $path
-		}else{
-			Write-Information "Ubuntu 18.04 Server does not exist. Download file and try again"
-			$output.ISOExists = "False"
-		}
-	}elseif ($OSType -eq 'Ubuntu1804Client')
-	{
-		$path = $path + "ubuntu-18.04.2-desktop-amd64.iso"
-		$file = Test-Path -Path $path
-		if($file)
-		{
-			Write-Verbose "Ubuntu 18.04 Desktop exists"
-			$output.ISOExists = "True"
-			$output.VMPath = $path
-		}else{
-			Write-Information "Ubuntu 18.04 Desktop does not exist. Download file and try again"
-			$output.ISOExists = "False"
-		}
-	}
-
-	# If path exists create VM
-	if($output.ISOExists -eq "True")
-	{
-		
-		# Use Standard Settings
-		$settings = Get-StandardVMSettings -OSType $OSType
-		$output.VMSettings = $settings
-		$NewVMFolder = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName
-		$NewVMPath = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName + "\" + $VMName + ".vhdx"
-		New-VM -Name $VMName -MemoryStartupBytes $settings.RAM -Generation $settings.Generation -NewVHDPath $NewVMPath -NewVHDSizeBytes $settings.HardDriveSize -Path $NewVMFolder -SwitchName $Switch
-		
-	}
+	
 
 	# Write output to pipeline
 	Write-Output $output

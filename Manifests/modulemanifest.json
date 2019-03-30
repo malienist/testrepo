@@ -122,5 +122,17 @@
   {
     "Name": "New-HyperVHostHunterSwitch",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-HyperVHostHunterSwitch.psm1"
+  },
+  {
+    "Name": "Deploy-HostHunterLab",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\Deploy-HostHunterLab.psm1"
+  },
+  {
+    "Name": "Start-HyperVVM",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\Start-HyperVVM.psm1"
+  },
+  {
+    "Name": "Start-NewHyperVVM",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\Start-NewHyperVVM.psm1"
   }
 ]
