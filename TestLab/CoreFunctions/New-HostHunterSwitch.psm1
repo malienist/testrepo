@@ -20,7 +20,7 @@ function New-HostHunterSwitch{
 	
 	if(-not $Name)
 	{
-		$Name = "HostHunterSwitch"
+		$Name = "HostHunterSwitch" + $SwitchType
 	}
 	
 	# Create custom powershell object for output

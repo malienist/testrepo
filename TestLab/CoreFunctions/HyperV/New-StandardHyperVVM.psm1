@@ -4,7 +4,11 @@ function New-StandardHyperVVM{
     Creates a new Virtual Machine with Hyper V as the hypervisor
     
 	.Description
-    Creates a new virtual machine with Hyper V as the Virtual Machine
+    Creates a new virtual machine with Hyper V as the Virtual Machine. Settings are defined as the standard settings in the 
+    HostHunter Manifest. 
+    Heavy use of the below sites made:
+    https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/create-virtual-machine
+    https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v
     
 	.Parameter
 	OSType - the type of OS to be used. Parameter set is tightly controlled. 
@@ -17,8 +21,9 @@ function New-StandardHyperVVM{
 	[CmdletBinding()]
 	param
 	(
-		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
+		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
 		[Parameter(Mandatory=$true)][string]$VMName,
+		[Parameter(Mandatory=$true)][String][ValidateSet('HostHunterSwitchExternal', 'HostHunterSwitchInternal', 'HostHunterSwitchPrivate')]$Switch,
 		[Parameter][switch]$NonStandardSettings
 	)
 
@@ -96,24 +101,14 @@ function New-StandardHyperVVM{
 	# If path exists create VM
 	if($output.ISOExists -eq "True")
 	{
-		if(-not $NonStandardSettings)
-		{
-			# Use Standard Settings
-			$settings = Get-StandardVMSettings -OSType $OSType
-			$output.VMSettings = $settings
-			New-VM -Name $VMName -
-		}else{
-			# Get new settings fo standard ISO 
-			$RAM = Read-Host "RAM Size in GB (e.g. 2GB)"
-			$Generation = Read-Host "Generation (1 or 2)"
-			$HardDrive = Read-Host "Hard Drive size in GB (e.g. 20GB)"
-			$settings = @{
-				RAM = $RAM
-				HardDriveSize = $HardDrive
-				Generation = $Generation
-			}
-			$output.VMSettings = $settings
-		}
+		
+		# Use Standard Settings
+		$settings = Get-StandardVMSettings -OSType $OSType
+		$output.VMSettings = $settings
+		$NewVMFolder = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName
+		$NewVMPath = "C:\Users\HostHunter\TestLab\VirtualMachines\" + $VMName + "\" + $VMName + ".vhdx"
+		New-VM -Name $VMName -MemoryStartupBytes $settings.RAM -Generation $settings.Generation -NewVHDPath $NewVMPath -NewVHDSizeBytes $settings.HardDriveSize -Path $NewVMFolder -SwitchName $Switch
+		
 	}
 
 	# Write output to pipeline

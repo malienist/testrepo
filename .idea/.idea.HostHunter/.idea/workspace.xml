@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Manifests/standardvmsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Development/Move-ModuleLocation.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/Development/Move-ModuleLocation.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Development/New-Module.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/Development/New-Module.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/modulemanifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Manifests/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetupScripts/TestLab/Set-VirtualisationPreference.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/SetupScripts/TestLab/Set-VirtualisationPreference.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetupScripts/setfilepathsDSC.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/SetupScripts/setfilepathsDSC.ps1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reload.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/reload.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manifests/standardvmsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/standardvmsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLab/CoreFunctions/New-HostHunterSwitch.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/CoreFunctions/New-HostHunterSwitch.psm1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,15 +21,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="144">
                   <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="256">
-                  <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -59,28 +44,19 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="257">
+                  <caret line="105" column="8" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="58" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-HostHunterSwitch.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="319">
-                  <caret line="46" column="37" lean-forward="true" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/SetupScripts/TestLab/Set-VirtualisationPreference.psm1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="479">
-                  <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/HelpFunctions/Set-Setting.psm1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="207">
-                  <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+                <state relative-caret-position="208">
+                  <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -107,11 +83,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-HyperVHostHunterSwitch.psm1">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="528">
-                  <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
+                <state relative-caret-position="256">
+                  <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Manifests/standardvmsettings.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="432">
+                  <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
                 </state>
               </provider>
             </entry>
@@ -171,7 +156,6 @@
         <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/SetupScripts/setfilepathsDSC.ps1" />
-        <option value="$PROJECT_DIR$/Manifests/standardvmsettings.json" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/Get-StandardVMSettings.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/Edit-StandardVMSettings.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/New-HyperVVM.psm1" />
@@ -183,7 +167,9 @@
         <option value="$PROJECT_DIR$/Manifests/settings.json" />
         <option value="$PROJECT_DIR$/reload.ps1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-HyperVHostHunterSwitch.psm1" />
+        <option value="$PROJECT_DIR$/Manifests/standardvmsettings.json" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/New-HostHunterSwitch.psm1" />
+        <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" />
       </list>
     </option>
   </component>
@@ -232,31 +218,7 @@
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
               <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="SetupScripts" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="SetupScripts" type="34e6ba20:FileSystemExplorerNode" />
               <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Configurations" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Configurations" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="AnsibleServer" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
@@ -270,12 +232,6 @@
               <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
               <item name="CoreFunctions" type="34e6ba20:FileSystemExplorerNode" />
               <item name="HyperV" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="ISOs" type="34e6ba20:FileSystemExplorerNode" />
             </path>
           </expand>
           <select />
@@ -331,12 +287,12 @@
       <workItem from="1553542716671" duration="2539000" />
       <workItem from="1553629310314" duration="1694000" />
       <workItem from="1553713006552" duration="987000" />
-      <workItem from="1553896569421" duration="12712000" />
+      <workItem from="1553896569421" duration="14233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78736000" />
+    <option name="totallyTimeSpent" value="80257000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -349,8 +305,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1138" y="0" width="1430" height="1408" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2729927" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2729927" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -361,7 +318,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" sideWeight="0.4861314" visible="true" weight="0.10893417" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4861314" visible="true" weight="0.10893417" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
@@ -393,7 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.txt" />
     <entry file="file://$PROJECT_DIR$/Development/ExecuteableManagement/New-Module.psm1" />
     <entry file="file://$PROJECT_DIR$/Development/ExecuteableManagement/Remove-Executeable.psm1">
       <provider selected="true" editor-type-id="text-editor" />
@@ -588,13 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Manifests/testlabmanifest.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -627,13 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="19" column="39" selection-end-line="110" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/standardvmsettings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -675,13 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/Get-StandardVMSettings.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -703,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reload.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -717,17 +645,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/standardvmsettings.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="86" selection-start-line="27" selection-start-column="86" selection-end-line="27" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-HyperVHostHunterSwitch.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="576">
           <caret line="51" column="74" selection-start-line="51" selection-start-column="74" selection-end-line="51" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-HostHunterSwitch.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="46" column="37" lean-forward="true" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        <state relative-caret-position="208">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="105" column="8" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="58" />
         </state>
       </provider>
     </entry>
