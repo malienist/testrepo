@@ -23,7 +23,7 @@ function New-StandardHyperVVM{
 	(
 		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
 		[Parameter(Mandatory=$true)][string]$VMName,
-		[Parameter(Mandatory=$true)][String][ValidateSet('HostHunterSwitchExternal', 'HostHunterSwitchInternal', 'HostHunterSwitchPrivate')]$Switch,
+		[Parameter(Mandatory=$true)][String][ValidateSet('HostHunterSwitchExternal', 'HostHunterSwitchInternal', 'HostHunterSwitchPrivate', 'Default Switch')]$Switch,
 		[Parameter][switch]$NonStandardSettings
 	)
 

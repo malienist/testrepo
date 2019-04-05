@@ -1,30 +1,39 @@
-function Get-HostNameConversion{
+function Invoke-Ubuntu1804ServerTemplateConfiguration{
 	<#
 	.Synopsis
-    Provides the hostname for an IP based upon DC list
+    Procedurally configures Ubuntu 1804 Server into a template configuration
     
 	.Description
-    Provides the hostname for an IP based upon DC list
+    Procedurally configures Ubuntu 1804 Server into a template
+    
+    .Parameter
+    VMName - Hostname of VM
     
 	.Parameter
-	IP - The IP to be searched for
+	IP - IP address of server
 
 	.Example
-	Get-HostNameConversion 192.168.1.23
-	Gets the hostname for 192.168.1.23
+	Invoke-Ubuntu1804ServerTemplateConfiguration -IP 1.1.1.1
 
 	#>
 
 	[CmdletBinding()]
 	param
 	(
-        [string]$IP
+		[Parameter(Mandatory=$true)][string]$VMName,
+        [Parameter(Mandatory=$true)][String]$IP
     )
 	
 	# Create custom powershell object for output
 	$output = [PSCustomObject]@{
-		
+		Outcome = "Failed"
+		IPAddress = ""
+		HostName = ""
 	}
+	
+	# Things to put in lab setup readme
+	# todo: 1. Need to grant sudo access to template user to perform specific commands at sudo without password prompting
+	
 	
 	# Write output to pipeline
 	Write-Output $output

@@ -22,7 +22,7 @@ function Build-StandardHyperVTemplate{
 	(
         [Parameter(Mandatory=$true)][String]$VMName,
 		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
-		[Parameter(Mandatory=$true)][String]$Switch
+		[Parameter(Mandatory=$true)][String][ValidateSet('HostHunterSwitchExternal', 'HostHunterSwitchInternal', 'HostHunterSwitchPrivate', 'Default Switch')]$Switch
     )
 	
 	# Create custom powershell object for output
