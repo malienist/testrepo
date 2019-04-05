@@ -69,7 +69,21 @@ function Build-StandardHyperVTemplate{
 			$output.Config = $vmconfig
 			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
 			Stop-VM -VMName $VMName
+			# Remove DVD Drive
 			Remove-VMDvdDrive -VMName $VMName -ControllerLocation 1 -ControllerNumber 0
+		}
+		elseif($OSType -eq "Ubuntu1804Server")
+		{
+			Write-Information -InformationAction Continue -MessageData "Configuring Ubuntu Server 18.04 for template"
+			# Confirm with user that SSH installed
+			$response = Read-Host "SSH enabled (y/n)"
+			if($response -eq "y")
+			{
+				
+			}
+			
+			$vmconfig = Invoke-Ubuntu1804ServerTemplateConfiguration -VMName $VMName -Credential $vmcreds
+			
 		}
 		
 		# If config completed, export the VM as a template

@@ -142,5 +142,13 @@
   {
     "Name": "New-WindowsServer2016Config",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-WindowsServer2016TemplateConfiguration.psm1"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-Ubuntu1604ServerTemplateConfiguration.psm1",
+    "Name": "Invoke-Ubuntu1604ServerTemplateConfiguration"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-Ubuntu1804ServerTemplateConfiguration.psm1",
+    "Name": "Invoke-Ubuntu1804ServerTemplateConfiguration"
   }
 ]
