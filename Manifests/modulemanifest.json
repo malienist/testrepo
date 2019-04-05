@@ -150,5 +150,13 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-Ubuntu1804ServerTemplateConfiguration.psm1",
     "Name": "Invoke-Ubuntu1804ServerTemplateConfiguration"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Remove-HHModule.psm1",
+    "Name": "Remove-HHModule"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\Development\\Rename-HHModule.psm1",
+    "Name": "Rename-HHModule"
   }
 ]

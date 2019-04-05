@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/modulemanifest.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,50 +23,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/README.md">
-              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-                <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="976">
-                    <caret line="61" column="30" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="47" />
-                  </first_editor>
-                  <second_editor />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/setup.ps1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="688">
-                  <caret line="74" selection-start-line="74" selection-end-line="74" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="40" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1">
+            <entry file="file://$PROJECT_DIR$/Development/Rename-HHModule.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-64">
-                  <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+                <state relative-caret-position="336">
+                  <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1">
+            <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="271">
-                  <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="166" />
+                <state relative-caret-position="400">
+                  <caret line="143" column="134" selection-start-line="143" selection-start-column="134" selection-end-line="143" selection-end-column="134" />
                 </state>
               </provider>
             </entry>
@@ -90,7 +57,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-576">
+                <state relative-caret-position="384">
                   <caret line="24" column="165" selection-start-line="24" selection-start-column="165" selection-end-line="24" selection-end-column="165" />
                 </state>
               </provider>
@@ -99,17 +66,35 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Start-NewHyperVVM.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="193">
+                <state relative-caret-position="352">
                   <caret line="22" column="145" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="148" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-WindowsServer2016TemplateConfiguration.psm1">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="384">
-                  <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+                  <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Development/Remove-HHModule.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="112">
+                  <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-31">
+                  <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -136,8 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Manifests/executablemanifest.json" />
-        <option value="$PROJECT_DIR$/Development/ExecuteableManagement/Get-NewExeDetails.psm1" />
         <option value="$PROJECT_DIR$/SetupScripts/installcoreexesDSC.ps1" />
         <option value="$PROJECT_DIR$/SetupScripts/Set-BaseVMCoreExecuteables.psm1" />
         <option value="$PROJECT_DIR$/SetupScripts/TestLab/Set-ADServer.psm1" />
@@ -187,6 +170,8 @@
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1" />
+        <option value="$PROJECT_DIR$/Development/Remove-HHModule.psm1" />
+        <option value="$PROJECT_DIR$/Development/Rename-HHModule.psm1" />
       </list>
     </option>
   </component>
@@ -333,11 +318,12 @@
       <workItem from="1553713006552" duration="987000" />
       <workItem from="1553896569421" duration="28018000" />
       <workItem from="1554495423672" duration="4093000" />
+      <workItem from="1554506907056" duration="1443000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98135000" />
+    <option name="totallyTimeSpent" value="99578000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -352,7 +338,7 @@
     <frame x="970" y="0" width="1781" height="1167" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26728645" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27019176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -363,14 +349,14 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4857641" visible="true" weight="0.114119925" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.48518303" visible="true" weight="0.114119925" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49916944" weight="0.3299373" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5142359" side_tool="true" visible="true" weight="0.114119925" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.51481694" side_tool="true" visible="true" weight="0.114119925" />
       <window_info anchor="bottom" id="Performance Profiler" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -395,18 +381,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HelpFunctions/Open-ZipFile.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Development/ExecuteableManagement/New-Executeable.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-96">
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -554,20 +528,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-HyperVVM.psm1" />
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-StandardHyperVVM.psm1" />
-    <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="38" column="32" lean-forward="true" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/executablemanifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Development/Move-ModuleLocation.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -632,24 +592,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/Start-NewHyperVVM.psm1" />
-    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="143" column="134" selection-start-line="143" selection-start-column="134" selection-end-line="143" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/Configurations/StandardDC.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reload.ps1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -667,13 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-HyperVVM.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -681,38 +620,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.ps1">
+    <entry file="file://$PROJECT_DIR$/reload.ps1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="166" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Start-NewHyperVVM.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="22" column="145" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="24" column="165" selection-start-line="24" selection-start-column="165" selection-end-line="24" selection-end-column="165" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-WindowsServer2016TemplateConfiguration.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="144">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -731,6 +642,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.ps1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1184">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -738,10 +656,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="8" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" column="165" selection-start-line="24" selection-start-column="165" selection-end-line="24" selection-end-column="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Start-NewHyperVVM.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="145" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/executablemanifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-64">
+        <state relative-caret-position="240">
           <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-WindowsServer2016TemplateConfiguration.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="24" column="32" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/Remove-HHModule.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="143" column="134" selection-start-line="143" selection-start-column="134" selection-end-line="143" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/Rename-HHModule.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
         </state>
       </provider>
     </entry>
