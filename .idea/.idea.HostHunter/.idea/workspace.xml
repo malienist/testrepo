@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Development/New-Module.psm1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Development/Rename-HHModule.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/Development/Rename-HHModule.psm1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/modulemanifest.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,20 +25,29 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Development/Rename-HHModule.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="336">
-                  <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+                <state relative-caret-position="225">
+                  <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="282">
+                  <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+            <entry file="file://$PROJECT_DIR$/Development/New-HHModule.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="143" column="134" selection-start-line="143" selection-start-column="134" selection-end-line="143" selection-end-column="134" />
+                <state>
+                  <caret column="15" selection-start-column="15" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -81,20 +92,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Development/Remove-HHModule.psm1">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="112">
                   <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-31">
-                  <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -113,6 +115,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ServerTemplate</find>
+      <find>Test-mo</find>
+      <find>modulepath</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,7 +125,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/SetupScripts/installcoreexesDSC.ps1" />
         <option value="$PROJECT_DIR$/SetupScripts/Set-BaseVMCoreExecuteables.psm1" />
         <option value="$PROJECT_DIR$/SetupScripts/TestLab/Set-ADServer.psm1" />
         <option value="$PROJECT_DIR$/SetupScripts/TestLab/Set-TestLabUpdate.psm1" />
@@ -164,14 +167,15 @@
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-HyperVTemplate.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVTemplate.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/New-WindowsServer2016Config.psm1" />
-        <option value="$PROJECT_DIR$/Manifests/modulemanifest.json" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-WindowsServer2016TemplateConfiguration.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/New-StandardHyperVVM.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Build-StandardHyperVTemplate.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1804ServerTemplateConfiguration.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/Procedural/HyperV/Invoke-Ubuntu1604ServerTemplateConfiguration.psm1" />
         <option value="$PROJECT_DIR$/Development/Remove-HHModule.psm1" />
+        <option value="$PROJECT_DIR$/Development/New-HHModule.psm1" />
         <option value="$PROJECT_DIR$/Development/Rename-HHModule.psm1" />
+        <option value="$PROJECT_DIR$/Manifests/modulemanifest.json" />
       </list>
     </option>
   </component>
@@ -318,12 +322,12 @@
       <workItem from="1553713006552" duration="987000" />
       <workItem from="1553896569421" duration="28018000" />
       <workItem from="1554495423672" duration="4093000" />
-      <workItem from="1554506907056" duration="1443000" />
+      <workItem from="1554506907056" duration="3351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99578000" />
+    <option name="totallyTimeSpent" value="101486000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -381,13 +385,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/todo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SetupScripts/TestLab/Set-ADServer.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -705,13 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Development/Remove-HHModule.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Development/New-Module.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-31">
@@ -719,17 +709,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+    <entry file="file://$PROJECT_DIR$/Development/Remove-HHModule.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="143" column="134" selection-start-line="143" selection-start-column="134" selection-end-line="143" selection-end-column="134" />
+        <state relative-caret-position="112">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Development/New-HHModule.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Development/Rename-HHModule.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
+        <state relative-caret-position="225">
+          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/modulemanifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="162" column="17" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
         </state>
       </provider>
     </entry>

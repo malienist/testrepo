@@ -24,7 +24,7 @@ function Rename-HHModule{
 	(
 		[Parameter(Mandatory=$True)][string]$ModuleCurrentName,
 		[Parameter(Mandatory=$True)][string]$ModuleNewName,
-		[Parameter(Mandatory=$True)][string]$ModulePath
+		[Parameter(Mandatory=$True)][string]$NewModulePath
 	)
 
 	# Setup output variable
@@ -38,39 +38,41 @@ function Rename-HHModule{
 	$modulelist = Get-Content -Path $ModulePath | ConvertFrom-Json
 
 	# Confirm module exists
-	$moduleexists = $false
-	if($modulelist | Where-Object {$_.Name -eq $ModuleName})
+	if($modulelist | Where-Object {$_.Name -eq $ModuleCurrentName})
 	{
 		# if yes, notify the user
 		Write-Information -InformationAction Continue -MessageData "Module exists"
-		$message = "Module Location: " + ($modulelist | Where-Object { $_.Name -match $ModuleName }).FileLocation
+		$message = "Module Location: " + ($modulelist | Where-Object { $_.Name -eq $ModuleCurrentName }).FileLocation
 		Write-Information -InformationAction Continue -MessageData $message
 
 		# Create a new array which does not contain removed module
 		$newarray = @()
 		foreach($module in $modulelist)
 		{
-			if($module.Name -ne $ModuleName)
+			if($module.Name -ne $ModuleCurrentName)
 			{
-				$newarray += $module
-			}else{
-				# Change the name of the module
-				$module.Name = $ModuleNewName
-				# Update the file path to reflect new name
-				$moduleloc = $ModulePath + $ModuleNewName + ".psm1"
-				$module.FileLocation = $moduleloc
 				$newarray += $module
 			}
 		}
+		# Add renamed module and filepath to array
+		$newmodulename = @{
+			Name = $ModuleNewName
+			FileLocation = $NewModulePath + $ModuleNewName + ".psm1"
+		}
+		
+		$newarray += $newmodulename
+		
 		# Save to module manifest list
 		$newarray | ConvertTo-Json | Out-File -FilePath $ModulePath
 
 		# Change file name
-		$modulepath = ($modulelist | Where-Object { $_.Name -match $ModuleName }).FileLocation
-		Rename-Item -Path $ModulePath -NewName $ModuleNewName
+		$modulefilepath = ($modulelist | Where-Object { $_.Name -eq $ModuleCurrentName }).FileLocation
+		$modulefilepath = $modulefilepath.tostring()
+		$ModuleNewName = $ModuleNewName + ".psm1"
+		Rename-Item -Path $modulefilepath -NewName $ModuleNewName
 		$output.Outcome = "Success"
 	}else{
-		Write-Information -MessageData "Module does not exist"
+		Write-Information -InformationAction Continue -MessageData "Module does not exist"
 		$output.Outcome = "Failed"
 	}
 

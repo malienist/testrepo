@@ -1,4 +1,4 @@
-function New-Module{
+function New-HHModule{
 	<#
 	.Synopsis
     Automates the baseline work for developing a new powershell module fully integrated into the framework
