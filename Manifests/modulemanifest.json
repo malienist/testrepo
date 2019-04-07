@@ -162,5 +162,9 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\Development\\Test-HHModule.psm1",
     "Name": "Test-HHModule"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-Windows10EnterpriseTemplateConfiguration.psm1",
+    "Name": "Invoke-Windows10EnterpriseTemplateConfiguration"
   }
 ]

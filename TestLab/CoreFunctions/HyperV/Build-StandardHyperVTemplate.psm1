@@ -64,7 +64,7 @@ function Build-StandardHyperVTemplate{
 		# Now configure Virtual Machine procedurally based upon type of Standard VM
 		if($OSType -eq "WindowsServer2016")
 		{
-			Write-Information -InformationAction Continue -MessageData "Configuring Windows Server 2016 for template"
+			Write-Information -InformationAction Continue -MessageData "Configuring Windows Server 2016 template"
 			$vmconfig = Invoke-WindowsServer2016TemplateConfiguration -VMName $VMName -Credential $vmcreds
 			$output.Config = $vmconfig
 			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
@@ -74,7 +74,7 @@ function Build-StandardHyperVTemplate{
 		}
 		elseif($OSType -eq "Ubuntu1804Server")
 		{
-			Write-Information -InformationAction Continue -MessageData "Configuring Ubuntu Server 18.04 for template"
+			Write-Information -InformationAction Continue -MessageData "Configuring Ubuntu Server 18.04 template"
 			# Confirm with user that SSH installed
 			$response = Read-Host "SSH enabled (y/n)"
 			if($response -eq "y")
@@ -84,6 +84,14 @@ function Build-StandardHyperVTemplate{
 			
 			$vmconfig = Invoke-Ubuntu1804ServerTemplateConfiguration -VMName $VMName -Credential $vmcreds
 			
+		}elseif($OSType -eq "Windows10Enterprise")
+		{
+			Write-Information -InformationAction Continue -MessageData "Configuring Windows 10 Enterprise template"
+			$vmconfig = Invoke-Windows10EnterpriseTemplateConfiguration -VMName $VMName -Credential $vmcreds
+			$output.Config = $vmconfig
+			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
+			Stop-VM -VMName $VMName
+			Remove-VMDvdDrive -VMName $VMName -ControllerLocation 1 -ControllerNumber 0
 		}
 		
 		# If config completed, export the VM as a template

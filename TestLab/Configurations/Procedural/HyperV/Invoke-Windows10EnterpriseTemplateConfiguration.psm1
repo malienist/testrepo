@@ -1,26 +1,28 @@
-function Invoke-WindowsServer2016TemplateConfiguration{
+function Invoke-Windows10EnterpriseTemplateConfiguration{
 	<#
 	.Synopsis
-    Configures a Windows Server 2016 machine into the basic config to template. Only useful for initial setup
+    Configures a Windows 10 Enterprise machine into the basic configuration for a template. Only useful for initial
+    setup
     
 	.Description
-    Configures a Windows Server 2016 machine into the basic config to template. Only useful for initial setup
+    Configures a Windows 10 Enterprise machine into the basic configuration for a template. Only useful for initial
+    setup
     
 	.Parameter
-	VMName - the name of the VM being templated
+	VMName - the name of the Virtual Machine being templated
 	
 	.Parameter
-	Credential - local credentials to the Windows Server 16 machine
+	Credential - local credentials to the Windows 10 Enterprise machine being templated
 
 	.Example
-	Invoke-WindowsServer2016Configuration -VMName WindowsServer2016_Template -Credential $cred
+	Invoke-Windows10EnterpriseTemplateConfiguration -VMName Win10Ent_Template -Credential $cred
 
 	#>
 
 	[CmdletBinding()]
 	param
 	(
-        [Parameter(Mandatory=$true)][string]$VMName,
+		[Parameter(Mandatory=$true)][string]$VMName,
 		[Parameter(Mandatory=$true)][System.Management.Automation.CredentialAttribute()]$Credential
     )
 	
@@ -31,6 +33,8 @@ function Invoke-WindowsServer2016TemplateConfiguration{
 		IPAddress = ""
 		RemotePowershell = ""
 		HostName = ""
+		VMSwitch = ""
+		NetConnectionProfile = ""
 	}
 	
 	# Ensure locally unsigned scripts can run
@@ -43,12 +47,37 @@ function Invoke-WindowsServer2016TemplateConfiguration{
 		$output.RemoteSigned = "True"
 	}
 	
-	# Change network adapter to get an ip address
-	Connect-VMNetworkAdapter -VMName $VMName -SwitchName 'Default Switch' # todo: make this a much cooler switch name
+	# Set network connection profile to Private for setup purposes
+	# Get current network connection profile
+	$connectionprofile = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetConnectionProfile}
+	if($connectionprofile.NetworkCategory -eq "Public")
+	{
+		# Set connection to private
+		Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Set-NetConnectionProfile -InterfaceAlias 'Ethernet' -NetworkCategory 'Private'}
+		# Confirm change has occured
+		$connectionprofile = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetConnectionProfile}
+		if($connectionprofile.NetworkCategory -eq "Private")
+		{
+			$output.NetConnectionProfile = "Private"
+		}else{
+			Write-Information -InformationAction Continue -MessageData "Unable to fix, try manually"
+		}
+	}
 	
+	# Ensure network adapter is 'Default Switch' so that it can connect to other machines :todo: connect a different switch
+	$switch = (Get-VMNetworkAdapter -VMName Server2016_Template).SwitchName
+	if($switch -ne 'Default Switch')
+	{
+		Connect-VMNetworkAdapter -VMName $VMName -SwitchName 'Default Switch'
+		$output.VMSwitch = $switch
+	}else{
+		$output.VMSwitch = $switch
+	}
+
 	# Ensure powershell remoting enabled
 	# Enable PSRemoting
 	Write-Information -InformationAction Continue -MessageData "Enabling Remote Powershell"
+	# todo: error handling if incorrect username / password combination
 	Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Enable-PSRemoting -Force}
 	# Set trusted hosts to * - note not recommended, however this will be changed once the configuration sets in.
 	Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Set-Item WSMan:\localhost\Client\TrustedHosts *}
@@ -60,6 +89,8 @@ function Invoke-WindowsServer2016TemplateConfiguration{
 	$output.IPAddress = [String]$ipaddress.IPAddress
 	# Use Invoke-Command with IP to get Computername
 	$computername = Invoke-Command -ComputerName $output.IPAddress -Credential $Credential -ScriptBlock{$env:COMPUTERNAME}
+
+	# Confirm the WinRM components are all working
 	if($computername)
 	{
 		# Invoke command was a success
