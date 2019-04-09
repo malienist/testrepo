@@ -39,6 +39,7 @@ function Invoke-Windows10EnterpriseTemplateConfiguration{
 	
 	# Ensure locally unsigned scripts can run
 	Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Set-ExecutionPolicy -ExecutionPolicy RemoteSigned}
+	
 	# Confirm change has been accepted
 	$executionpolicy = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-ExecutionPolicy}
 	if($executionpolicy.Value -eq "RemoteSigned")
@@ -50,14 +51,16 @@ function Invoke-Windows10EnterpriseTemplateConfiguration{
 	# Set network connection profile to Private for setup purposes
 	# Get current network connection profile
 	$connectionprofile = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetConnectionProfile}
-	if($connectionprofile.NetworkCategory -eq "Public")
+	if($connectionprofile.NetworkCategory -eq "Public" -or $connectionprofile.NetworkCategory -eq 0)
 	{
+		Write-Information -InformationAction Continue -MessageData "Network Connection profile set to 'Public'. Changing to 'Private'"
 		# Set connection to private
 		Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Set-NetConnectionProfile -InterfaceAlias 'Ethernet' -NetworkCategory 'Private'}
 		# Confirm change has occured
 		$connectionprofile = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetConnectionProfile}
 		if($connectionprofile.NetworkCategory -eq "Private")
 		{
+			Write-Information -InformationAction Continue -MessageData "Network Connection state changed to 'Private'"
 			$output.NetConnectionProfile = "Private"
 		}else{
 			Write-Information -InformationAction Continue -MessageData "Unable to fix, try manually"
@@ -65,7 +68,7 @@ function Invoke-Windows10EnterpriseTemplateConfiguration{
 	}
 	
 	# Ensure network adapter is 'Default Switch' so that it can connect to other machines :todo: connect a different switch
-	$switch = (Get-VMNetworkAdapter -VMName Server2016_Template).SwitchName
+	$switch = (Get-VMNetworkAdapter -VMName $VMName).SwitchName
 	if($switch -ne 'Default Switch')
 	{
 		Connect-VMNetworkAdapter -VMName $VMName -SwitchName 'Default Switch'
@@ -84,8 +87,11 @@ function Invoke-Windows10EnterpriseTemplateConfiguration{
 	# Enable winrm
 	Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{winrm quickconfig}
 	# Test WinRM works
+	# Wait for 10 seconds while WinRM completes restart
+	# Write-Information -InformationAction Continue -MessageData "Waiting 10 seconds for WinRM restart"
+	# Start-Sleep -Seconds 10
 	# Get IP address
-	$ipaddress = Invoke-Command -VMName Server2016_Template -Credential $Credential -ScriptBlock{Get-NetIPAddress | Select-Object IPAddress, InterfaceAlias, AddressFamily | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.InterfaceAlias -eq "Ethernet"}}
+	$ipaddress = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetIPAddress | Select-Object IPAddress, InterfaceAlias, AddressFamily | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.InterfaceAlias -eq "Ethernet"}}
 	$output.IPAddress = [String]$ipaddress.IPAddress
 	# Use Invoke-Command with IP to get Computername
 	$computername = Invoke-Command -ComputerName $output.IPAddress -Credential $Credential -ScriptBlock{$env:COMPUTERNAME}

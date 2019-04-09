@@ -166,5 +166,13 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\Procedural\\HyperV\\Invoke-Windows10EnterpriseTemplateConfiguration.psm1",
     "Name": "Invoke-Windows10EnterpriseTemplateConfiguration"
+  },
+  {
+    "Name": "Build-TestLabTemplates",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\BuildFunctions\\Build-TestLabTemplates.psm1"
+  },
+  {
+    "Name": "New-TestLabEndpoint",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\ManifestModification\\New-TestLabEndpoint.psm1"
   }
 ]

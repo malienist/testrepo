@@ -33,6 +33,10 @@ function Build-StandardHyperVTemplate{
 		Created = @{}
 		Started = @{}
 		Config = @{}
+		RemoteAccessEnabled = $false
+		RemoteAccessType = ""
+		SMB = $false
+		IPAddress = ""
 	}
 	
 	# First create the VM. Create linked to a disconnected switch initially
@@ -71,6 +75,16 @@ function Build-StandardHyperVTemplate{
 			Stop-VM -VMName $VMName
 			# Remove DVD Drive
 			Remove-VMDvdDrive -VMName $VMName -ControllerLocation 1 -ControllerNumber 0
+			# Once VM modification complete, update the outcome objects to store in the TestLabEndpoint manifest
+			# Update if remote access available
+			$output.RemoteAccessType = "WinRM"
+			$output.IPAddress = $vmconfig.IPaddress
+			if($vmconfig.RemotePowershell -eq "Success")
+			{
+				$output.RemoteAccessEnabled = $true
+			}else{
+				$output.RemoteAccessEnabled = $false
+			}
 		}
 		elseif($OSType -eq "Ubuntu1804Server")
 		{
@@ -86,12 +100,23 @@ function Build-StandardHyperVTemplate{
 			
 		}elseif($OSType -eq "Windows10Enterprise")
 		{
+			# Setup Windows 10 Enterprise with Powershell remoting, signed remote scripts and get IP address
 			Write-Information -InformationAction Continue -MessageData "Configuring Windows 10 Enterprise template"
 			$vmconfig = Invoke-Windows10EnterpriseTemplateConfiguration -VMName $VMName -Credential $vmcreds
 			$output.Config = $vmconfig
 			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
 			Stop-VM -VMName $VMName
 			Remove-VMDvdDrive -VMName $VMName -ControllerLocation 1 -ControllerNumber 0
+			# Once VM modification complete, update the outcome objects to store in the TestLabEndpoint manifest
+			# Update if remote access available
+			$output.RemoteAccessType = "WinRM"
+			$output.IPAddress = $vmconfig.IPaddress
+			if($vmconfig.RemotePowershell -eq "Success")
+			{
+				$output.RemoteAccessEnabled = $true
+			}else{
+				$output.RemoteAccessEnabled = $false
+			}
 		}
 		
 		# If config completed, export the VM as a template
@@ -102,8 +127,6 @@ function Build-StandardHyperVTemplate{
 			$output.Outcome = "Success"
 		}
 	}
-	
-	
 	
 	# Write output to pipeline
 	Write-Output $output
