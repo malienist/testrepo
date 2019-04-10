@@ -9,6 +9,7 @@ $global:TestLabManifest = ($settings | Where-Object{$_.Type -match "TestLabManif
 $global:SettingsFile = "C:\Users\HostHunter\Manifests\settings.json"
 $global:VirtualizationType = ($settings | Where-Object{$_.Type -match "VirtualizationType"}).Vendor
 $global:WindowsServerTemplate = ($settings | Where-Object{$_.Type -match "WindowsServerTemplate"}).Setting
+
 # Import modules
 $message = $ModulePath
 Write-Host $message

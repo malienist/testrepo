@@ -174,5 +174,9 @@
   {
     "Name": "New-TestLabEndpoint",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\ManifestModification\\New-TestLabEndpoint.psm1"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\ISOManagement\\New-ISOFile.psm1",
+    "Name": "New-ISOFile"
   }
 ]

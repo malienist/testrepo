@@ -1,0 +1,14 @@
+[
+  {
+    "ISOHashType": "SHA256",
+    "ISOOS": "Ubuntu1804Desktop",
+    "ISOHash": "22580B9F3B186CC66818E60F44C46F795D708A1AD86B9225C458413B638459C4",
+    "ISOFileName": "ubuntu-18.04.2-desktop-amd64.iso"
+  },
+  {
+    "ISOHashType": "SHA256",
+    "ISOOS": "Ubuntu1804Server",
+    "ISOHash": "EA6CCB5B57813908C006F42F7AC8EAA4FC603883A2D07876CF9ED74610BA2F53",
+    "ISOFileName": "ubuntu-18.04.2-live-server-amd64.iso"
+  }
+]
