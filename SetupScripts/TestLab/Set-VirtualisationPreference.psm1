@@ -17,7 +17,7 @@ function Set-VirtualisationPreference{
     [CmdletBinding()]
     param
     (
-        [parameter(Mandatory=$true)][ValidateSet('VMwareWorkstation', 'HyperV')][string]$VirtualisationPreference
+        [parameter(Mandatory=$true)][ValidateSet('HyperV')][string]$VirtualisationPreference
     )
 
     $output = @{
@@ -57,6 +57,8 @@ function Set-VirtualisationPreference{
         Write-Information -InformationAction Continue -MessageData "HyperV standard installation available"
         $version = ""
         Set-Setting -Type $VirtualisationPreference -Version $version -Vendor "HyperV"
+        Write-Information -InformationAction Continue -MessageData "Installing Hyper-V Powershell modules and features"
+        powershell Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All
     }
     
 }
