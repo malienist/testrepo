@@ -1,14 +1,20 @@
 [
   {
-    "ISOHashType": "SHA256",
-    "ISOOS": "Ubuntu1804Desktop",
-    "ISOHash": "22580B9F3B186CC66818E60F44C46F795D708A1AD86B9225C458413B638459C4",
-    "ISOFileName": "ubuntu-18.04.2-desktop-amd64.iso"
-  },
-  {
-    "ISOHashType": "SHA256",
+    "ISOFileName": "ubuntu-18.04.2-live-server-amd64.iso",
     "ISOOS": "Ubuntu1804Server",
     "ISOHash": "EA6CCB5B57813908C006F42F7AC8EAA4FC603883A2D07876CF9ED74610BA2F53",
-    "ISOFileName": "ubuntu-18.04.2-live-server-amd64.iso"
+    "ISOHashType": "SHA256"
+  },
+  {
+    "ISOFileName": "en_windows_10_enterprise_version_1703_updated_march_2017_x64_dvd_10189290.iso",
+    "ISOOS": "Windows10Enterprise",
+    "ISOHash": "77D5E7C91B5DBBEE410FB6C57CB944238BF7176A",
+    "ISOHashType": "SHA1"
+  },
+  {
+    "ISOFileName": "en_windows_server_2016_updated_feb_2018_x64_dvd_11636692.iso",
+    "ISOOS": "WindowsServer2016",
+    "ISOHash": "7ADC82E00F1367B43897BB969A75BBF96D46F588",
+    "ISOHashType": "SHA1"
   }
 ]

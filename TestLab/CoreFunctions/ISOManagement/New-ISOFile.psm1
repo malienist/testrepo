@@ -46,20 +46,27 @@ function New-ISOFile{
 	
 	# Tell user that ISO Manifest is being updated
 	Write-Information -InformationAction Continue -MessageData "ISO Manifest being updated"
+
+	# Create new array for list
+	$isoarray = @()
+	$isoarray += $output
 	
 	# Get the current contents of ISOManifest
 	$isolist = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\ISOManifest.json | ConvertFrom-Json
 	
 	# Confirm ISO OS not already stored
-	if($isolist.ISOOS -eq $ISOOS)
+	foreach($iso in $isolist)
 	{
-		Write-Information -InformationAction Continue -MessageData "ISO Operating System already present"
-	}else{
-		$isolist += $output
+		if($iso.ISOOS -eq $ISOOS)
+		{
+			Write-Information -InformationAction Continue -MessageData "ISO Operating System already present"
+		}else{
+			$isoarray += $iso
+		}
 	}
 	
 	# Store back into file
-	$isolist | ConvertTo-Json | Out-File -FilePath C:\Users\HostHunter\Manifests\ISOManifest.json
+	$isoarray | ConvertTo-Json | Out-File -FilePath C:\Users\HostHunter\Manifests\ISOManifest.json
 	
 	# Write output to pipeline
 	Write-Output $output

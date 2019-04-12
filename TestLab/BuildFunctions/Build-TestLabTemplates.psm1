@@ -23,12 +23,30 @@ function Build-TestLabTemplates{
 	}
 	
 	# Get a list of the current standard ISOs
-	$ISOs = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\ISOManifest.json
+	Write-Information -InformationAction Continue -MessageData "#######################################################"
+	Write-Information -InformationAction Continue -MessageData "Building TestLab Templates"
+	Write-Information -InformationAction Continue -MessageData "#######################################################"
+	
+	# Build the HostHunter Switch
+	Write-Information -InformationAction Continue -MessageData "Creating Host Hunter switch"
+	Get-NetAdapter
+	$switchname = New-HostHunterSwitch -SwitchType Internal | Out-Null
+	
+	# Get the new Switch 
+	$switchname = "HostHunterSwitchInternal"
+	
+	$ISOs = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\ISOManifest.json | ConvertFrom-Json
 	foreach($ISO in $ISOs)
 	{
 		$VMName = $ISO.ISOOS + "_Template"
+		$ISOName = $ISO.ISOOS
 		$message = "Building $VMName"
-		Build-StandardHyperVTemplate -VMName $VMName -OSType $ISO.ISOOS -Switch 'Default Switch'
+		Write-Information -InformationAction Continue -MessageData $message
+		if($VirtualizationType -eq 'HyperV')
+		{
+			Build-StandardHyperVTemplate -VMName $VMName -OSType $ISOName -Switch $switchname
+		}
+		
 	}
 	
 	# Get a list of currently available templates and display to user.

@@ -20,7 +20,13 @@ function New-HostHunterSwitch{
 	
 	if(-not $Name)
 	{
-		$Name = "HostHunterSwitch" + $SwitchType
+		if($SwitchType -ne 'Internal')
+		{
+			$Name = "HostHunterSwitch" + $SwitchType
+		}else{
+			$Name = "HostHunterSwitch"
+		}
+		
 	}
 	
 	# Create custom powershell object for output
@@ -48,6 +54,17 @@ function New-HostHunterSwitch{
 			break
 		}
 	}
+	
+	# Rename for weird Internal bug
+	if($SwitchType -ne 'Internal')
+	{
+		$Name = "HostHunterSwitch" + $SwitchType
+	}else{
+		$Name = "HostHunterSwitchInternal"
+	}
+	
+	# Add switch to testlabmanifest
+	New-TestLabManifestItem -ItemOS 'HyperV' -ItemPurpose 'Switch' -ItemFileLocation 'NA' -ItemName $Name -ItemRemoteConfigurationType 'HyperV' -ItemRemoteConfigurationEnabled $true -ItemSMB 'NA' -ItemIPAddress 'NA'
 	
 	# Write output to pipeline
 	Write-Output $output

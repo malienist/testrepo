@@ -51,8 +51,8 @@ function New-TestLabEndpoint{
 	[CmdletBinding()]
 	param
 	(
-		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$EPOS,
-		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'System')]$EPPurpose,
+		[Parameter(Mandatory=$true)][string]$EPOS,
+		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'System', 'SIEM')]$EPPurpose,
 		[Parameter(Mandatory=$true)][string]$EPFileLocation,
 		[Parameter(Mandatory=$true)][string]$EPHostName,
 		[Parameter(Mandatory=$true)][string][ValidateSet('SSH', 'WinRM')]$EPRemoteConfigurationType,
@@ -63,8 +63,10 @@ function New-TestLabEndpoint{
 	
 	# Create custom powershell object for output
 	$output = [PSCustomObject]@{
-		
+		Outcome = "Failed"
 	}
+	
+	New-TestLabManifestItem -ItemOS $EPOS -ItemPurpose $EPPurpose -ItemFileLocation $EPFileLocation -ItemName $EPHostName -ItemRemoteConfigurationType $EPRemoteConfigurationType -ItemRemoteConfigurationEnabled $EPRemoteConfigurationEnabled -ItemSMB $EPSMB -ItemIPAddress $EPIPAddress
 	
 	# Write output to pipeline
 	Write-Output $output

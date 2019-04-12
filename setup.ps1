@@ -3,7 +3,7 @@
 
 # Update Powershell Help
 Write-Information -InformationAction Continue -MessageData "Updating Help"
-#Update-Help
+Update-Help
 
 # Ensure WinRM services is running
 Write-Information -InformationAction Continue -MessageData "Ensuring Powershell Remoting works"
@@ -29,7 +29,7 @@ Write-Information -InformationAction Continue -MessageData "Configuring Base VM"
 Import-Module C:\Users\HostHunter\SetupScripts\Set-BaseVMFileStructure.psm1 -Force
 
 # Now configure BaseVM
-Set-BaseVMFileStructure
+# Set-BaseVMFileStructure
 
 # Now change the permissions on this folder and all subfolders so that user (i.e. me) can freely 
 # access and save it. Many thanks to this website: https://blogs.msdn.microsoft.com/johan/2008/10/01/powershell-editing-permissions-on-a-file-or-folder/
@@ -45,6 +45,112 @@ Set-ACL -Path C:\Users\HostHunter\ $ACL
 Write-Information -InformationAction Continue -MessageData "Importing powershell modules"
 .\reload.ps1
 
+# With virtualization preference set, setup test lab
+Write-Information -InformationAction Continue -MessageData "Setting up TestLab"
+# Get the ISOs and move to the framework file location
+while($windowsserverisopresent -ne $true)
+{
+    $windowsserverISO = Read-Host "File name for WindowsServer2016 ISO (include .iso)"
+    $isopath = $env:USERPROFILE + "\Downloads\" + $windowsserverISO
+    $windowsserverisopresent = Test-Path -Path $isopath
+    if($windowsserverisopresent -ne $true)
+    {
+        Write-Information -InformationAction Continue -MessageData "File not found, try again"
+    }
+}
+if($windowsserverisopresent -eq $true)
+{
+    # Move to ISO file location
+    $destination = "C:\Users\HostHunter\TestLab\ISOs\" + $windowsserverISO
+    Write-Information -InformationAction Continue -MessageData "Moving Windows Server 2016 ISO into HostHunter Framework"
+    Move-Item -Path $isopath -Destination $destination
+    # Get the Hash
+    $ISOHash = Read-Host "Hash for Windows Server 2016"
+    # Get the HashType
+    $ISOHashType = Read-Host "HashType - options SHA1, SHA2, SHA256, MD5"
+    # Confirm this is accurate
+    $hash = Get-FileHash -Algorithm $ISOHashType -Path $destination
+    if($hash.Hash -eq $ISOHash)
+    {
+        # Add to iso manifest
+        New-ISOFile -ISOFileName $windowsserverISO -ISOOS "WindowsServer2016" -ISOHash $ISOHash -ISOHashType $ISOHashType
+    }
+    else
+    {
+        Write-Information -InformationAction Continue -MessageData "Incorrect Hash"
+        break
+    }
+    
+}
+
+# Windows 10
+while($windows10Enterpriseisopresent -ne $true)
+{
+    $windows10EnterpriseISO = Read-Host "File name for Windows10Enterprise ISO (include .iso)"
+    $isopath = $env:USERPROFILE + "\Downloads\" + $windows10EnterpriseISO
+    $windows10Enterpriseisopresent = Test-Path -Path $isopath
+    if($windows10Enterpriseisopresent -ne $true)
+    {
+        Write-Information -InformationAction Continue -MessageData "File not found, try again"
+    }
+}
+
+if($windows10Enterpriseisopresent -eq $true)
+{
+    $destination = "C:\Users\HostHunter\TestLab\ISOs\" + $windows10EnterpriseISO
+    Write-Information -InformationAction Continue -MessageData "Moving Windows 10 Enterprise ISO into HostHunter Framework"
+    Move-Item -Path $isopath -Destination $destination
+    # Get the Hash
+    $ISOHash = Read-Host "Hash for Windows 10 Enterprise"
+    # Get the HashType
+    $ISOHashType = Read-Host "HashType - options SHA1, SHA2, SHA256, MD5"
+    # Confirm this is accurate
+    $hash = Get-FileHash -Algorithm $ISOHashType -Path $destination
+    if($hash.Hash -eq $ISOHash)
+    {
+        # Add to iso manifest
+        New-ISOFile -ISOFileName $windows10EnterpriseISO -ISOOS "Windows10Enterprise" -ISOHash $ISOHash -ISOHashType $ISOHashType
+    }
+    else
+    {
+        Write-Information -InformationAction Continue -MessageData "Incorrect Hash"
+        break
+    }
+}
+# Ubuntu Server
+while($ubuntu1804serverisopresent -ne $true)
+{
+    $ubuntu1804serverISO = Read-Host "File name for Ubuntu 1804 Server ISO (include .iso)"
+    $isopath = $env:USERPROFILE + "\Downloads\" + $ubuntu1804serverISO
+    $ubuntu1804serverisopresent = Test-Path -Path $isopath
+    if($ubuntu1804serverisopresent -ne $true)
+    {
+        Write-Information -InformationAction Continue -MessageData "File not found, try again"  
+    }
+}
+if($ubuntu1804serverisopresent -eq $true)
+{
+    $destination = "C:\Users\HostHunter\TestLab\ISOs\" + $ubuntu1804serverISO
+    Write-Information -InformationAction Continue -MessageData "Moving Ubuntu 1804 Server ISO into HostHunter Framework"
+    Move-Item -Path $isopath -Destination $destination
+    # Get the Hash
+    $ISOHash = Read-Host "Hash for Ubuntu 1804 Server"
+    # Get the HashType
+    $ISOHashType = Read-Host "HashType - options SHA1, SHA2, SHA256, MD5"
+    # Confirm this is accurate
+    $hash = Get-FileHash -Algorithm $ISOHashType -Path $destination
+    if($hash.Hash -eq $ISOHash)
+    {
+        # Add to iso manifest
+        New-ISOFile -ISOFileName $ubuntu1804serverISO -ISOOS "Ubuntu1804Server" -ISOHash $ISOHash -ISOHashType $ISOHashType
+    }
+    else
+    {
+        Write-Information -InformationAction Continue -MessageData "Incorrect Hash"
+        break
+    }
+}
+
 # Set the virtualization preference
 # todo: make this more robust
 Write-Information -InformationAction Continue -MessageData "Currently available virtualization integration: HyperV"
@@ -56,54 +162,17 @@ if($virtualization -eq "HyperV")
 else
 {
     Write-Information -InformationAction Continue -MessageData "Invalid entry selected"
+    break
 }
 
-# With virtualization preference set, setup test lab
-Write-Information -InformationAction Continue -MessageData "Setting up TestLab"
-# Get the ISOs and move to the framework file location
-while($windowsserverisopresent -ne $true)
-{
-    $windowsserverISO = Read-Host "File name for WindowsServer2016 ISO (include .iso)"
-    $isopath = $env:USERPROFILE + "\Downloads\" + $windowsserverISO
-    $windowsserverisopresent = Test-Path -Path $isopath
-    Write-Information -InformationAction Continue -MessageData "File not found, try again" 
-}
-if($windowsserverisopresent -eq $true)
-{
-    # Move to ISO file location
-    $destination = "C:\Users\HostHunter\TestLab\ISOs\" + $windowsserverISO
-    Write-Information -InformationAction Continue -MessageData "Moving into HostHunter Framework"
-    Move-Item -Path $isopath -Destination $destination
-    # Get the Hash
-    $ISOHash = Read-Host "Hash for Windows Server 2016"
-    # Get the HashType
-    $ISOHashType = Read-Host "HashType - options SHA1, SHA2, SHA256, MD5"
-    # Confirm this is accurate
-    $hash = Get-FileHash -Algorithm $ISOHashType -Path $isopath
-    if($hash -eq $ISOHash)
-    {
-        # Add to iso manifest
-        New-ISOFile -ISOFileName $windowsserverISO -ISOOS "WindowsServer2016" -ISOHash $ISOHash -ISOHashType $ISOHashType
-    }
-    else
-    {
-        Write-Information -InformationAction Continue -MessageData "Incorrect Hash, try again"
-    }
-    
-}
-
-# Windows 10
-
-# Ubuntu Server
-
+# Build template VMs
+Write-Information -InformationAction Continue -MessageData "Building template VMs"
+Build-TestLabTemplates
 
 ### Future work once framework in operation
 # Ensure all core executeables have been downloaded
+<#
 Get-CoreExecuteables
-
-
-
-
 
 # Install Pester
 Write-Information -InformationAction Continue -MessageData "Checking Pester Installation"
@@ -142,5 +211,5 @@ Install-Module PSWindowsUpdate
 # https://www.powershellgallery.com/packages/xActiveDirectory/2.24.0.0
 
 Install-Module -Name xActiveDirectory
-# 
+#>
 

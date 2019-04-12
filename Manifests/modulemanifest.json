@@ -178,5 +178,9 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\ISOManagement\\New-ISOFile.psm1",
     "Name": "New-ISOFile"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\New-TestLabManifestItem.psm1",
+    "Name": "New-TestLabManifestItem"
   }
 ]
