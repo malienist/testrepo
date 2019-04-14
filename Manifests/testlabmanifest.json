@@ -1,5 +1,15 @@
 [
   {
+    "ItemSMB": "NA",
+    "ItemRemoteConfigurationType": "HyperV",
+    "ItemFileLocation": "NA",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemName": "HostHunterSwitchInternal",
+    "ItemIPAddress": "NA",
+    "ItemOS": "HyperV",
+    "ItemPurpose": "Switch"
+  },
+  {
     "ItemPurpose": "Switch",
     "ItemFileLocation": "NA",
     "ItemName": "HostHunterSwitchInternal",

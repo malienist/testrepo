@@ -45,6 +45,24 @@ Download the ISOs below to the downloads folder:
 2. Once ISOs are downloaded, open an Administrator Powershell 6/7 shell
 3. Navigate to HostHunter download
 4. Run `setup.ps1`
-5. Follow prompts
-
-### Expected results
+5. Provide prompts with filenames, hashes and hash types for the previously stored ISOs
+6. For VM Template creation:
+    - Ubuntu 18.04 Settings:
+        - Follow standard prompts
+        - If proxy required, setup (not covered in this guide)
+        - Select the name you desire. Call the Server: ubuntu1804server_template. Make sure you record the username:password
+        - Install OpenSSH server
+        - Choose the packages you wish to install. I recommend no extras, but up to you.
+        - Ignore the prompt: "Please remove the installation medium, then press ENTER:". This occurs automatically through `Build-TestLabTemplates` module
+        - When completed, return to Powershell prompt and press enter to continue
+    - Windows 10 Enterprise Settings:
+        - Follow standard prompts
+        - For "Let's connect you to a network" select either 'Domain Join' or 'Skip for Now'
+        - Record username:password combination
+        - (recommended) turn off Cortana and all tracking
+        - When Windows starts up, return to Powershell prompt and press enter to continue
+    - Windows Server 2016
+        - Follow prompts
+        - (recommended) Select 'Windows Server 2016 Datacenter (Desktop Experience)'
+        - Record username:password
+        - When Windows starts up, return to Powershell prompt and press enter to continue
