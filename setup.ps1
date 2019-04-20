@@ -169,6 +169,36 @@ else
 Write-Information -InformationAction Continue -MessageData "Building template VMs"
 Build-TestLabTemplates
 
+# Confirm if Ansible Server to be created locally or remote
+$ansiblelocation = Read-Host "Is ansible server remote or local (remote/local)" #todo: Input validation
+if($ansiblelocation -eq "remote")
+{
+    # If remote, store in the manifest as remote for future reference
+    Write-Information -InformationAction Continue -MessageData "ansible stored in remote location (user selected)"
+    # Get details of remote ansible server from user
+    $remotehostname = Read-Host "ansible server hostname"
+    $remoteip = Read-Host "ansible server IP address"
+    $remoteconfigurationenabled = Read-Host "ansible server remote configuration enabled (true/false)"
+    if($remoteconfigurationenabled -eq "true")
+    {
+        $remoteconfigurationenabled -eq $true
+    }else{
+        $remoteconfigurationenabled -eq $false
+    }
+    New-TestLabManifestItem -ItemOS 'Ubuntu1804Server' -ItemPurpose 'Ansible' -ItemFileLocation 'Remote' -ItemName $remotehostname -ItemRemoteConfigurationType 'SSH' -ItemRemoteConfigurationEnabled $remoteconfigurationenabled -ItemSMB $false -ItemIPAddress $remoteip
+}elseif($ansiblelocation -eq "local")
+{
+    # Check if ansible server exists in manifest
+    $testlab = Get-Content -Raw -Path $testlabmanifest | ConvertFrom-Json
+    if($testlab | Where-Object {$_.ItemPurpose -eq 'ansible'})
+    {
+        Write-Information -InformationAction Continue -MessageData "ansible server already created"
+    }else{
+        Write-Information -InformationAction Continue -MessageData "Creating ansible server"
+        
+    }
+}
+
 ### Future work once framework in operation
 # Ensure all core executeables have been downloaded
 <#

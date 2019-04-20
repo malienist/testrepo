@@ -1,83 +1,33 @@
 [
   {
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemFileLocation": "NA",
-    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationType": "WinRM",
+    "ItemName": "WindowsServer2016_Template",
+    "ItemIPAddress": "False",
+    "ItemOS": "WindowsServer2016",
+    "ItemPurpose": "Template",
     "ItemRemoteConfigurationEnabled": "True",
-    "ItemIPAddress": "NA",
-    "ItemSMB": "NA",
-    "ItemOS": "HyperV",
-    "ItemPurpose": "Switch"
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
   },
   {
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemFileLocation": "NA",
-    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemName": "Windows10Enterprise_Template",
+    "ItemIPAddress": "False",
+    "ItemOS": "Windows10Enterprise",
+    "ItemPurpose": "Template",
     "ItemRemoteConfigurationEnabled": "True",
-    "ItemIPAddress": "NA",
-    "ItemSMB": "NA",
-    "ItemOS": "HyperV",
-    "ItemPurpose": "Switch"
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
   },
   {
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemFileLocation": "NA",
-    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemName": "Ubuntu1804Server_Template",
+    "ItemIPAddress": "False",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemPurpose": "Template",
     "ItemRemoteConfigurationEnabled": "True",
-    "ItemIPAddress": "NA",
-    "ItemSMB": "NA",
-    "ItemOS": "HyperV",
-    "ItemPurpose": "Switch"
-  },
-  {
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemFileLocation": "NA",
-    "ItemRemoteConfigurationType": "HyperV",
-    "ItemRemoteConfigurationEnabled": "True",
-    "ItemIPAddress": "NA",
-    "ItemSMB": "NA",
-    "ItemOS": "HyperV",
-    "ItemPurpose": "Switch"
-  },
-  {
-    "ItemSMB": "NA",
-    "ItemRemoteConfigurationType": "HyperV",
-    "ItemFileLocation": "NA",
-    "ItemRemoteConfigurationEnabled": "True",
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemIPAddress": "NA",
-    "ItemOS": "HyperV",
-    "ItemPurpose": "Switch"
-  },
-  {
-    "ItemPurpose": "Switch",
-    "ItemFileLocation": "NA",
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemSMB": "NA",
-    "ItemIPAddress": "NA",
-    "ItemOS": "HyperV",
-    "ItemRemoteConfigurationType": "HyperV",
-    "ItemRemoteConfigurationEnabled": "True"
-  },
-  {
-    "ItemPurpose": "Switch",
-    "ItemFileLocation": "NA",
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemSMB": "NA",
-    "ItemIPAddress": "NA",
-    "ItemOS": "HyperV",
-    "ItemRemoteConfigurationType": "HyperV",
-    "ItemRemoteConfigurationEnabled": "True"
-  },
-  {
-    "ItemPurpose": "Switch",
-    "ItemFileLocation": "NA",
-    "ItemName": "HostHunterSwitchInternal",
-    "ItemSMB": "NA",
-    "ItemIPAddress": "NA",
-    "ItemOS": "HyperV",
-    "ItemRemoteConfigurationType": "HyperV",
-    "ItemRemoteConfigurationEnabled": "True"
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
   },
   {
     "HostName": "WIN-J7M415A83NK",

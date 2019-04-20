@@ -44,7 +44,7 @@ function New-TestLabManifestItem{
 	IPAddress - the IP Address of endpoint
 
 	.Example
-	New-TestLabEndpoint -EPOS WindowsServer2016 -EPPurpose DomainController -EPType Template -EPFileLocation <filelocation> -EPHostName TestMachine -EPRemoteConfigurationType WinRM -EPRemoteConfigurationEnabled $true -EPSMB $false -EPIPAddress 0.0.0.1	
+	New-TestLabManifestItem -EPOS WindowsServer2016 -EPPurpose DomainController -EPType Template -EPFileLocation <filelocation> -EPHostName TestMachine -EPRemoteConfigurationType WinRM -EPRemoteConfigurationEnabled $true -EPSMB $false -EPIPAddress 0.0.0.1	
 	
 	#>
 
@@ -52,7 +52,7 @@ function New-TestLabManifestItem{
 	param
 	(
 		[Parameter(Mandatory=$true)][string]$ItemOS,
-		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'System', 'Switch', 'AD', 'SIEM')]$ItemPurpose,
+		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'Ansible', 'Switch', 'AD', 'SIEM', 'Client')]$ItemPurpose,
 		[Parameter(Mandatory=$true)][string]$ItemFileLocation,
 		[Parameter(Mandatory=$true)][string]$ItemName,
 		[Parameter(Mandatory=$true)][string][ValidateSet('SSH', 'WinRM', 'NA', 'HyperV')]$ItemRemoteConfigurationType,

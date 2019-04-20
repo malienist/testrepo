@@ -58,7 +58,7 @@ function Invoke-Windows10EnterpriseTemplateConfiguration{
 		Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Set-NetConnectionProfile -InterfaceAlias 'Ethernet' -NetworkCategory 'Private'}
 		# Confirm change has occured
 		$connectionprofile = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetConnectionProfile}
-		if($connectionprofile.NetworkCategory -eq "Private")
+		if($connectionprofile.NetworkCategory -ne "Public")
 		{
 			Write-Information -InformationAction Continue -MessageData "Network Connection state changed to 'Private'"
 			$output.NetConnectionProfile = "Private"

@@ -1,10 +1,10 @@
 function New-AnsibleServer{
 	<#
 	.Synopsis
-    Sets up a new ansible server.
+    Builds up a new ansible server.
     
 	.Description
-    Installs ansible on a server then copies over a series of play books.
+    Installs ansible on an Ubuntu Server
 
 	.Example
 	New-AnsibleServer
@@ -19,11 +19,18 @@ function New-AnsibleServer{
 	
 	# Create custom powershell object for output
 	$output = [PSCustomObject]@{
-		
+		Outcome = "Failed"
+		VMCreated = $false
 	}
 	
-	# Get IP address of Ansible server
-	# todo: split this out into a module so various methods of virtualisation can be used
+	# Create VM, call it AnsibleServer
+	$newansiblevm = New-UbuntuServer -OSName 'AnsibleServer'
+	if($newansiblevm.Outcome -eq "Success")
+	{
+		$output.VMCreated = $true
+		# Now start to configure machine
+		
+	}
 	
 	# Write output to pipeline
 	Write-Output $output

@@ -12,6 +12,7 @@
         <e p="vscode-nls" t="IncludeRecursive" />
       </e>
     </e>
+    <e p="C:\Users\james\.Rider2018.3\config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\james\.Rider2018.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\james\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_HostHunter.-517313650.00" t="ExcludeRecursive" />
   </component>

@@ -52,7 +52,7 @@ function New-TestLabEndpoint{
 	param
 	(
 		[Parameter(Mandatory=$true)][string]$EPOS,
-		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'System', 'SIEM')]$EPPurpose,
+		[Parameter(Mandatory=$true)][string][ValidateSet('Template', 'Target', 'Infrastructure', 'System', 'SIEM', 'Ansible', 'Client', 'Server')]$EPPurpose,
 		[Parameter(Mandatory=$true)][string]$EPFileLocation,
 		[Parameter(Mandatory=$true)][string]$EPHostName,
 		[Parameter(Mandatory=$true)][string][ValidateSet('SSH', 'WinRM')]$EPRemoteConfigurationType,

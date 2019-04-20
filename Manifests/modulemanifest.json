@@ -182,5 +182,9 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\New-TestLabManifestItem.psm1",
     "Name": "New-TestLabManifestItem"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-HyperVVMfromTemplate.psm1",
+    "Name": "New-HyperVVMfromTemplate"
   }
 ]
