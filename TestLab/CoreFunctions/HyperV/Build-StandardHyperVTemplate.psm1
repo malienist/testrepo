@@ -61,7 +61,7 @@ function Build-StandardHyperVTemplate{
 	# If VM Creation successful, wait for user to press return then continue
 	if($vmstart.Outcome -eq "Success")
 	{
-		Read-Host "Press return when ready to continue"
+		Read-Host "Press return when operating system installation complete"
 		# Get the vm credentials
 		$vmcreds = Get-Credential -Message "Input credentials (before AD creation/joining)"
 		
@@ -93,10 +93,21 @@ function Build-StandardHyperVTemplate{
 			$response = Read-Host "SSH enabled (y/n)"
 			if($response -eq "y")
 			{
-				
+				Write-Information -InformationAction Continue -MessageData "Testing connection"
+				$output.RemoteAccessEnabled = $true
+				# todo: fix this up for future updates
 			}
 			
-			$vmconfig = Invoke-Ubuntu1804ServerTemplateConfiguration -VMName $VMName -Credential $vmcreds
+			#$vmconfig = Invoke-Ubuntu1804ServerTemplateConfiguration -VMName $VMName -Credential $vmcreds
+			$vmconfig = @{
+				Outcome = "Success"
+			}
+			Write-Information -InformationAction Continue -MessageData "Stopping VM to remove DVD Drive"
+			Stop-VM -VMName $VMName
+			
+			# Once VM modification complete, update the outcome objects to store in the TestLabEndpoint manifest
+			$output.RemoteAccessType = "SSH"
+			$output.IPAddress = Read-Host "IP Address from setup"
 			
 		}elseif($OSType -eq "Windows10Enterprise")
 		{
@@ -114,6 +125,7 @@ function Build-StandardHyperVTemplate{
 			if($vmconfig.RemotePowershell -eq "Success")
 			{
 				$output.RemoteAccessEnabled = $true
+				$output.RemoteAccessType = 'SSH'
 			}else{
 				$output.RemoteAccessEnabled = $false
 			}

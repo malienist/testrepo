@@ -56,10 +56,10 @@ function Invoke-WindowsServer2016TemplateConfiguration{
 	Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{winrm quickconfig}
 	# Test WinRM works
 	# Get IP address
-	$ipaddress = Invoke-Command -VMName Server2016_Template -Credential $Credential -ScriptBlock{Get-NetIPAddress | Select-Object IPAddress, InterfaceAlias, AddressFamily | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.InterfaceAlias -eq "Ethernet"}}
+	$ipaddress = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{Get-NetIPAddress | Select-Object IPAddress, InterfaceAlias, AddressFamily | Where-Object {$_.AddressFamily -eq 'IPv4' -and $_.InterfaceAlias -eq "Ethernet"}}
 	$output.IPAddress = [String]$ipaddress.IPAddress
 	# Use Invoke-Command with IP to get Computername
-	$computername = Invoke-Command -ComputerName $output.IPAddress -Credential $Credential -ScriptBlock{$env:COMPUTERNAME}
+	$computername = Invoke-Command -VMName $VMName -Credential $Credential -ScriptBlock{$env:COMPUTERNAME}
 	if($computername)
 	{
 		# Invoke command was a success

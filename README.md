@@ -50,6 +50,7 @@ Download the ISOs below to the downloads folder:
     - Ubuntu 18.04 Settings:
         - Follow standard prompts
         - If proxy required, setup (not covered in this guide)
+        - Record the IP Address stated during setup
         - Select the name you desire. Call the Server: ubuntu1804server_template. Make sure you record the username:password
         - Install OpenSSH server
         - Choose the packages you wish to install. I recommend no extras, but up to you.

@@ -1,5 +1,45 @@
 [
   {
+    "ItemName": "HostHunterSwitchInternal",
+    "ItemFileLocation": "NA",
+    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "NA",
+    "ItemSMB": "NA",
+    "ItemOS": "HyperV",
+    "ItemPurpose": "Switch"
+  },
+  {
+    "ItemName": "HostHunterSwitchInternal",
+    "ItemFileLocation": "NA",
+    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "NA",
+    "ItemSMB": "NA",
+    "ItemOS": "HyperV",
+    "ItemPurpose": "Switch"
+  },
+  {
+    "ItemName": "HostHunterSwitchInternal",
+    "ItemFileLocation": "NA",
+    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "NA",
+    "ItemSMB": "NA",
+    "ItemOS": "HyperV",
+    "ItemPurpose": "Switch"
+  },
+  {
+    "ItemName": "HostHunterSwitchInternal",
+    "ItemFileLocation": "NA",
+    "ItemRemoteConfigurationType": "HyperV",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "NA",
+    "ItemSMB": "NA",
+    "ItemOS": "HyperV",
+    "ItemPurpose": "Switch"
+  },
+  {
     "ItemSMB": "NA",
     "ItemRemoteConfigurationType": "HyperV",
     "ItemFileLocation": "NA",

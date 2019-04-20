@@ -39,7 +39,7 @@ function New-HostHunterSwitch{
 	
 	if($VirtualizationType -eq "HyperV")
 	{
-		
+		# Create a Virtual Switch using HyperV commandlets
 		$output.Outcome = $switch.Outcome
 		Get-NetAdapter
 		$netadapter = Get-NetAdapter

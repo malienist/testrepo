@@ -34,6 +34,8 @@ function Build-TestLabTemplates{
 	
 	# Get the new Switch 
 	$switchname = "HostHunterSwitchInternal"
+
+	Write-Information -InformationAction Continue -MessageData "#######################################################"
 	
 	$ISOs = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\ISOManifest.json | ConvertFrom-Json
 	foreach($ISO in $ISOs)
@@ -44,7 +46,8 @@ function Build-TestLabTemplates{
 		Write-Information -InformationAction Continue -MessageData $message
 		if($VirtualizationType -eq 'HyperV')
 		{
-			Build-StandardHyperVTemplate -VMName $VMName -OSType $ISOName -Switch $switchname
+			Build-StandardHyperVTemplate -VMName $VMName -OSType $ISOName -Switch 'Default Switch'
+			Write-Information -InformationAction Continue -MessageData "#######################################################"
 		}
 		
 	}

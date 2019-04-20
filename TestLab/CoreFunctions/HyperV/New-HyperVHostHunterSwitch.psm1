@@ -37,7 +37,7 @@ function New-HyperVHostHunterSwitch{
 		SwitchDetails = @{}
 	}
 	
-	$switch = Get-VMSwitch | Where-Object {$_.Name -eq $Name}
+	$switch = Get-VMSwitch | Where-Object {$_.ItemName -eq $Name}
 	
 	# Check if switch already exists
 	if($switch)
