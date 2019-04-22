@@ -90,7 +90,7 @@ function New-TestLabManifestItem{
 			ItemRemoteConfigurationType = $ItemRemoteConfigurationType
 			ItemRemoteConfigurationEnabled = $ItemRemoteConfigurationEnabled
 			ItemSMB = $ItemSMB
-			ItemIPAddress = $ItemSMB
+			ItemIPAddress = $ItemIPAddress
 		}
 		$TestLabArray += $newitem
 		$output.Outcome = "Success"

@@ -1,33 +1,43 @@
 [
   {
-    "ItemRemoteConfigurationType": "WinRM",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemPurpose": "Ansible",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemName": "AnsibleServer",
+    "ItemIPAddress": "172.17.8.190",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemSMB": "False"
+  },
+  {
+    "ItemSMB": "False",
+    "ItemPurpose": "Template",
+    "ItemRemoteConfigurationEnabled": "True",
     "ItemName": "WindowsServer2016_Template",
     "ItemIPAddress": "False",
-    "ItemOS": "WindowsServer2016",
-    "ItemPurpose": "Template",
-    "ItemRemoteConfigurationEnabled": "True",
-    "ItemSMB": "False",
-    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
+    "ItemRemoteConfigurationType": "WinRM",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates",
+    "ItemOS": "WindowsServer2016"
   },
   {
-    "ItemRemoteConfigurationType": "SSH",
+    "ItemSMB": "False",
+    "ItemPurpose": "Template",
+    "ItemRemoteConfigurationEnabled": "True",
     "ItemName": "Windows10Enterprise_Template",
     "ItemIPAddress": "False",
-    "ItemOS": "Windows10Enterprise",
-    "ItemPurpose": "Template",
-    "ItemRemoteConfigurationEnabled": "True",
-    "ItemSMB": "False",
-    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates",
+    "ItemOS": "Windows10Enterprise"
   },
   {
-    "ItemRemoteConfigurationType": "SSH",
-    "ItemName": "Ubuntu1804Server_Template",
-    "ItemIPAddress": "False",
-    "ItemOS": "Ubuntu1804Server",
+    "ItemSMB": "False",
     "ItemPurpose": "Template",
     "ItemRemoteConfigurationEnabled": "True",
-    "ItemSMB": "False",
-    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates"
+    "ItemName": "Ubuntu1804Server_Template",
+    "ItemIPAddress": "False",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates",
+    "ItemOS": "Ubuntu1804Server"
   },
   {
     "HostName": "WIN-J7M415A83NK",

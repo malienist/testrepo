@@ -174,7 +174,7 @@ $ansiblelocation = Read-Host "Is ansible server remote or local (remote/local)" 
 if($ansiblelocation -eq "remote")
 {
     # If remote, store in the manifest as remote for future reference
-    Write-Information -InformationAction Continue -MessageData "ansible stored in remote location (user selected)"
+    Write-Information -InformationAction Continue -MessageData "ansible located in remote location (user selected)"
     # Get details of remote ansible server from user
     $remotehostname = Read-Host "ansible server hostname"
     $remoteip = Read-Host "ansible server IP address"
@@ -195,9 +195,34 @@ if($ansiblelocation -eq "remote")
         Write-Information -InformationAction Continue -MessageData "ansible server already created"
     }else{
         Write-Information -InformationAction Continue -MessageData "Creating ansible server"
+        New-AnsibleServer
+    }
+}
+
+$SIEMlocation = Read-Host "Is SIEM server remote or local (remote/local)" #todo: Input validation
+if($SIEMlocation -eq "remote")
+{
+    # If remote, store in teh manifest as remote for future reference
+    Write-Information -InformationAction Continue -MessageData "SIEM located in remote location (user selected)"
+    # Get details of remote SIEM from user
+    $remotehostname = Read-Host "SIEM Server hostname"
+    $remoteip = Read-Host "SIEM server IP address"
+    New-TestLabManifestItem -ItemOS 'Ubuntu1804Server' -ItemPurpose 'SIEM' -ItemFileLocation 'Remote' -ItemName $remotehostname -ItemRemoteConfigurationType 'SSH' -ItemRemoteConfigurationEnabled $remoteconfigurationenabled -ItemSMB $false -ItemIPAddress $remoteip
+}elseif($SIEMlocation -eq "local")
+{
+    # Check if SIEM exists in manifest
+    $testlab = Get-Content -Raw -Path $testlabmanifest | ConvertFrom-Json
+    if($testlab | Where-Object {$_.ItemPurpose -eq "SIEM"})
+    {
+        Write-Information -InformationAction Continue -MessageData "SIEM server already created"
+    }else{
+        Write-Information -InformationAction Continue -MessageData "Creating SIEM server"
         
     }
 }
+
+# Confirm if SIEM server is local or remote
+
 
 ### Future work once framework in operation
 # Ensure all core executeables have been downloaded

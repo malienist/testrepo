@@ -19,8 +19,8 @@ function New-UbuntuServer{
 	
 	# Create custom powershell object for output
 	$output = [PSCustomObject]@{
-		$outcome = "Failed"
-		$newvmdetails = ""
+		Outcome = "Failed"
+		Newvmdetails = ""
 	}
 	
 	# Create VM using chosen method of virtualization
@@ -30,6 +30,7 @@ function New-UbuntuServer{
 		if($newvm.Outcome -eq "Success")
 		{
 			$output.Outcome = "Success"
+			Write-Information -InformationAction Continue -MessageData "Ubuntu Server created successfully"
 			$output.newvmdetails = $newvm
 		}
 	}

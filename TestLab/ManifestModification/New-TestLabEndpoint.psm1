@@ -23,9 +23,6 @@ function New-TestLabEndpoint{
 	EPPurpose - Purpose of the end point
 	
 	.Parameter
-	EPType - the type of endpoint (template or TestLab)
-	
-	.Parameter
 	EPFileLocation - File location of Virtual Machine. Especially relevant for templates
 	
 	.Parameter

@@ -186,5 +186,9 @@
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\HyperV\\New-HyperVVMfromTemplate.psm1",
     "Name": "New-HyperVVMfromTemplate"
+  },
+  {
+    "Name": "New-SplunkSIEM",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\SIEM\\Splunk\\New-SplunkSIEM.psm1"
   }
 ]

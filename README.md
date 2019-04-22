@@ -40,7 +40,7 @@ Download the ISOs below to the downloads folder:
 2. Windows 10 Enterprise
 3. Ubuntu 18.04 Live Server http://releases.ubuntu.com/18.04/
 
-### Process
+### Template Creation Process
 1. Ensure your virtualization option of choice is ready for use (note for this version of HostHunter, only HyperV is supported)
 2. Once ISOs are downloaded, open an Administrator Powershell 6/7 shell
 3. Navigate to HostHunter download
@@ -55,7 +55,21 @@ Download the ISOs below to the downloads folder:
         - Install OpenSSH server
         - Choose the packages you wish to install. I recommend no extras, but up to you.
         - Ignore the prompt: "Please remove the installation medium, then press ENTER:". This occurs automatically through `Build-TestLabTemplates` module
-        - When completed, return to Powershell prompt and press enter to continue
+        - When completed installation completed, login to server using credentials
+        - Run the following commands to install Microsoft Linux Integration Services (LIS):
+            - Edit modules file in initramfs-tools: 
+                - `sudo nano /etc/initramfs-tools/modules`
+                - Add the following lines at the bottom:
+                    - `hv_vmbus`
+                    - `hv_storvsc`
+                    - `hv_blkvsc`
+                    - `hv_netvsc`
+            -Reinitialize modules file:
+                - `sudo apt install linux-virtual linux-cloud-tools-virtual linux-tools-virtual`
+                - `update-initramfs -u`
+            - Reboot Machine
+            - Credit to https://oitibs.com/hyper-v-lis-on-ubuntu-18-04/
+        - Return to Powershell prompt and press enter to continue
     - Windows 10 Enterprise Settings:
         - Follow standard prompts
         - For "Let's connect you to a network" select either 'Domain Join' or 'Skip for Now'
@@ -67,3 +81,21 @@ Download the ISOs below to the downloads folder:
         - (recommended) Select 'Windows Server 2016 Datacenter (Desktop Experience)'
         - Record username:password
         - When Windows starts up, return to Powershell prompt and press enter to continue
+        
+### HostHunter Core Services Setup Process
+#### Ansible Server
+Used to maintain configuration control of test networks, simplifying the ability to install new configuration managed items for testing purposes
+1. Choose whether to install a local ansible or server, or use your organizations master ansible server. If a master server selected, simply enter in the IP and Hostname.
+##### Master Server
+2. Enter IP address
+3. Enter Hostname
+4. Continue
+##### Local Server
+2. At prompt, enter username from Ubuntu Server template creation
+3. At ssh prompt, enter the following commands:
+    - `sudo apt update`
+    - `sudo apt install software-properties-common`
+    - `sudo apt-add-repository --yes --update ppa:ansible/ansible`
+    - `sudo apt install ansible`
+4. Once install completed, exit ssh session:
+    - `exit`
