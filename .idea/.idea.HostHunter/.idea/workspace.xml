@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HostHunter/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/modulemanifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Manifests/testlabmanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/testlabmanifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/New-UbuntuServer.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/New-UbuntuServer.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/setup.ps1" beforeDir="false" afterPath="$PROJECT_DIR$/setup.ps1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +28,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/setup.ps1">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="541">
@@ -41,10 +38,28 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
+            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+                <state relative-caret-position="416">
+                  <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="368">
+                  <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/Enable-AnsibleSSH.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="160">
+                  <caret line="10" column="111" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
                 </state>
               </provider>
             </entry>
@@ -56,8 +71,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+                <state relative-caret-position="208">
+                  <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
                 </state>
               </provider>
             </entry>
@@ -86,17 +101,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="16">
-                  <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
+                <state relative-caret-position="269">
+                  <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="44" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="526">
+                  <first_editor relative-caret-position="228">
                     <caret line="101" selection-start-line="101" selection-end-line="101" />
                   </first_editor>
                   <second_editor />
@@ -109,15 +124,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="64">
                   <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="48">
-                  <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="54" />
                 </state>
               </provider>
             </entry>
@@ -146,13 +152,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/TestLab/New-PullServer.psm1" />
         <option value="$PROJECT_DIR$/Interact/Invoke-WinRMFileTransfer.psm1" />
         <option value="$PROJECT_DIR$/Interact/Invoke-InitialWinRMFileTransfer.psm1" />
         <option value="$PROJECT_DIR$/TestLab/New-DomainController.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/StandardDC.ps1" />
         <option value="$PROJECT_DIR$/SetupScripts/TestLab/TestLabCommentary.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/SetupScripts/setfilepathsDSC.ps1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/Get-StandardVMSettings.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/Edit-StandardVMSettings.psm1" />
@@ -193,10 +197,12 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.md" />
         <option value="$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1" />
-        <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" />
         <option value="$PROJECT_DIR$/Manifests/testlabmanifest.json" />
         <option value="$PROJECT_DIR$/setup.ps1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/Enable-AnsibleSSH.psm1" />
+        <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" />
       </list>
     </option>
   </component>
@@ -216,6 +222,11 @@
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
               <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
+              <item name=".ssh" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
@@ -367,12 +378,13 @@
       <workItem from="1555737703929" duration="10555000" />
       <workItem from="1555878052522" duration="1091000" />
       <workItem from="1555880741290" duration="7403000" />
-      <workItem from="1555890610613" duration="1560000" />
+      <workItem from="1555890610613" duration="2002000" />
+      <workItem from="1556050831738" duration="2775000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159542000" />
+    <option name="totallyTimeSpent" value="162759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,7 +399,7 @@
     <frame x="978" y="0" width="1781" height="1167" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20337014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20569436" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -398,14 +410,14 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.47646716" visible="true" weight="0.045454547" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4758861" visible="true" weight="0.045454547" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49916944" weight="0.3299373" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5235328" side_tool="true" visible="true" weight="0.045454547" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5241139" side_tool="true" visible="true" weight="0.045454547" />
       <window_info anchor="bottom" id="Performance Profiler" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -430,13 +442,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/SetupScripts/TestLab/New-TestLab.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="117" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SetupScripts/TestLab/TestLabCommentary.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -682,24 +687,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/reload.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
           <caret line="7" column="23" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -713,10 +711,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+    <entry file="file://$PROJECT_DIR$/Manifests/settings.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+        <state relative-caret-position="240">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.ps1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="219" column="8" selection-start-line="219" selection-start-column="8" selection-end-line="219" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -724,6 +729,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/New-UbuntuServer.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="50" column="8" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/Enable-AnsibleSSH.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="111" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
         </state>
       </provider>
     </entry>
@@ -735,45 +775,17 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="526">
+          <first_editor relative-caret-position="228">
             <caret line="101" selection-start-line="101" selection-end-line="101" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1">
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="92" column="42" selection-start-line="92" selection-start-column="42" selection-end-line="92" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/ManifestModification/New-TestLabEndpoint.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="22" column="40" selection-start-line="22" selection-start-column="40" selection-end-line="22" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setup.ps1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="219" column="8" selection-start-line="219" selection-start-column="8" selection-end-line="219" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/New-UbuntuServer.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="54" />
+        <state relative-caret-position="368">
+          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
         </state>
       </provider>
     </entry>

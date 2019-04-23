@@ -190,5 +190,9 @@
   {
     "Name": "New-SplunkSIEM",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\SIEM\\Splunk\\New-SplunkSIEM.psm1"
+  },
+  {
+    "Name": "Enable-AnsibleSSH",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\Enable-AnsibleSSH.psm1"
   }
 ]

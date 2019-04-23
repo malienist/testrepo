@@ -10,3 +10,5 @@ C:/Users/HostHunter/Manifests/testlabmanifest.json
 *.idea
 *.cer
 TestLab/VirtualMachines/
+.ssh/
+*.ssh/

@@ -23,6 +23,8 @@ function New-AnsibleServer{
 		Outcome = "Failed"
 		VMCreated = $false
 		VMCheckpoint = $false
+		VMSnapshotDetails = ""
+		SSHEnabled = $false
 	}
 	
 	# Create VM, call it AnsibleServer
@@ -65,8 +67,26 @@ function New-AnsibleServer{
 		# Take Snapshot (Microsoft calls them Checkpoints https://docs.microsoft.com/en-us/powershell/module/hyper-v/checkpoint-vm?view=win10-ps)
 		Checkpoint-VM -Name AnsibleServer -SnapshotName AnsibleInstalled -Verbose
 		$output.VMCheckpoint = $true
+        
+        # Restart VM
+        Start-VM -Name AnsibleServer
+        
+        # Wait for 20 seconds for reboot to complete
+        Start-Sleep -Seconds 20
+		
+		# Enable SSH on Server for future use
+		Enable-AnsibleSSH -UserName $user -IPAddress $ip
+		
+		# Take new snapshot with SSH installed
+		Checkpoint-VM -Name AnsibleServer -SnapshotName SSHInstalled -Verbose
+
+		# Get Snapshot details for future reference
+		$snapshot = Get-VM -Name AnsibleServer | Get-VMSnapshot
+		$output.VMSnapshotDetails = $snapshot
+		
 		$output.Outcome = "Success"
 		# todo: record the snapshot being taken for future reference
+		
 		
 		# todo: record the non-standard software now installed
 	}
