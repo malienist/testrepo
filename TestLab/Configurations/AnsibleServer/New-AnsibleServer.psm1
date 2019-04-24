@@ -85,8 +85,6 @@ function New-AnsibleServer{
 		$output.VMSnapshotDetails = $snapshot
 		
 		$output.Outcome = "Success"
-		# todo: record the snapshot being taken for future reference
-		
 		
 		# todo: record the non-standard software now installed
 	}

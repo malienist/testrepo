@@ -28,11 +28,8 @@ function Enable-AnsibleSSH{
 		SSHPrivateKeyStorageLocation = ""
 	}
 	
-	# Generate SSH key
-	Write-Information -InformationAction Continue -MessageData "Generating SSH Key"
-	ssh-keygen.exe -f C:\Users\HostHunter\.ssh\id_rsa
-	$output.SSHKeyCreated = $true
-	$output.SSHPrivateKeyStorageLocation = C:\Users\HostHunter\.ssh\id_rsa
+	# Create New HH SSH Key
+	New-HHSSHKey
 	
 	# Connect to Ansible Server and provide public key
 	cat C:\Users\HostHunter\.ssh\id_rsa.pub | ssh.exe $Username@$IPAddress "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"

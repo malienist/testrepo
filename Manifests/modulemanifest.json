@@ -81,11 +81,11 @@
   },
   {
     "Name": "Invoke-WinRMFileTransfer",
-    "FileLocation": "C:\\Users\\HostHunter\\Interact\\Invoke-WinRMFileTransfer.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\Interact\\Invoke-WinRMFileTransfer.psm1"
   },
   {
     "Name": "Invoke-InitialWinRMFileTransfer",
-    "FileLocation": "C:\\Users\\HostHunter\\Interact\\Invoke-InitialWinRMFileTransfer.psm1"
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\Interact\\Invoke-InitialWinRMFileTransfer.psm1"
   },
   {
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\New-AnsibleServer.psm1",
@@ -194,5 +194,21 @@
   {
     "Name": "Enable-AnsibleSSH",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\Enable-AnsibleSSH.psm1"
+  },
+  {
+    "Name": "New-HHSSHKey",
+    "FileLocation": "C:\\Users\\HostHunter\\HelpFunctions\\New-HHSSHKey.psm1"
+  },
+  {
+    "Name": "Invoke-SSHCommand",
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\LogicalAccountability\\Connections\\SSH\\Invoke-SSHCommand.psm1"
+  },
+  {
+    "Name": "Send-LogicalAccountability",
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\LogicalAccountability\\Send-LogicalAccountability.psm1"
+  },
+  {
+    "Name": "Send-HHDataObject",
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\LogicalAccountability\\Send-HHDataObject.psm1"
   }
 ]
