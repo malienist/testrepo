@@ -69,22 +69,30 @@ function Invoke-SSHCommand{
 			# If key exists, continue with command or scp
 			if($output.KeyExists = $true)
 			{
-				if($Type -eq 'SCP')
+				foreach($host in $HostNameorIP)
 				{
-					Send-LogicalAccountability
-					Write-Information -InformationAction Continue -MessageData "This will be an SCP Command in the future"
+					if($Type -eq 'SCP')
+					{
+						Send-LogicalAccountability
+						Write-Information -InformationAction Continue -MessageData "This will be an SCP Command in the future"
+					}
+					elseif ($Type -eq 'Connection')
+					{
+						# Set identity file to the non-standard location in the HHFramework
+						Send-LogicalAccountability
+						ssh.exe -i $idfile $Username@$host
+						$output.Outcome = "Success"
+					}
+					elseif ($Type -eq 'Command')
+					{
+						# Set identity file to the non-standard location in the HHFramework
+						Send-LogicalAccountability
+						$result = ssh.exe -i $idfile $Username@$host $Command
+						Send-HHDataObject -AccountabilityHash "TestHash" -DataObject $result
+						$output.Outcome = "Success"
+					}
 				}
-				elseif ($Type -eq 'Connection')
-				{
-					Send-LogicalAccountability
-					ssh.exe -i $idfile $Username@$HostNameorIP
-				}
-				elseif ($Type -eq 'Command')
-				{
-					Send-LogicalAccountability
-					$result = ssh.exe -i $idfile $Username@HostNameorIP $Command
-					Send-HHDataObject -AccountabilityHash "TestHash" -DataObject $result
-				}
+				
 			}
 		}else{
 			# End here

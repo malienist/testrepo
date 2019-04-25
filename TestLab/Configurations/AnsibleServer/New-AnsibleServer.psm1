@@ -75,16 +75,23 @@ function New-AnsibleServer{
         Start-Sleep -Seconds 20
 		
 		# Enable SSH on Server for future use
-		Enable-AnsibleSSH -UserName $user -IPAddress $ip
+		$ssh = Enable-AnsibleSSH -UserName $user -IPAddress $ip
 		
-		# Take new snapshot with SSH installed
-		Checkpoint-VM -Name AnsibleServer -SnapshotName SSHInstalled -Verbose
+		if($ssh.Outcome -eq "Success")
+		{
+			# Take new snapshot with SSH installed
+			Checkpoint-VM -Name AnsibleServer -SnapshotName SSHInstalled -Verbose
 
-		# Get Snapshot details for future reference
-		$snapshot = Get-VM -Name AnsibleServer | Get-VMSnapshot
-		$output.VMSnapshotDetails = $snapshot
-		
-		$output.Outcome = "Success"
+			# Get Snapshot details for future reference
+			$snapshot = Get-VM -Name AnsibleServer | Get-VMSnapshot
+			$output.VMSnapshotDetails = $snapshot
+
+			$output.Outcome = "Success"
+			# Write output to pipeline
+			Write-Output $output
+		}else{
+			Write-Information -InformationAction Continue -MessageData "Enabling SSH on ansible server failed. Retry"
+		}
 		
 		# todo: record the non-standard software now installed
 	}

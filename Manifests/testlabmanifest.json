@@ -1,5 +1,25 @@
 [
   {
+    "ItemSMB": "False",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemPurpose": "Ansible",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemName": "AnsibleServer",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "172.17.8.182"
+  },
+  {
+    "ItemSMB": "False",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemPurpose": "Ansible",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemName": "AnsibleServer",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemIPAddress": "172.17.8.186"
+  },
+  {
     "ItemRemoteConfigurationType": "SSH",
     "ItemRemoteConfigurationEnabled": "True",
     "ItemIPAddress": "172.17.8.189",

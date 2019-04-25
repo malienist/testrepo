@@ -32,14 +32,16 @@ function New-HHSSHKey{
 	if($private -and $public -eq "True")
 	{
 		Write-Information -InformationAction Continue -MessageData "Keys already exist, continue"
+		$output.Outcome = "Success"
 	}else{
 		# Generate SSH key
 		Write-Information -InformationAction Continue -MessageData "Generating SSH Key"
-		ssh-keygen.exe -f C:\Users\HostHunter\.ssh\id_rsa.pub
+		ssh-keygen.exe -f C:\Users\HostHunter\.ssh\id_rsa
+		$output.Outcome = "Success"
 	}
 
 	$output.SSHKeyCreated = $true
-	$output.SSHPrivateKeyStorageLocation = C:\Users\HostHunter\.ssh\id_rsa
+	$output.SSHPrivateKeyStorageLocation = "C:\Users\HostHunter\.ssh\id_rsa"
 	
 	# Write output to pipeline
 	Write-Output $output

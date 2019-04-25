@@ -26,13 +26,21 @@ function Enable-AnsibleSSH{
 	$output = [PSCustomObject]@{
 		SSHKeyCreated = $true
 		SSHPrivateKeyStorageLocation = ""
+		Outcome = "Failed"
 	}
 	
 	# Create New HH SSH Key
-	New-HHSSHKey
+	$ssh = New-HHSSHKey
 	
-	# Connect to Ansible Server and provide public key
-	cat C:\Users\HostHunter\.ssh\id_rsa.pub | ssh.exe $Username@$IPAddress "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+	if($ssh.Outcome -eq "Success")
+	{
+		# Connect to Ansible Server and provide public key
+		cat C:\Users\HostHunter\.ssh\id_rsa.pub | ssh.exe $Username@$IPAddress "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+		$output.Outcome = "Success"
+	}else{
+		Write-Information -InformationAction Continue -MessageData "Generation of ssh key failed. Investigate then try again"
+	}
+	
 	
 	# Write output to pipeline
 	Write-Output $output
