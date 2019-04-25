@@ -1,5 +1,45 @@
 [
   {
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemIPAddress": "172.17.8.179",
+    "ItemName": "SIEMServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemPurpose": "SIEM"
+  },
+  {
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemIPAddress": "172.17.8.189",
+    "ItemName": "SIEMServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemPurpose": "SIEM"
+  },
+  {
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemIPAddress": "172.17.8.183",
+    "ItemName": "SIEMServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemPurpose": "SIEM"
+  },
+  {
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemIPAddress": "172.17.8.184",
+    "ItemName": "SIEMServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemPurpose": "SIEM"
+  },
+  {
     "ItemSMB": "False",
     "ItemOS": "Ubuntu1804Server",
     "ItemPurpose": "SIEM",

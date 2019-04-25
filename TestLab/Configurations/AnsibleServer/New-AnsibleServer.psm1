@@ -106,6 +106,7 @@ function New-AnsibleServer{
 
 			$output.Outcome = "Success"
 			# Write output to pipeline
+			
 			Write-Output $output
 		}else{
 			Write-Information -InformationAction Continue -MessageData "Enabling SSH on ansible server failed. Retry"

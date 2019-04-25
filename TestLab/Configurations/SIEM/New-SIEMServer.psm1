@@ -36,16 +36,16 @@ function New-SIEMServer{
 		Start-HyperVVM -VMName 'SIEMServer'
 		# Wait for start to finish to get new IP
 		$vmip = (Get-VM -Name 'SIEMServer').NetworkAdapters
-		if($vmip.IPAddresses -ne $null)
+		if($vmip.IPAddresses.count -ge 2)
 		{
 			$ip = (Get-VM -Name 'SIEMServer').NetworkAdapters.IPAddresses[0]
 		}else{
 			while (-not $ip)
 			{
 				Start-Sleep -Seconds 1
-				Write-Information -InformationAction Continue -MessageData "Waiting for IP Address to be established"
+				Write-Information -InformationAction Continue -MessageData "Waiting for IPv4 Address to be established"
 				$vmip = (Get-VM -Name 'SIEMServer').NetworkAdapters
-				if($vmip.IPaddresses -ne $null)
+				if($vmip.IPaddresses.count -ge 2)
 				{
 					$ip = (Get-VM -Name 'SIEMServer').NetworkAdapters.IPAddresses[0]
 				}
@@ -54,6 +54,7 @@ function New-SIEMServer{
 		# turn $ip into string
 		$ip = $ip.tostring()
 		$message = "SIEMServer IP is $ip"
+		Write-Information -InformationAction Continue -MessageData $message
 
 		# Save the endpoint to TestLab Manifest
 		New-TestLabEndpoint -EPOS Ubuntu1804Server -EPPurpose SIEM -EPFileLocation 'C:\Users\HostHunter\TestLab\VirtualMachines' -EPHostName 'SIEMServer' -EPRemoteConfigurationType 'SSH' -EPRemoteConfigurationEnabled $true -EPSMB $false -EPIPAddress $ip
@@ -75,7 +76,7 @@ function New-SIEMServer{
 		$output.VMCheckpoint = $true
 		$output.VMCheckpointDetails = $snapshot
 		$output.Outcome = "Success"
-
+		Write-Output $output
 	}
 
 	# Write output to pipeline
