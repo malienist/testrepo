@@ -69,6 +69,9 @@ Download the ISOs below to the downloads folder:
                 - `update-initramfs -u`
             - Reboot Machine
             - Credit to https://oitibs.com/hyper-v-lis-on-ubuntu-18-04/
+        - Install python2 integrator for use with ansible
+            - `sudo apt install python-minimal python-simplejson`
+            - Many thanks to https://github.com/ansible/ansible/issues/46980
         - Return to Powershell prompt and press enter to continue
     - Windows 10 Enterprise Settings:
         - Follow standard prompts
