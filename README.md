@@ -101,5 +101,10 @@ Used to maintain configuration control of test networks, simplifying the ability
     - Generate ssh keys for future use configuring items: `ssh-keygen` 
         - Follow standard prompts
         - Changing the default file location is not supported at this stage
+    - Create an ansible user to interact with ansible files
+        - `sudo adduser ansible`
+        - If you want more information / details about this, checkout https://linuxize.com/post/how-to-create-a-sudo-user-on-ubuntu/
+    - Give permission to the username you are using to add / modify ansible files
+        - `sudo chown -R <username> /etc/ansible/`
 4. Once install completed, exit ssh session:
     - `exit`

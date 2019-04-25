@@ -214,5 +214,13 @@
   {
     "Name": "New-SIEMServer",
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\SIEM\\New-SIEMServer.psm1"
+  },
+  {
+    "Name": "New-AnsibleEndpoint",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleModules\\New-AnsibleEndpoint.psm1"
+  },
+  {
+    "Name": "Invoke-HostCommand",
+    "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\Invoke-HostCommand.psm1"
   }
 ]

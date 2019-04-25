@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d5e8435-e92f-4dd3-a98e-2ff155caa27c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Manifests/modulemanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/modulemanifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Manifests/testlabmanifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Manifests/testlabmanifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1" beforeDir="false" afterPath="$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,19 +45,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1">
+            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleModules/New-AnsibleEndpoint.psm1">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="416">
-                  <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Manifests/testlabmanifest.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="800">
-                  <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+                <state relative-caret-position="445">
+                  <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -86,23 +78,41 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="1568">
-                    <caret line="98" column="8" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="31" />
+                  <first_editor relative-caret-position="212">
+                    <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
                   </first_editor>
                   <second_editor />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Manifests/testlabmanifest.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+                <state relative-caret-position="160">
+                  <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-85">
+                  <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/HostHunterFramework/Invoke-HostCommand.psm1">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="224">
+                  <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
                 </state>
               </provider>
             </entry>
@@ -132,8 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/TestLab/CoreFunctions/Edit-StandardVMSettings.psm1" />
-        <option value="$PROJECT_DIR$/TestLab/CoreFunctions/New-HyperVVM.psm1" />
         <option value="$PROJECT_DIR$/TestLab/CoreFunctions/New-StandardHyperVVM.psm1" />
         <option value="$PROJECT_DIR$/Development/New-Module.psm1" />
         <option value="$PROJECT_DIR$/Development/Move-ModuleLocation.psm1" />
@@ -174,20 +182,22 @@
         <option value="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Send-LogicalAccountability.psm1" />
         <option value="$PROJECT_DIR$/HelpFunctions/New-HHSSHKey.psm1" />
         <option value="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Send-HHDataObject.psm1" />
-        <option value="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/setup.ps1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/Enable-AnsibleSSH.psm1" />
         <option value="$PROJECT_DIR$/Manifests/modulemanifest.json" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1" />
-        <option value="$PROJECT_DIR$/Manifests/testlabmanifest.json" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1" />
         <option value="$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1" />
+        <option value="$PROJECT_DIR$/Manifests/testlabmanifest.json" />
+        <option value="$PROJECT_DIR$/HostHunterFramework/Invoke-HostCommand.psm1" />
+        <option value="$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1" />
+        <option value="$PROJECT_DIR$/TestLab/Configurations/AnsibleModules/New-AnsibleEndpoint.psm1" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="978" />
+    <option name="x" value="976" />
     <option name="width" value="1781" />
     <option name="height" value="1167" />
   </component>
@@ -279,14 +289,7 @@
               <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
               <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Configurations" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="AnsibleServer" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Configurations" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="SIEM" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="AnsibleModules" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
@@ -306,12 +309,6 @@
               <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
               <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
               <item name="ManifestModification" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="HostHunter" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="TestLab" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="VirtualMachines" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
@@ -397,12 +394,12 @@
       <workItem from="1556050831738" duration="2775000" />
       <workItem from="1556142593568" duration="5688000" />
       <workItem from="1556148944088" duration="8720000" />
-      <workItem from="1556158013424" duration="901000" />
+      <workItem from="1556158013424" duration="6681000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178068000" />
+    <option name="totallyTimeSpent" value="183848000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,7 +411,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="978" y="0" width="1781" height="1167" extended-state="0" />
+    <frame x="976" y="0" width="1781" height="1167" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21266705" />
@@ -460,20 +457,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Development/Move-ModuleLocation.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="39" column="4" lean-forward="true" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HelpFunctions/Set-Setting.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/Get-StandardVMSettings.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -643,13 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Start-HyperVVM.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/New-TestLabManifestItem.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
@@ -709,31 +685,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reload.ps1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setup.ps1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2752">
           <caret line="172" column="12" selection-start-line="172" selection-start-column="12" selection-end-line="172" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manifests/testlabmanifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -754,32 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1568">
-            <caret line="98" column="8" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/Enable-UbuntuSSH.psm1">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="91" column="49" selection-start-line="91" selection-start-column="49" selection-end-line="91" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -790,17 +723,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+        <state relative-caret-position="1024">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/New-SIEMServer.psm1">
+    <entry file="file://$PROJECT_DIR$/TestLab/CoreFunctions/HyperV/Start-HyperVVM.psm1">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="56" column="75" selection-start-line="56" selection-start-column="75" selection-end-line="56" selection-end-column="75" />
+        <state relative-caret-position="256">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reload.ps1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/SIEM/Splunk/New-SplunkSIEM.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Manifests/testlabmanifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleServer/New-AnsibleServer.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1664">
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HostHunterFramework/Invoke-HostCommand.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HostHunterFramework/LogicalAccountability/Connections/SSH/Invoke-SSHCommand.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-85">
+          <caret line="88" column="61" selection-start-line="88" selection-start-column="61" selection-end-line="88" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestLab/Configurations/AnsibleModules/New-AnsibleEndpoint.psm1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="51" column="4" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="212">
+            <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

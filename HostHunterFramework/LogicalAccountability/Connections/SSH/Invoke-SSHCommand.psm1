@@ -86,9 +86,15 @@ function Invoke-SSHCommand{
 					elseif ($Type -eq 'Command')
 					{
 						# Set identity file to the non-standard location in the HHFramework
-						Send-LogicalAccountability
+						Send-LogicalAccountability | Out-Null
 						$result = ssh.exe -i $idfile $Username@$host $Command
-						Send-HHDataObject -AccountabilityHash "TestHash" -DataObject $result
+						if($result -eq $null)
+						{
+							Write-Information -InformationAction Continue -MessageData "No result returned from SSH command"
+							$result = "No result"
+						}
+						Send-HHDataObject -AccountabilityHash "TestHash" -DataObject $result | Out-Null
+						
 						$output.Outcome = $result
 					}
 				}
