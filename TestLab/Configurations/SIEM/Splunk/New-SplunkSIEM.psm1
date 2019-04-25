@@ -20,20 +20,10 @@ function New-SplunkSIEM{
 	# Create custom powershell object for output
 	$output = [PSCustomObject]@{
 		Outcome = "Failed"
-		VMCreated = $false
-		VMCheckpoint = $false
-		VMCheckpointDetails = ""
 	}
 	
-	# Create VM, call it SplunkSIEM
-	$newsplunkSIEM = New-UbuntuServer -OSName 'SplunkSIEM'
-	if($newsplunkSIEM.Outcome -eq "Success")
-	{
-		$output.VMCreated = $true
-		
-	}
-	
-	
+	# Create the SIEMServer
+	$SIEM = New-SIEMServer
 	
 	# Write output to pipeline
 	Write-Output $output

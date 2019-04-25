@@ -1,7 +1,7 @@
 function New-AnsibleServer{
 	<#
 	.Synopsis
-    Builds up a new ansible server.
+    Builds a new ansible server.
     
 	.Description
     Creates a new Ubuntu 18.04 server, then installs ansible on it. 
@@ -25,6 +25,7 @@ function New-AnsibleServer{
 		VMCheckpoint = $false
 		VMSnapshotDetails = ""
 		SSHEnabled = $false
+		AnsiblePublicKey = ""
 	}
 	
 	# Create VM, call it AnsibleServer
@@ -38,21 +39,30 @@ function New-AnsibleServer{
 		Start-HyperVVM -VMName 'AnsibleServer'
 		
 		# Wait for reboot to finish before getting new IP
-		$ip = (Get-VM -Name 'AnsibleServer').NetworkAdapters.IPAddresses[0]
-		
-		while (-not $ip)
+		$vmip = (Get-VM -Name 'AnsibleServer').NetworkAdapters
+		if($vmip.IPAddresses -ne $null)
 		{
-			Start-Sleep -Seconds 1
-			Write-Information -InformationAction Continue -MessageData "Waiting for IP Address to be established"
 			$ip = (Get-VM -Name 'AnsibleServer').NetworkAdapters.IPAddresses[0]
-			# todo: somehow programmatically check this
+		}else{
+			while (-not $ip)
+			{
+				Start-Sleep -Seconds 1
+				Write-Information -InformationAction Continue -MessageData "Waiting for IP Address to be established"
+				$vmip = (Get-VM -Name 'AnsibleServer').NetworkAdapters
+				if($vmip.IPaddresses -ne $null)
+				{
+					$ip = (Get-VM -Name 'AnsibleServer').NetworkAdapters.IPAddresses[0]
+				}
+			}
 		}
+		
+		
 		# Turn $ip into a string
 		$ip = $ip.tostring()
 		$message = "AnsibleServer IP is $ip"
 		Write-Information -InformationAction Continue -MessageData $message
 		
-		# Save the completed details to TestLab Manifest
+		# Save the endpoint TestLab Manifest
 		New-TestLabEndpoint -EPOS Ubuntu1804Server -EPPurpose Ansible -EPFileLocation 'C:\Users\HostHunter\TestLab\VirtualMachines' -EPHostName 'AnsibleServer' -EPRemoteConfigurationType 'SSH' -EPRemoteConfigurationEnabled $true -EPSMB $false -EPIPAddress $ip
 		
 		# With IP, setup ssh connection to server to enable installation of Ansible
@@ -75,7 +85,7 @@ function New-AnsibleServer{
         Start-Sleep -Seconds 20
 		
 		# Enable SSH on Server for future use
-		$ssh = Enable-AnsibleSSH -UserName $user -IPAddress $ip
+		$ssh = Enable-UbuntuSSH -UserName $user -IPAddress $ip
 		
 		if($ssh.Outcome -eq "Success")
 		{
@@ -85,6 +95,14 @@ function New-AnsibleServer{
 			# Get Snapshot details for future reference
 			$snapshot = Get-VM -Name AnsibleServer | Get-VMSnapshot
 			$output.VMSnapshotDetails = $snapshot
+			
+			# Get public key for Ansible Server and store in Host Hunter Framework for use configuring future Ubuntu endpoints
+			Write-Information -InformationAction Continue -MessageData "Getting AnsibleServer Public Key into Host Hunter Framework"
+			# Get public key
+			$result = Invoke-SSHCommand -HostNameorIP $ip -Username $user -HHSystem -KeyExists True -Type Command -Command "cat ~/.ssh/id_rsa.pub"
+			# Store public key in file
+			$result.Outcome | Out-File -FilePath C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub
+			$output.AnsiblePublicKey = "C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub"
 
 			$output.Outcome = "Success"
 			# Write output to pipeline

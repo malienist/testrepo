@@ -89,7 +89,7 @@ function Invoke-SSHCommand{
 						Send-LogicalAccountability
 						$result = ssh.exe -i $idfile $Username@$host $Command
 						Send-HHDataObject -AccountabilityHash "TestHash" -DataObject $result
-						$output.Outcome = "Success"
+						$output.Outcome = $result
 					}
 				}
 				

@@ -97,5 +97,9 @@ Used to maintain configuration control of test networks, simplifying the ability
     - `sudo apt install software-properties-common`
     - `sudo apt-add-repository --yes --update ppa:ansible/ansible`
     - `sudo apt install ansible`
+    - If during this process you get an error regarding another process using apt, follow this website to resolve: https://itsfoss.com/could-not-get-lock-error/
+    - Generate ssh keys for future use configuring items: `ssh-keygen` 
+        - Follow standard prompts
+        - Changing the default file location is not supported at this stage
 4. Once install completed, exit ssh session:
     - `exit`

@@ -169,6 +169,9 @@ else
 Write-Information -InformationAction Continue -MessageData "Building template VMs"
 Build-TestLabTemplates
 
+# Create SSH Key
+New-HHSSHKey
+
 # Confirm if Ansible Server to be created locally or remote
 $ansiblelocation = Read-Host "Is ansible server remote or local (remote/local)" #todo: Input validation
 if($ansiblelocation -eq "remote")

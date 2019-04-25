@@ -1,4 +1,4 @@
-function Enable-AnsibleSSH{
+function Enable-UbuntuSSH{
 	<#
 	.Synopsis
    Enables the use of SSH from PowerShell 6 commandline to use Ansible Server dynamically
@@ -28,18 +28,9 @@ function Enable-AnsibleSSH{
 		SSHPrivateKeyStorageLocation = ""
 		Outcome = "Failed"
 	}
-	
-	# Create New HH SSH Key
-	$ssh = New-HHSSHKey
-	
-	if($ssh.Outcome -eq "Success")
-	{
-		# Connect to Ansible Server and provide public key
-		cat C:\Users\HostHunter\.ssh\id_rsa.pub | ssh.exe $Username@$IPAddress "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
-		$output.Outcome = "Success"
-	}else{
-		Write-Information -InformationAction Continue -MessageData "Generation of ssh key failed. Investigate then try again"
-	}
+	# Connect to Ubuntu Server and provide public key
+	cat C:\Users\HostHunter\.ssh\id_rsa.pub | ssh.exe $Username@$IPAddress "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+	$output.Outcome = "Success"
 	
 	
 	# Write output to pipeline

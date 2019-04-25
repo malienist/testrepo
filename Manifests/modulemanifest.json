@@ -192,8 +192,8 @@
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\SIEM\\Splunk\\New-SplunkSIEM.psm1"
   },
   {
-    "Name": "Enable-AnsibleSSH",
-    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\Enable-AnsibleSSH.psm1"
+    "Name": "Enable-UbuntuSSH",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\AnsibleServer\\Enable-UbuntuSSH.psm1"
   },
   {
     "Name": "New-HHSSHKey",
@@ -210,5 +210,9 @@
   {
     "Name": "Send-HHDataObject",
     "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\LogicalAccountability\\Send-HHDataObject.psm1"
+  },
+  {
+    "Name": "New-SIEMServer",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\Configurations\\SIEM\\New-SIEMServer.psm1"
   }
 ]
