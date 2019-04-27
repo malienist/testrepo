@@ -1,35 +1,35 @@
-function Set-VirtualisationPreference{
+function Set-VirtualizationPreference{
     <#
 	.Synopsis
-    Sets the virtualisation preference for test lab. Downloads appropriate modules and updates settings file.
+    Sets the virtualization preference for test lab. Downloads appropriate modules and updates settings file.
     
 	.Description
-    Sets the virtualisation preference for test lab. Downloads appropriate modules and updates settings file.
+    Sets the virtualization preference for test lab. Downloads appropriate modules and updates settings file.
     
 	.Parameter
-	VirtualisationPreference
+	VirtualizationPreference
 
 	.Example
-	Set-VirtualisationPreference -VirtualisationPreference VMWare
+	Set-VirtualizationPreference -VirtualizationPreference VMWare
 
 	#>
 
     [CmdletBinding()]
     param
     (
-        [parameter(Mandatory=$true)][ValidateSet('HyperV')][string]$VirtualisationPreference
+        [parameter(Mandatory=$true)][ValidateSet('HyperV')][string]$VirtualizationPreference
     )
 
     $output = @{
-        "Virtualisation" = $VirtualisationPreference
+        "Virtualization" = $VirtualizationPreference
         "Version" = ""
         "Outcome" = "Failed"
     }
     
-    # Confirm modules for chosen virtualisation preference are installed
-    if($VirtualisationPreference -eq "VMWareWorkstation")
+    # Confirm modules for chosen virtualization preference are installed
+    if($VirtualizationPreference -eq "VMWareWorkstation")
     {
-        Write-Information -InformationAction Continue -MessageData "VMware chosen for Virtualisation"
+        Write-Information -InformationAction Continue -MessageData "VMware chosen for Virtualization"
         if(Get-Module -Name vmxtoolkit)
         {
             Write-Information -InformationAction Continue -MessageData "VMX Toolkit installed"
@@ -45,18 +45,18 @@ function Set-VirtualisationPreference{
                 $version = (Get-VMwareVersion).Major
                 
                 # Update settings file
-                Set-Setting -Type "VirtualisationPreference" -Version $version -Vendor "VMWare" 
+                Set-Setting -Type "VirtualizationPreference" -Version $version -Vendor "VMWare" 
                 
             }else{
                 Write-Information -InformationAction Continue -MessageData "VMWToolkit installation failed"
             }
         }
     }
-    elseif($VirtualisationPreference -eq "HyperV")
+    elseif($VirtualizationPreference -eq "HyperV")
     {
         Write-Information -InformationAction Continue -MessageData "HyperV standard installation available"
         $version = ""
-        Set-Setting -Type $VirtualisationPreference -Version $version -Vendor "HyperV"
+        Set-Setting -Type $VirtualizationPreference -Version $version -Vendor "HyperV"
         Write-Information -InformationAction Continue -MessageData "Installing Hyper-V Powershell modules and features"
         powershell Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-Tools-All
     }

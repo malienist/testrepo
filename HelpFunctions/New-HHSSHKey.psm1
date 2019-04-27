@@ -6,6 +6,9 @@ function New-HHSSHKey{
 	.Description
     Using the ssh-keygen.exe within PowerShell 6/7, creates a new private/public pair. Stores it in the HostHunter
     framework so that it's stored separately from the rest of the system.
+    
+    .Parameter
+    [switch]Force = used to force a new key to be created, even if one exists.
 
 	.Example
 	New-HHSSHKey
@@ -15,7 +18,7 @@ function New-HHSSHKey{
 	[CmdletBinding()]
 	param
 	(
-        
+        [switch]$Force
     )
 	
 	# Create custom powershell object for output
@@ -29,7 +32,7 @@ function New-HHSSHKey{
 	$private = Test-Path -Path C:\Users\HostHunter\.ssh\id_rsa
 	$public = Test-Path -Path C:\Users\HostHunter\.ssh\id_rsa.pub
 	
-	if($private -and $public -eq "True")
+	if($private -and $public -eq "True" -and -not $Force)
 	{
 		Write-Information -InformationAction Continue -MessageData "Keys already exist, continue"
 		$output.Outcome = "Success"

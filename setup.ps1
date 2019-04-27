@@ -1,50 +1,6 @@
 #Requires -RunAsAdministrator
 #Requires -Version 5.1
 
-# Update Powershell Help
-Write-Information -InformationAction Continue -MessageData "Updating Help"
-Update-Help
-
-# Ensure WinRM services is running
-Write-Information -InformationAction Continue -MessageData "Ensuring Powershell Remoting works"
-$outcome = "n"
-while($outcome -ne "y")
-{
-    $outcome = Read-Host "Is network connection profile not set to Public(y/n)"
-    if($outcome -eq "n")
-    {
-        Write-Information -InformationAction Continue -MessageData "Follow this process to set to private"
-        Write-Information -InformationAction Continue -MessageData "Get current network connection profile index: Get-NetconnectionProfile"
-        Write-Information -InformationAction Continue -MessageData "Using desired network, set to private: Set-NetconnectionProfile -InterfaceIndex <index number> -NetworkCategory Private"
-        Write-Information -InformationAction Continue -MessageData "Confirm network connection profile changed: Get-NetconnectionProfile"
-    }
-}
-
-Write-Information -InformationAction Continue -MessageData "Setting up PSRemoting"
-Enable-PSRemoting -Force
-Set-Item WSMan:localhost\client\TrustedHosts *
-
-# Import DSC module
-Write-Information -InformationAction Continue -MessageData "Configuring Base VM"
-Import-Module C:\Users\HostHunter\SetupScripts\Set-BaseVMFileStructure.psm1 -Force
-
-# Now configure BaseVM
-# Set-BaseVMFileStructure
-
-# Now change the permissions on this folder and all subfolders so that user (i.e. me) can freely 
-# access and save it. Many thanks to this website: https://blogs.msdn.microsoft.com/johan/2008/10/01/powershell-editing-permissions-on-a-file-or-folder/
-# and https://stackoverflow.com/questions/33234047/powershell-how-to-give-full-access-a-list-of-local-user-for-folders
-# Microsoft documentation page: https://docs.microsoft.com/en-us/dotnet/api/system.security.accesscontrol.filesystemaccessrule?view=netframework-4.7.2
-
-Write-Information -InformationAction Continue -MessageData "Updating Folder Permissions"
-$ACL = Get-Acl -Path C:\Users\HostHunter
-$NewACL = New-Object System.Security.AccessControl.FileSystemAccessRule($env:USERNAME, "FullControl", "ContainerInherit,ObjectInherit", "None", "Allow")
-Set-ACL -Path C:\Users\HostHunter\ $ACL
-
-# Import all modules into current command shell
-Write-Information -InformationAction Continue -MessageData "Importing powershell modules"
-.\reload.ps1
-
 # With virtualization preference set, setup test lab
 Write-Information -InformationAction Continue -MessageData "Setting up TestLab"
 # Get the ISOs and move to the framework file location
@@ -149,20 +105,6 @@ if($ubuntu1804serverisopresent -eq $true)
         Write-Information -InformationAction Continue -MessageData "Incorrect Hash"
         break
     }
-}
-
-# Set the virtualization preference
-# todo: make this more robust
-Write-Information -InformationAction Continue -MessageData "Currently available virtualization integration: HyperV"
-$virtualization = Read-Host "Set virtualisation preference (HyperV)"
-if($virtualization -eq "HyperV")
-{
-    Set-VirtualisationPreference -VirtualisationPreference $virtualization
-}
-else
-{
-    Write-Information -InformationAction Continue -MessageData "Invalid entry selected"
-    break
 }
 
 # Build template VMs

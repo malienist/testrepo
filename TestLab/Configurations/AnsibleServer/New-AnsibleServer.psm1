@@ -15,7 +15,7 @@ function New-AnsibleServer{
 	[CmdletBinding()]
 	param
 	(
-        
+		[Parameter(Mandatory=$true)][string]$UbuntuTemplateUsername
     )
 	
 	# Create custom powershell object for output
@@ -26,6 +26,7 @@ function New-AnsibleServer{
 		VMSnapshotDetails = ""
 		SSHEnabled = $false
 		AnsiblePublicKey = ""
+		SudoPrivilegesRemoved = $false
 	}
 	
 	# Create VM, call it AnsibleServer
@@ -40,16 +41,16 @@ function New-AnsibleServer{
 		
 		# Wait for reboot to finish before getting new IP
 		$vmip = (Get-VM -Name 'AnsibleServer').NetworkAdapters
-		if($vmip.IPAddresses -ne $null)
+		if($vmip.IPAddresses.count -ge 2)
 		{
 			$ip = (Get-VM -Name 'AnsibleServer').NetworkAdapters.IPAddresses[0]
 		}else{
 			while (-not $ip)
 			{
 				Start-Sleep -Seconds 1
-				Write-Information -InformationAction Continue -MessageData "Waiting for IP Address to be established"
+				Write-Information -InformationAction Continue -MessageData "Waiting for IPv4 Address to be established"
 				$vmip = (Get-VM -Name 'AnsibleServer').NetworkAdapters
-				if($vmip.IPaddresses -ne $null)
+				if($vmip.IPaddresses.count -ge 2)
 				{
 					$ip = (Get-VM -Name 'AnsibleServer').NetworkAdapters.IPAddresses[0]
 				}
@@ -62,55 +63,39 @@ function New-AnsibleServer{
 		$message = "AnsibleServer IP is $ip"
 		Write-Information -InformationAction Continue -MessageData $message
 		
+		# Configure Ansible Server
+		Write-Information -InformationAction Continue -MessageData "Adding software properties common"
+		ssh.exe -i C:\Users\HostHunter\.ssh\id_rsa $UbuntuTemplateUsername@$ip "sudo apt install software-properties-common -y"
+		Write-Information -InformationAction Continue -MessageData "Adding ansible apt repository"
+		ssh.exe -i C:\Users\HostHunter\.ssh\id_rsa $UbuntuTemplateUsername@$ip "sudo apt-add-repository --yes --update ppa:ansible/ansible"
+		Write-Information -InformationAction Continue -MessageData "Installing Ansible"
+		ssh.exe -i C:\Users\HostHunter\.ssh\id_rsa $UbuntuTemplateUsername@$ip "sudo apt install ansible -y"
+		
 		# Save the endpoint TestLab Manifest
 		New-TestLabEndpoint -EPOS Ubuntu1804Server -EPPurpose Ansible -EPFileLocation 'C:\Users\HostHunter\TestLab\VirtualMachines' -EPHostName 'AnsibleServer' -EPRemoteConfigurationType 'SSH' -EPRemoteConfigurationEnabled $true -EPSMB $false -EPIPAddress $ip
-		
-		# With IP, setup ssh connection to server to enable installation of Ansible
-		# Build command:
-		$user = Read-Host "Ubuntu Server username (same as for template)"
-		ssh.exe $user@$ip
-		
-		# Now stop VM
-		Write-Information -InformationAction Continue -MessageData "Stopping AnsibleServer"
-		Stop-VM -Name 'AnsibleServer' -Verbose
 		
 		# Take Snapshot (Microsoft calls them Checkpoints https://docs.microsoft.com/en-us/powershell/module/hyper-v/checkpoint-vm?view=win10-ps)
 		Checkpoint-VM -Name AnsibleServer -SnapshotName AnsibleInstalled -Verbose
 		$output.VMCheckpoint = $true
-        
-        # Restart VM
-        Start-VM -Name AnsibleServer
-        
-        # Wait for 20 seconds for reboot to complete
-        Start-Sleep -Seconds 20
 		
-		# Enable SSH on Server for future use
-		$ssh = Enable-UbuntuSSH -UserName $user -IPAddress $ip
+		# Create Ansible user, lower privileged
+		Write-Information -InformationAction Continue -MessageData "Adding ansible user"
+		ssh.exe -i C:\Users\HostHunter\.ssh\id_rsa $UbuntuTemplateUsername@$ip "sudo adduser --quiet --disabled-password --shell /bin/bash --home /home/ansible -gecos 'User' ansible"
 		
-		if($ssh.Outcome -eq "Success")
-		{
-			# Take new snapshot with SSH installed
-			Checkpoint-VM -Name AnsibleServer -SnapshotName SSHInstalled -Verbose
+		# Creating Ansible user SSH Key
+		Write-Information -InformationAction Continue -MessageData "Creating Ansible user SSH Key"
+		ssh.exe -i C:\Users\HostHunter\.ssh\id_rsa ansible@$ip "ssh-keygen -N '' "
+        
+        # Get public key for Ansible Server and store in Host Hunter Framework for use configuring future Ubuntu endpoints
+		Write-Information -InformationAction Continue -MessageData "Getting AnsibleServer Public Key into Host Hunter Framework"
+		# Get public key
+		$result = Invoke-SSHCommand -HostNameorIP $ip -Username 'ansible' -HHSystem -KeyExists True -Type Command -Command "cat ~/.ssh/id_rsa.pub"
+		# Store public key in file
+		$result.Outcome | Out-File -FilePath C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub
+		$output.AnsiblePublicKey = "C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub"
 
-			# Get Snapshot details for future reference
-			$snapshot = Get-VM -Name AnsibleServer | Get-VMSnapshot
-			$output.VMSnapshotDetails = $snapshot
-			
-			# Get public key for Ansible Server and store in Host Hunter Framework for use configuring future Ubuntu endpoints
-			Write-Information -InformationAction Continue -MessageData "Getting AnsibleServer Public Key into Host Hunter Framework"
-			# Get public key
-			$result = Invoke-SSHCommand -HostNameorIP $ip -Username $user -HHSystem -KeyExists True -Type Command -Command "cat ~/.ssh/id_rsa.pub"
-			# Store public key in file
-			$result.Outcome | Out-File -FilePath C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub
-			$output.AnsiblePublicKey = "C:\Users\HostHunter\.ssh\AnsibleServerPublicKey\id_rsa.pub"
-
-			$output.Outcome = "Success"
-			# Write output to pipeline
-			
-			Write-Output $output
-		}else{
-			Write-Information -InformationAction Continue -MessageData "Enabling SSH on ansible server failed. Retry"
-		}
+		$output.Outcome = "Success"
+		# Write output to pipeline
 		
 		# todo: record the non-standard software now installed
 	}

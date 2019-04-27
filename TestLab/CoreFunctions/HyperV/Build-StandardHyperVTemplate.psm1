@@ -21,7 +21,7 @@ function Build-StandardHyperVTemplate{
 	param
 	(
         [Parameter(Mandatory=$true)][String]$VMName,
-		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server', 'Ubuntu1804Client')]$OSType,
+		[Parameter(Mandatory=$true)][string][ValidateSet('WindowsServer2016', 'Windows10Enterprise', 'Ubuntu1804Server')]$OSType,
 		[Parameter(Mandatory=$true)][String][ValidateSet('HostHunterSwitchExternal', 'HostHunterSwitchInternal', 'HostHunterSwitchPrivate', 'Default Switch')]$Switch
     )
 	
@@ -62,12 +62,13 @@ function Build-StandardHyperVTemplate{
 	if($vmstart.Outcome -eq "Success")
 	{
 		Read-Host "Press return when operating system installation complete"
-		# Get the vm credentials
-		$vmcreds = Get-Credential -Message "Input credentials (before AD creation/joining)"
+		
 		
 		# Now configure Virtual Machine procedurally based upon type of Standard VM
 		if($OSType -eq "WindowsServer2016")
 		{
+			# Get the vm credentials
+			$vmcreds = Get-Credential -Message "Input credentials (before AD creation/joining)"
 			Write-Information -InformationAction Continue -MessageData "Configuring Windows Server 2016 template"
 			$vmconfig = Invoke-WindowsServer2016TemplateConfiguration -VMName $VMName -Credential $vmcreds
 			$output.Config = $vmconfig
@@ -89,14 +90,12 @@ function Build-StandardHyperVTemplate{
 		elseif($OSType -eq "Ubuntu1804Server")
 		{
 			Write-Information -InformationAction Continue -MessageData "Configuring Ubuntu Server 18.04 template"
-			# Confirm with user that SSH installed
-			$response = Read-Host "SSH enabled (y/n)"
-			if($response -eq "y")
-			{
-				Write-Information -InformationAction Continue -MessageData "Testing connection"
-				$output.RemoteAccessEnabled = $true
-				# todo: fix this up for future updates
-			}
+			# Get details for server
+			$ubuntutemplateusername = Read-Host "UbuntuServer template Username"
+			$ubuntutemplateipaddress = Read-Host "UbuntuServer template IPAddress"
+			Invoke-Ubuntu1804ServerTemplateConfiguration -UbuntuTemplateUsername $ubuntutemplateusername -UbuntuTemplateIP $ubuntutemplateipaddress -VMName $VMName
+			$output.RemoteAccessType = 'SSH'
+			$output.RemoteAccessEnabled = $true
 			
 			#$vmconfig = Invoke-Ubuntu1804ServerTemplateConfiguration -VMName $VMName -Credential $vmcreds
 			$vmconfig = @{
@@ -107,10 +106,12 @@ function Build-StandardHyperVTemplate{
 			
 			# Once VM modification complete, update the outcome objects to store in the TestLabEndpoint manifest
 			$output.RemoteAccessType = "SSH"
-			$output.IPAddress = Read-Host "IP Address from setup"
+			$output.IPAddress = $ubuntutemplateipaddress
 			
 		}elseif($OSType -eq "Windows10Enterprise")
 		{
+			# Get the vm credentials
+			$vmcreds = Get-Credential -Message "Input credentials (before AD creation/joining)"
 			# Setup Windows 10 Enterprise with Powershell remoting, signed remote scripts and get IP address
 			Write-Information -InformationAction Continue -MessageData "Configuring Windows 10 Enterprise template"
 			$vmconfig = Invoke-Windows10EnterpriseTemplateConfiguration -VMName $VMName -Credential $vmcreds

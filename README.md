@@ -52,10 +52,16 @@ Download the ISOs below to the downloads folder:
         - If proxy required, setup (not covered in this guide)
         - Record the IP Address stated during setup
         - Select the name you desire. Call the Server: ubuntu1804server_template. Make sure you record the username:password
+        - Record the IP Address provided during setup
         - Install OpenSSH server
         - Choose the packages you wish to install. I recommend no extras, but up to you.
         - Ignore the prompt: "Please remove the installation medium, then press ENTER:". This occurs automatically through `Build-TestLabTemplates` module
-        - When completed installation completed, login to server using credentials
+        - Once server has been built, login and execute the following commands (note, this will be undone at conclusion of vm setup):
+            - 
+        - Enter credentials when prompted for server login
+        - When second login occurs, remove need for the server template username to password sudo protection. Warning these are not best security practices and this setting is removed at conclusion of setup.
+            - `sudo visudo`
+            - at bottom of file `<username> ALL=(ALL) NOPASSWD:ALL`
         - Run the following commands to install Microsoft Linux Integration Services (LIS):
             - Edit modules file in initramfs-tools: 
                 - `sudo nano /etc/initramfs-tools/modules`

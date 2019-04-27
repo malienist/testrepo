@@ -48,8 +48,8 @@
     "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\Set-TestLabUpdate.psm1"
   },
   {
-    "Name": "Set-VirtualisationPreference",
-    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\Set-VirtualisationPreference.psm1"
+    "Name": "Set-VirtualizationPreference",
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\TestLab\\Set-VirtualizationPreference.psm1"
   },
   {
     "Name": "Set-Setting",
@@ -176,7 +176,7 @@
     "FileLocation": "C:\\Users\\HostHunter\\TestLab\\ManifestModification\\New-TestLabEndpoint.psm1"
   },
   {
-    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\CoreFunctions\\ISOManagement\\New-ISOFile.psm1",
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\TemplateManagement\\New-ISOFile.psm1",
     "Name": "New-ISOFile"
   },
   {
@@ -222,5 +222,21 @@
   {
     "Name": "Invoke-HostCommand",
     "FileLocation": "C:\\Users\\HostHunter\\HostHunterFramework\\Invoke-HostCommand.psm1"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\Invoke-HostHunterSetup.psm1",
+    "Name": "Invoke-HostHunterSetup"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\Initialize-HHWinRM.psm1",
+    "Name": "Initialize-HHWinRM"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\SetupScripts\\Initialize-TestLab.psm1",
+    "Name": "Initialize-TestLab"
+  },
+  {
+    "FileLocation": "C:\\Users\\HostHunter\\TestLab\\TemplateManagement\\New-ISOForTemplate.psm1",
+    "Name": "New-ISOForTemplate"
   }
 ]

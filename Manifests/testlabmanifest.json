@@ -1,23 +1,93 @@
 [
   {
-    "ItemRemoteConfigurationType": "SSH",
-    "ItemIPAddress": "172.17.8.179",
-    "ItemName": "SIEMServer",
+    "ItemIPAddress": "f",
     "ItemOS": "Ubuntu1804Server",
     "ItemRemoteConfigurationEnabled": "True",
     "ItemSMB": "False",
     "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
-    "ItemPurpose": "SIEM"
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Ansible",
+    "ItemName": "AnsibleServer"
   },
   {
-    "ItemSMB": "False",
+    "ItemIPAddress": "192.168.202.210",
     "ItemOS": "Ubuntu1804Server",
-    "ItemPurpose": "Ansible",
-    "ItemRemoteConfigurationType": "SSH",
-    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
-    "ItemName": "AnsibleServer",
     "ItemRemoteConfigurationEnabled": "True",
-    "ItemIPAddress": "172.17.8.188"
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Ansible",
+    "ItemName": "AnsibleServer"
+  },
+  {
+    "ItemIPAddress": "192.168.202.217",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Ansible",
+    "ItemName": "AnsibleServer"
+  },
+  {
+    "ItemIPAddress": "192.168.202.219",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Ansible",
+    "ItemName": "AnsibleServer"
+  },
+  {
+    "ItemIPAddress": "192.168.202.222",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Ansible",
+    "ItemName": "AnsibleServer"
+  },
+  {
+    "ItemIPAddress": "192.168.202.214",
+    "ItemOS": "WindowsServer2016",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates",
+    "ItemRemoteConfigurationType": "WinRM",
+    "ItemPurpose": "Template",
+    "ItemName": "WindowsServer2016_Template"
+  },
+  {
+    "ItemIPAddress": "192.168.202.211",
+    "ItemOS": "Windows10Enterprise",
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemSMB": "False",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines\\Templates",
+    "ItemRemoteConfigurationType": "SSH",
+    "ItemPurpose": "Template",
+    "ItemName": "Windows10Enterprise_Template"
+  },
+  {
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemPurpose": "SIEM",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemIPAddress": "192.168.202.211",
+    "ItemName": "SIEMServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemSMB": "False",
+    "ItemRemoteConfigurationType": "SSH"
+  },
+  {
+    "ItemRemoteConfigurationEnabled": "True",
+    "ItemPurpose": "Ansible",
+    "ItemFileLocation": "C:\\Users\\HostHunter\\TestLab\\VirtualMachines",
+    "ItemIPAddress": "192.168.202.220",
+    "ItemName": "AnsibleServer",
+    "ItemOS": "Ubuntu1804Server",
+    "ItemSMB": "False",
+    "ItemRemoteConfigurationType": "SSH"
   },
   {
     "ItemSMB": "False",

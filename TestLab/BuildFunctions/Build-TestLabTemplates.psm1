@@ -23,11 +23,9 @@ function Build-TestLabTemplates{
 	}
 	
 	# Get a list of the current standard ISOs
-	Write-Information -InformationAction Continue -MessageData "#######################################################"
-	Write-Information -InformationAction Continue -MessageData "Building TestLab Templates"
-	Write-Information -InformationAction Continue -MessageData "#######################################################"
-
-	Write-Information -InformationAction Continue -MessageData "#######################################################"
+	Write-Information -InformationAction Continue -MessageData "##################################################################"
+	Write-Information -InformationAction Continue -MessageData "#####               Building TestLab Templates               #####" 
+	Write-Information -InformationAction Continue -MessageData "##################################################################"
 	
 	$ISOs = Get-Content -Raw -Path C:\Users\HostHunter\Manifests\ISOManifest.json | ConvertFrom-Json
 	foreach($ISO in $ISOs)

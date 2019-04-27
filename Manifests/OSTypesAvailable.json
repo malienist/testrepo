@@ -1,0 +1,11 @@
+[
+  {
+    "OSType": "WindowsServer2016"
+  },
+  {
+    "OSType": "Windows10Enterprise"
+  },
+  {
+    "OSType": "Ubuntu1804Server"
+  }
+]
